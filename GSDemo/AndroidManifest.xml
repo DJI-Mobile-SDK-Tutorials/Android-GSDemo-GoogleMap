@@ -36,11 +36,11 @@
         
         <meta-data
             android:name="com.dji.sdk.API_KEY"
-            android:value="" />
+            android:value="462540cd568bd21a0a137d7f" />
         
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value=""/>
+            android:value="AIzaSyCNux9n4srcLk4gRA9ZPKunNoAnISqsgUI"/>
         
         <meta-data 
             android:name="com.google.android.gms.version"

@@ -24,16 +24,12 @@ import dji.sdk.api.DJIDroneTypeDef.DJIDroneType;
 import dji.sdk.api.GroundStation.DJIGroundStationTask;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJIGroundStationFinishAction;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.DJIGroundStationMovingMode;
-import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.GroundStationHoverResult;
 import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.GroundStationResult;
-import dji.sdk.api.GroundStation.DJIGroundStationTypeDef.GroundStationTakeOffResult;
 import dji.sdk.api.GroundStation.DJIGroundStationWaypoint;
 import dji.sdk.api.MainController.DJIMainControllerSystemState;
 import dji.sdk.api.MainController.DJIMainControllerTypeDef.DJIMcIocType;
 import dji.sdk.interfaces.DJIGerneralListener;
 import dji.sdk.interfaces.DJIGroundStationExecuteCallBack;
-import dji.sdk.interfaces.DJIGroundStationHoverCallBack;
-import dji.sdk.interfaces.DJIGroundStationTakeOffCallBack;
 import dji.sdk.interfaces.DJIMcIocTypeCallBack;
 import dji.sdk.interfaces.DJIMcuUpdateStateCallBack;
 
@@ -292,8 +288,9 @@ public class GSDemoActivity extends FragmentActivity implements OnClickListener,
     public void onClick(View v) {
         // TODO Auto-generated method stub
         switch (v.getId()) {
-            case R.id.locate:{           	     	
-                locateDrone();  // Locate the drone's place         	
+            case R.id.locate:{
+                updateDroneLocation();
+                cameraUpdate(); // Locate the drone's place                         	
                 break;
             }
             case R.id.add:{
@@ -334,26 +331,11 @@ public class GSDemoActivity extends FragmentActivity implements OnClickListener,
         }
     }
     
-    private void locateDrone(){
+    private void cameraUpdate(){
         LatLng pos = new LatLng(droneLocationLat, droneLocationLng);
         CameraUpdate cu = CameraUpdateFactory.newLatLng(pos);
         aMap.moveCamera(cu);
         
-        //Create MarkerOptions object
-        final MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(pos);
-        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.aircraft));
-        
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (droneMarker != null) {
-                    droneMarker.remove();
-                }
-             
-                droneMarker = aMap.addMarker(markerOptions);
-            }
-          });
     }
     
     private void enableDisableAdd(){
@@ -487,7 +469,7 @@ public class GSDemoActivity extends FragmentActivity implements OnClickListener,
                 String ResultsString = "return code =" + result.toString();
                 handler.sendMessage(handler.obtainMessage(SHOWTOAST, ResultsString));
                 
-                if (result == GroundStationResult.GS_Result_Successed) {
+                if (result == GroundStationResult.GS_Result_Success) {
                     DJIDrone.getDjiGroundStation().uploadGroundStationTask(mGroundStationTask, new DJIGroundStationExecuteCallBack(){
     
                         @Override
@@ -515,10 +497,10 @@ public class GSDemoActivity extends FragmentActivity implements OnClickListener,
 //            }
 //            
 //        });
-        DJIDrone.getDjiGroundStation().startGroundStationTask(new DJIGroundStationTakeOffCallBack(){
+        DJIDrone.getDjiGroundStation().startGroundStationTask(new DJIGroundStationExecuteCallBack(){
 
             @Override
-            public void onResult(GroundStationTakeOffResult result) {
+            public void onResult(GroundStationResult result) {
                 // TODO Auto-generated method stub
                 String ResultsString = "return code =" + result.toString();
                 handler.sendMessage(handler.obtainMessage(SHOWTOAST, ResultsString));
@@ -527,10 +509,10 @@ public class GSDemoActivity extends FragmentActivity implements OnClickListener,
     }
     
     private void stopGroundStationTask(){
-        DJIDrone.getDjiGroundStation().pauseGroundStationTask(new DJIGroundStationHoverCallBack(){
+        DJIDrone.getDjiGroundStation().pauseGroundStationTask(new DJIGroundStationExecuteCallBack(){
 
             @Override
-            public void onResult(GroundStationHoverResult result) {
+            public void onResult(GroundStationResult result) {
                 // TODO Auto-generated method stub
                 String ResultsString = "return code =" + result.toString();
                 handler.sendMessage(handler.obtainMessage(SHOWTOAST, ResultsString));

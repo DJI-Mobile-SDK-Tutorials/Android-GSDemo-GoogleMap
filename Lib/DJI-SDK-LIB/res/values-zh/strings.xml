@@ -11,7 +11,6 @@
     <string name="ERR_DESCRIPTION_PLUS_REMOVE_LOCK">取消云台锁扣</string>
     <string name="ERR_DESCRIPTION_CONNECTTION_NOT_OK">连接断开</string>
     <string name="ERR_DESCRIPTION_UNSUPPORT">不支持</string>
-    <string name="ERR_DECRIPTION_AUTH_FAILED">授权失败</string>
     <string name="ERR_DECRIPTION_CMD_RECV_PACK_NULL">命令返回包为空</string>
     <string name="ERR_DECRIPTION_PARAM_IILEGAL">参数非法</string>
     <string name="DESCRIPTION_RESULT_OK">成功</string>
@@ -41,7 +40,7 @@
     <string name="ERR_DECRIPTION_FLASH_FLUSHING">固件正在升级中</string>
     <string name="ERR_DECRIPTION_UNDEFINED">未定义错误</string>
     <string name="ERR_DECRIPTION_TIMEOUT">执行超时</string>
-    <string name="ERR_DECRIPTION_NOCONNECT">没有连接</string>    
+    <string name="ERR_COULD_NOT_DELETE_ALL_FILE">不能删除所有文件</string>
 
 
     <string name="DetailCheckPermissionSuccess">获取权限成功</string>

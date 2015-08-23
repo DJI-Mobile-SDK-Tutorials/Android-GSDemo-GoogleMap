@@ -1,2 +1,6 @@
 # Android-GSDemo-GoogleMap
-A Demo for using DJI Mobile SDK to create a GroundStation App using Google Map. It's a counterpart of iOS-GSDemo using GoogleMap. In this demo, we add the functions to configure the waypoints, upload the waypoints, start the ground station task, stop the ground station task. 
+This demo is a counterpart of iOS-GSDemo. This demo shows how to load a map (using Google map as an example in this demo), how to add waypoints by clicking on the map, how to clear waypoints, configure the waypoints, upload the waypoints, start the ground station task, stop the ground station task.
+
+Please check the tutorial here:
+
+GitBook Link <http://dji-dev.gitbooks.io/mobile-sdk-tutorials>

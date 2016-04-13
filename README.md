@@ -1,3 +1,5 @@
+> Note：This Tutorial and Sample Project is developed based on DJI Android SDK v2.4, an update version for Android SDK v3.1.1 will be published soon.
+
 # Creating a MapView and Waypoint Application
 
 <!-- toc -->
@@ -8,7 +10,7 @@
 
 In this tutorial, you will learn how to setup the DJI PC Simulator, update the firmware of Inspire 1, Phantom 3 Professional and Phantom 3 to its beta version, and how to test the GroundStation API with DJI PC Simulator. Also, you will get in touch with the basic process of using DJI GroundStation's Waypoint feature. So let's get started!
 
-You can download the demo project from this **Github Page**. If you want to have a better reading experience, please check our [Gitbook Version](http://dji-dev.gitbooks.io/mobile-sdk-tutorials/content/en/Android/GSDemo/GSDemo_en.html)
+You can download the demo project from this **Github Page**.
 
 ## Using the DJI PC Simulator
 
@@ -72,17 +74,16 @@ remote controller. Click Display Simulator. You can see the screenshot as below:
 
 **Important**: If you want to stop midway through the GroundStation Waypoint Mission, you should click **Stop Simulation** firstly, otherwise the simulator may run the previous groundstation mission when you start it again, it may be confused.
 
-For more info about DJI PC Simulator, please check the **DJI PC Simulator user manual.pdf** file, which you download along with the simulator.---
-**Note**: 
+For more info about DJI PC Simulator, please check the **DJI PC Simulator user manual.pdf** file, which you download along with the simulator.
 
 ## Upgrade the Aircraft's Firmware
 
-Download and update the aircraft's firmware to its beta version before attempting to use the DJI Mobile SDK API.
+Download and update the aircraft's firmware before attempting to use the DJI Mobile SDK API.
 
 Choose and download one of the following firmware from : <https://developer.dji.com/mobile-sdk/downloads> :
 
-- Phantom 3 Professional Firmware (P3X_FW_V01.01.1003.bin)
-- Inspire 1 Firmware (WM610_FW_V01.02.01.02.bin)
+- Phantom 3 Professional Firmware
+- Inspire 1 Firmware
 
 It is not required to update Remote Controller's firmware. Place the **bin** file in the SD card and insert it to the Micro USB port on the camera, and restart the aircraft and then the update process will start automatically. It may take 10 ~ 30 minutes to finish.
 
@@ -93,13 +94,8 @@ Verify the result via the beeping pattern from the gimbals or the blinking patte
 - Upgrade Failed: B...
 - Critical Error: D D D...
 
-Also, you can check the firmware upgrade status by checking the **txt** file generated during the upgrade process. For Phantom 3 Professional, the txt file is named as **"P3X_FW_RESULT_AB.txt"**, For Inspire 1, it's named as **"WM610_FW_RESULT_AB.txt"**, here are the example contents:
-
-  ![upgradeP3XSuccess](./Images/upgradeP3XSuccess.png)
-  
-  ![upgradeInspire1Success](./Images/upgradeInspire1Success.png)
-  
-  
+Also, you can check the firmware upgrade status by checking the **txt** file generated during the upgrade process. 
+    
 ## Setup the Map View
 
 ### 1. Create a map view

@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.dji.GSDemo.GoogleMap"
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        //Enabling multidex support
+        multiDexEnabled true //Mention in the doc
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //Mention in the doc
+    dexOptions {
+        incremental = true;
+        preDexLibraries = false
+        javaMaxHeapSize "4g" // 2g should be also OK
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile project(':dJISDKLIB')
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.android.support:design:23.2.1'
+    compile 'com.android.support:multidex:1.0.1'
+
+}

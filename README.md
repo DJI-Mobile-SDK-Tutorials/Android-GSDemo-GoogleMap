@@ -11,9 +11,11 @@ Also you will know how to setup the DJI PC Simulator, upgrade your Inspire 1, Ph
 
 You can download the demo project from this **Github Page**.
 
+> Note: In this tutorial, we will use Inspire 1 for testing.
+
 ## Using The DJI PC Simulator
 
-### 1. Introduction
+### Introduction
 
 The DJI PC Simulator is a flight simulator designed for SDK developers. The simulator creates a virtual 3D environment and provides data analysis from flight data transmitted to the PC via the UDP protocol.
 
@@ -21,7 +23,7 @@ The DJI PC Simulator is a flight simulator designed for SDK developers. The simu
 
 **Supported DJI Platforms**: Matrice 100, Inspire 1, Phantom 3 Professional, and Phantom 3 Advanced
 
-### 2. Installing and Setup the DJI PC Simulator
+### Installing and Setup the DJI PC Simulator
 
 First, you should download the DJI PC Simulator and WIN Driver from here: <https://developer.dji.com/mobile-sdk/downloads> :
 
@@ -32,7 +34,7 @@ You must install the driver before running the simulator. Since the simulator on
 
 Then, double click the **DJISimulator-Installer.exe** file and follow the instructions to install the program. 
 
-### 3. Using the DJI PC Simulator
+### Using the DJI PC Simulator
 
 **1**. The **Simulator Config** window will appear once you launch the DJI PC Simulator. Set the **Latitude** and **Longitude** values based on your preference. The **SN** represents the connected aircraft's SN number. If you do not see the **SN**, your aircraft is not connected properly to the PC or there is an issues with your firmware.
 
@@ -114,11 +116,7 @@ For the Phantom 3, you can check upgrade status of the firmware by looking at th
 - Upgrade Success: camera sattus indicator will stop blinking 
 - Upgrade Failed or Error: camera status indicator will show solid red
 
-Regardless of what aircraft you are using, you can check whether or not the firmware was upgraded by checking the **txt** file generated during the upgrade process. For the Phantom 3 Professional, the txt file is named **"P3X_FW_RESULT_AB.txt"**, and for the Inspire 1, it's named **"WM610_FW_RESULT_AB.txt"**. Here are example contents of the **txt** file:
-
-  ![upgradeP3XSuccess](./Images/upgradeP3XSuccess.png)
-  
-  ![upgradeInspire1Success](./Images/upgradeInspire1Success.png)
+Regardless of what aircraft you are using, you can check whether or not the firmware was upgraded by checking the **txt** file generated during the upgrade process. 
   
 ## Implementing the UI of Application
 

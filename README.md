@@ -11,7 +11,7 @@ Also you will know how to setup the DJI PC Simulator, upgrade your Inspire 1, Ph
 
 You can download the demo project from this **Github Page**.
 
-> Note: In this tutorial, we will use Inspire 1 for testing.
+> Note: In this tutorial, we will use Inspire 1 for testing. Using the [Google Map API](https://developers.google.com/maps/) for navigating.
 
 ## Using The DJI PC Simulator
 
@@ -297,10 +297,15 @@ public class DJIDemoApplication extends Application{
     public void onCreate() {
         super.onCreate();
     }
+    
+    protected void attachBaseContext(Context base){
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 }
 ~~~
 
-   Here, we override the onCreate() method. We can do some settings when the application is created here.
+   Here, we override the `onCreate()` method. and implement the `attachBaseContext()` method to install the multiDex. We can do some settings when the application is created here.
    
 #### 2. Creating the MainActivity
 

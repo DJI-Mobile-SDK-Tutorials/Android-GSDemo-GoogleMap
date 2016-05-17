@@ -234,7 +234,7 @@ android {
     defaultConfig {
         ...
         minSdkVersion 19
-        targetSdkVersion 22
+        targetSdkVersion 23
         ...
         
         // Enabling multidex support.
@@ -250,7 +250,7 @@ dependencies {
 }
 ~~~
 
-In the code above, we declare the "compileSdkVersion", "buildToolsVersion", "minSdkVersion" and "targetSdkVersion". Please make sure the **targetSdkVersion** is assigned as 22 here. Furthermore, we add the `compile 'com.google.android.gms:play-services:8.4.0'` to the "dependencies" to support google play service.
+In the code above, we declare the "compileSdkVersion", "buildToolsVersion", "minSdkVersion" and "targetSdkVersion". Furthermore, we add the `compile 'com.google.android.gms:play-services:8.4.0'` to the "dependencies" to support google play service.
 
 Then select **Tools->Android->Sync Project with Gradle Files** to sync the gradle files.
 

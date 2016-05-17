@@ -503,6 +503,23 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        // When the compile and target version is higher than 22, please request the
+        // following permissions at runtime to ensure the
+        // SDK work well.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.VIBRATE,
+                            Manifest.permission.INTERNET, Manifest.permission.ACCESS_WIFI_STATE,
+                            Manifest.permission.WAKE_LOCK, Manifest.permission.ACCESS_COARSE_LOCATION,
+                            Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.CHANGE_WIFI_STATE, Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
+                            Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.SYSTEM_ALERT_WINDOW,
+                            Manifest.permission.READ_PHONE_STATE,
+                    }
+                    , 1);
+        }
+        
         setContentView(R.layout.activity_main);
         initUI();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -602,11 +619,13 @@ In the code shown above, we implement the following features:
 
 **1.** Create a GoogleMap variable and 7 Button member variables for the UI. Then create the `initUI()` method to init the 7 Button variables and implement their `setOnClickListener` method and pass "this" as parameter.
 
-**2.** We override the `onCreate()` method to invoke `initUI()` method and create "SupportMapFragment" variable to call the `OnMapReady()` method asynchronously.
+**2.** In the `onCreate()` method, we request several permissions at runtime to ensure the SDK works well when the compile and target SDK version is higher than 22(Like Android Marshmallow 6.0 device and API 23).
 
-**3.** Implement the `showSettingDialog` method to show the **Waypoint Configuration** alert dialog and override the `onClick()` method to show the configuration dialog when press the **Config** button.
+**3.** Then invoke `initUI()` method and create "SupportMapFragment" variable to call the `OnMapReady()` method asynchronously.
 
-**4.** Lastly, we override the `onMapReady()` method to initialize the `gMap` and invoke `setUpMap()` method to implement the `setOnMapClickListener()` method of `gMap` variable. Then add a marker of Shenzhen, China here for example. So when the Google map is loaded, you will see a red pin tag on Shenzhen, China.
+**4.** Implement the `showSettingDialog` method to show the **Waypoint Configuration** alert dialog and override the `onClick()` method to show the configuration dialog when press the **Config** button.
+
+**5.** Lastly, we override the `onMapReady()` method to initialize the `gMap` and invoke `setUpMap()` method to implement the `setOnMapClickListener()` method of `gMap` variable. Then add a marker of Shenzhen, China here for example. So when the Google map is loaded, you will see a red pin tag on Shenzhen, China.
 
 For more details, please check the Github Sample Project. If you are not familiar with adding a Google map to your application, please follow this guide <https://developers.google.com/maps/documentation/android-api/utility/setup#library-dependency>. 
 

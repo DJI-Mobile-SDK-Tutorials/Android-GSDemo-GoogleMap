@@ -7,11 +7,12 @@
 ---
 
 In this tutorial, you will learn how to implement the DJIWaypoint Mission feature and get familiar with the usages of DJIMissionManager. 
+
 Also you will know how to setup the DJI PC Simulator, upgrade your Inspire 1, Phantom 3 Professional and Phantom 3 Advanced's firmware to the lastest version, and how to test the Waypoint Mission API with DJI PC Simulator too. So let's get started!
 
 You can download the demo project from this **Github Page**.
 
-> Note: In this tutorial, we will use Inspire 1 for testing. Using the [Google Map API](https://developers.google.com/maps/) for navigating.
+> Note: In this tutorial, we will use Inspire 1 for testing, use Android Studio 2.1.1 for developing the demo application, and use the [Google Map API](https://developers.google.com/maps/) for navigating.
 
 ## Using The DJI PC Simulator
 
@@ -746,7 +747,7 @@ Now let's build and run the project and install it to your Android device. If ev
 
 ![registerSuccess](./Images/registerSuccess.png)
 
-> **Important:** Please check if the "armeabi-v7a" lib folder has been added to your jnLibs folder in **dJISDKLib** successfully before testing resgistering the app. 
+> **Important:** Please check if the "armeabi-v7a", "arm64-v8a" and "x86" lib folders has been added to your jnLibs folder in **dJISDKLib** successfully before testing resgistering the app. 
 > 
 > ![armeabi](./Images/armeabi.png)
 

@@ -211,7 +211,7 @@ Moreover, specify the permissions of your application needs, by adding **\<uses-
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 ~~~
 
-Finally, we need to specify requirement for OpenGL ES version 2 by adding the following element inside the "manifest" element:
+Finally, we need to specify requirement for OpenGL ES version 2 by adding the following element inside the **\<manifest>** element:
 
 ~~~xml
    <uses-feature

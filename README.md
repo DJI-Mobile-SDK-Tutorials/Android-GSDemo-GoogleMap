@@ -180,15 +180,13 @@ Now, let's go to [Google Developer Console](https://console.developers.google.co
  
 #### 5. Adding Android API Key
 
-Open the AndroidManifest.xml file, add the following elements as childs of **<application>** element and substitute your Android API Key for "YOUR _ API_KEY" in the **value** attribute as shown below:
+Open the AndroidManifest.xml file, add the following element as child of **\<application>** element and substitute your Android API Key for "YOUR _ API_KEY" in the **value** attribute as shown below:
 
 ~~~xml
 	<meta-data
 		android:name="com.google.android.geo.API_KEY"
 		android:value="YOUR_API_KEY" />
-    <meta-data
-       android:name="com.google.android.gms.version"
-       android:value="@integer/google_play_services_version" />
+
 ~~~
 
 The first element sets the key "com.google.android.geo.API_KEY" to the value of your API key. The second one set the google play services version number.
@@ -213,7 +211,7 @@ Moreover, specify the permissions of your application needs, by adding **\<uses-
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 ~~~
 
-Finally, we need to specify requirement for OpenGL ES version 2 by adding the following element inside the "manifest" element:
+Finally, we need to specify requirement for OpenGL ES version 2 by adding the following element inside the **\<manifest>** element:
 
 ~~~xml
    <uses-feature

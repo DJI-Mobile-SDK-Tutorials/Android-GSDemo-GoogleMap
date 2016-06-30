@@ -180,7 +180,7 @@ Now, let's go to [Google Developer Console](https://console.developers.google.co
  
 #### 5. Adding Android API Key
 
-Open the AndroidManifest.xml file, add the following elements as childs of **\<application>** element and substitute your Android API Key for "YOUR _ API_KEY" in the **value** attribute as shown below:
+Open the AndroidManifest.xml file, add the following element as child of **\<application>** element and substitute your Android API Key for "YOUR _ API_KEY" in the **value** attribute as shown below:
 
 ~~~xml
 	<meta-data

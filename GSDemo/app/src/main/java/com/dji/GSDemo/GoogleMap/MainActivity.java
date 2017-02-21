@@ -32,21 +32,19 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import dji.common.flightcontroller.DJIFlightControllerCurrentState;
-import dji.common.util.DJICommonCallbacks;
-import dji.sdk.flightcontroller.DJIFlightController;
-import dji.common.flightcontroller.DJIFlightControllerDataType;
-import dji.sdk.flightcontroller.DJIFlightControllerDelegate;
+
+import dji.common.flightcontroller.FlightControllerState;
+import dji.common.util.CommonCallbacks;
+import dji.sdk.base.BaseProduct;
+import dji.sdk.flightcontroller.FlightController;
 import dji.sdk.missionmanager.DJIMission;
-import dji.sdk.missionmanager.DJIMissionManager;
 import dji.sdk.missionmanager.DJIWaypoint;
 import dji.sdk.missionmanager.DJIWaypointMission;
-import dji.sdk.products.DJIAircraft;
-import dji.sdk.base.DJIBaseComponent;
-import dji.sdk.base.DJIBaseProduct;
 import dji.common.error.DJIError;
+import dji.sdk.missionmanager.MissionManager;
+import dji.sdk.products.Aircraft;
 
-public class MainActivity extends FragmentActivity implements View.OnClickListener, GoogleMap.OnMapClickListener, OnMapReadyCallback, DJIMissionManager.MissionProgressStatusCallback, DJICommonCallbacks.DJICompletionCallback {
+public class MainActivity extends FragmentActivity implements View.OnClickListener, GoogleMap.OnMapClickListener, OnMapReadyCallback, MissionManager.MissionProgressStatusCallback, CommonCallbacks.CompletionCallback {
 
     protected static final String TAG = "GSDemoActivity";
 
@@ -65,11 +63,11 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private float mSpeed = 10.0f;
 
     private DJIWaypointMission mWaypointMission;
-    private DJIMissionManager mMissionManager;
-    private DJIFlightController mFlightController;
+    private MissionManager mMissionManager;
+    private FlightController mFlightController;
 
-    private DJIWaypointMission.DJIWaypointMissionFinishedAction mFinishedAction = DJIWaypointMission.DJIWaypointMissionFinishedAction.NoAction;
-    private DJIWaypointMission.DJIWaypointMissionHeadingMode mHeadingMode = DJIWaypointMission.DJIWaypointMissionHeadingMode.Auto;
+    private DJIWaypointMission.DJIWaypointMissionFinishedAction mFinishedAction = DJIWaypointMission.DJIWaypointMissionFinishedAction.NO_ACTION;
+    private DJIWaypointMission.DJIWaypointMissionHeadingMode mHeadingMode = DJIWaypointMission.DJIWaypointMissionHeadingMode.AUTO;
 
     @Override
     protected void onResume(){
@@ -175,7 +173,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     }
 
     private void initMissionManager() {
-        DJIBaseProduct product = DJIDemoApplication.getProductInstance();
+        BaseProduct product = DJIDemoApplication.getProductInstance();
 
         if (product == null || !product.isConnected()) {
             setResultToToast("Disconnected");
@@ -194,20 +192,20 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     private void initFlightController() {
 
-        DJIBaseProduct product = DJIDemoApplication.getProductInstance();
+        BaseProduct product = DJIDemoApplication.getProductInstance();
         if (product != null && product.isConnected()) {
-            if (product instanceof DJIAircraft) {
-                mFlightController = ((DJIAircraft) product).getFlightController();
+            if (product instanceof Aircraft) {
+                mFlightController = ((Aircraft) product).getFlightController();
             }
         }
 
         if (mFlightController != null) {
-            mFlightController.setUpdateSystemStateCallback(new DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback() {
+            mFlightController.setStateCallback(new FlightControllerState.Callback() {
 
                 @Override
-                public void onResult(DJIFlightControllerCurrentState state) {
-                    droneLocationLat = state.getAircraftLocation().getLatitude();
-                    droneLocationLng = state.getAircraftLocation().getLongitude();
+                public void onUpdate(FlightControllerState djiFlightControllerCurrentState) {
+                    droneLocationLat = djiFlightControllerCurrentState.getAircraftLocation().getLatitude();
+                    droneLocationLng = djiFlightControllerCurrentState.getAircraftLocation().getLongitude();
                     updateDroneLocation();
                 }
             });
@@ -378,13 +376,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 Log.d(TAG, "Select finish action");
                 if (checkedId == R.id.finishNone){
-                    mFinishedAction = DJIWaypointMission.DJIWaypointMissionFinishedAction.NoAction;
+                    mFinishedAction = DJIWaypointMission.DJIWaypointMissionFinishedAction.NO_ACTION;
                 } else if (checkedId == R.id.finishGoHome){
-                    mFinishedAction = DJIWaypointMission.DJIWaypointMissionFinishedAction.GoHome;
+                    mFinishedAction = DJIWaypointMission.DJIWaypointMissionFinishedAction.GO_HOME;
                 } else if (checkedId == R.id.finishAutoLanding){
-                    mFinishedAction = DJIWaypointMission.DJIWaypointMissionFinishedAction.AutoLand;
+                    mFinishedAction = DJIWaypointMission.DJIWaypointMissionFinishedAction.AUTO_LAND;
                 } else if (checkedId == R.id.finishToFirst){
-                    mFinishedAction = DJIWaypointMission.DJIWaypointMissionFinishedAction.GoFirstWaypoint;
+                    mFinishedAction = DJIWaypointMission.DJIWaypointMissionFinishedAction.GO_FIRST_WAYPOINT;
                 }
             }
         });
@@ -396,13 +394,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 Log.d(TAG, "Select heading");
 
                 if (checkedId == R.id.headingNext) {
-                    mHeadingMode = DJIWaypointMission.DJIWaypointMissionHeadingMode.Auto;
+                    mHeadingMode = DJIWaypointMission.DJIWaypointMissionHeadingMode.AUTO;
                 } else if (checkedId == R.id.headingInitDirec) {
-                    mHeadingMode = DJIWaypointMission.DJIWaypointMissionHeadingMode.UsingInitialDirection;
+                    mHeadingMode = DJIWaypointMission.DJIWaypointMissionHeadingMode.USING_INITIAL_DIRECTION;
                 } else if (checkedId == R.id.headingRC) {
-                    mHeadingMode = DJIWaypointMission.DJIWaypointMissionHeadingMode.ControlByRemoteController;
+                    mHeadingMode = DJIWaypointMission.DJIWaypointMissionHeadingMode.CONTROL_BY_REMOTE_CONTROLLER;
                 } else if (checkedId == R.id.headingWP) {
-                    mHeadingMode = DJIWaypointMission.DJIWaypointMissionHeadingMode.UsingWaypointHeading;
+                    mHeadingMode = DJIWaypointMission.DJIWaypointMissionHeadingMode.USING_WAYPOINT_HEADING;
                 }
             }
         });
@@ -475,7 +473,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 }
             };
 
-            mMissionManager.prepareMission(mWaypointMission, progressHandler, new DJICommonCallbacks.DJICompletionCallback() {
+            mMissionManager.prepareMission(mWaypointMission, progressHandler, new CommonCallbacks.CompletionCallback() {
                 @Override
                 public void onResult(DJIError error) {
                     setResultToToast(error == null ? "Mission Prepare Successfully" : error.getDescription());
@@ -489,7 +487,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
         if (mMissionManager != null) {
 
-            mMissionManager.startMissionExecution(new DJICommonCallbacks.DJICompletionCallback() {
+            mMissionManager.startMissionExecution(new CommonCallbacks.CompletionCallback() {
                 @Override
                 public void onResult(DJIError error) {
                     setResultToToast("Mission Start: " + (error == null ? "Successfully" : error.getDescription()));
@@ -502,7 +500,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private void stopWaypointMission(){
 
         if (mMissionManager != null) {
-            mMissionManager.stopMissionExecution(new DJICommonCallbacks.DJICompletionCallback() {
+            mMissionManager.stopMissionExecution(new CommonCallbacks.CompletionCallback() {
 
                 @Override
                 public void onResult(DJIError error) {

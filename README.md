@@ -1,5 +1,7 @@
 # Android-GSDemo-GoogleMap
 
+> **Note: This Sample Project is developed based on Android SDK v3.5.1, an update version for Android SDK v4.0 will be published soon.**
+
 ## Introduction
 
 This GSDemo-GoogleMap is designed for you to learn how to implement the DJIWaypoint Mission features and get familiar with the usages of DJIMissionManager. Also you will know how to test the Waypoint Mission API with DJI PC Simulator. This demo is build based on the [Google Map](https://developers.google.com/maps).

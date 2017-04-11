@@ -71,7 +71,7 @@
         <!-- DJI SDK -->
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ConnectionActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|keyboard"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
@@ -81,6 +81,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"></activity>
 
     </application>
 

@@ -5,6 +5,11 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+
         applicationId "com.dji.GSDemo.GoogleMap"
         minSdkVersion 19
         targetSdkVersion 23

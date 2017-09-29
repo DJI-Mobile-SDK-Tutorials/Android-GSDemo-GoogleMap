@@ -44,5 +44,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-ads:9.2.0'
     compile 'com.google.android.gms:play-services-auth:9.2.0'
     compile 'com.google.android.gms:play-services-gcm:9.2.0'
-    compile 'com.dji:dji-sdk:4.3.0'
+    compile 'com.dji:dji-sdk:4.3.2'
 }

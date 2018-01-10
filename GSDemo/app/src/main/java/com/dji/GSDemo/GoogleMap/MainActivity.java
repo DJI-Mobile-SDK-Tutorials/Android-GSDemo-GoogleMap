@@ -35,7 +35,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-
 import dji.common.flightcontroller.FlightControllerState;
 import dji.common.mission.waypoint.Waypoint;
 import dji.common.mission.waypoint.WaypointMission;
@@ -267,7 +266,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     public WaypointMissionOperator getWaypointMissionOperator() {
         if (instance == null) {
-            instance = DJISDKManager.getInstance().getMissionControl().getWaypointMissionOperator();
+            if (DJISDKManager.getInstance().getMissionControl() != null){
+                instance = DJISDKManager.getInstance().getMissionControl().getWaypointMissionOperator();
+            }
         }
         return instance;
     }

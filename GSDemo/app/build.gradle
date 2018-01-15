@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
 
@@ -32,17 +32,31 @@ android {
         preDexLibraries = false
         javaMaxHeapSize "4g" // 2g should be also OK
     }
+
+    packagingOptions{
+        doNotStrip "*/*/libdjivideo.so"
+        doNotStrip "*/*/libSDKRelativeJNI.so"
+        doNotStrip "*/*/libFlyForbid.so"
+        doNotStrip "*/*/libduml_vision_bokeh.so"
+        doNotStrip "*/*/libyuv2.so"
+        doNotStrip "*/*/libGroudStation.so"
+        doNotStrip "*/*/libFRCorkscrew.so"
+        doNotStrip "*/*/libUpgradeVerify.so"
+        doNotStrip "*/*/libFR.so"
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.google.android.gms:play-services:9.2.0'
-    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:design:23.3.0'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.google.android.gms:play-services-ads:9.2.0'
     compile 'com.google.android.gms:play-services-auth:9.2.0'
     compile 'com.google.android.gms:play-services-gcm:9.2.0'
-    compile 'com.dji:dji-sdk:4.3.2'
+
+    compile ('com.dji:dji-sdk:4.4.1')
+    provided ('com.dji:dji-sdk-provided:4.4.1')
 }

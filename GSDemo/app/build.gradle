@@ -26,6 +26,10 @@ android {
         }
     }
 
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
     //Mention in the doc
     dexOptions {
         incremental = true;
@@ -57,6 +61,6 @@ dependencies {
     compile 'com.google.android.gms:play-services-auth:9.2.0'
     compile 'com.google.android.gms:play-services-gcm:9.2.0'
 
-    compile ('com.dji:dji-sdk:4.4.1')
-    provided ('com.dji:dji-sdk-provided:4.4.1')
+    compile ('com.dji:dji-sdk:4.5')
+    provided ('com.dji:dji-sdk-provided:4.5')
 }

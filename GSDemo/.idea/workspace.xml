@@ -39,14 +39,18 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+              <folding>
+                <element signature="e#1951#1969#0" expanded="true" />
+                <element signature="e#2552#2591#0" expanded="true" />
+                <element signature="e#3364#3382#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
           <provider editor-type-id="android-manifest">
             <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -63,33 +67,10 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
+            <state relative-caret-position="198">
               <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2759#2776#0" expanded="true" />
-                <element signature="e#3899#4079#0" expanded="true" />
-                <element signature="e#4078#4079#0" expanded="true" />
-                <element signature="e#7735#8186#0" expanded="true" />
-                <element signature="e#8185#8186#0" expanded="true" />
-                <element signature="e#11263#11624#0" expanded="true" />
-                <element signature="e#11623#11624#0" expanded="true" />
-                <element signature="e#12430#12595#0" expanded="true" />
-                <element signature="e#12594#12595#0" expanded="true" />
-                <element signature="e#14331#14782#0" expanded="true" />
-                <element signature="e#14781#14782#0" expanded="true" />
-                <element signature="e#14844#15638#0" expanded="true" />
-                <element signature="e#15637#15638#0" expanded="true" />
-                <element signature="e#15688#16485#0" expanded="true" />
-                <element signature="e#16484#16485#0" expanded="true" />
-                <element signature="e#16644#17268#0" expanded="true" />
-                <element signature="e#17267#17268#0" expanded="true" />
-                <element signature="e#19323#19801#0" expanded="true" />
-                <element signature="e#19800#19801#0" expanded="true" />
-                <element signature="e#19904#20156#0" expanded="true" />
-                <element signature="e#20155#20156#0" expanded="true" />
-                <element signature="e#20256#20507#0" expanded="true" />
-                <element signature="e#20506#20507#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,15 +89,13 @@
       <file leaf-file-name="DJIDemoApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/DJIDemoApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
+            <state relative-caret-position="418">
               <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
               <folding>
                 <element signature="e#978#979#0" expanded="true" />
                 <element signature="e#1016#1017#0" expanded="true" />
                 <element signature="e#1076#1077#0" expanded="true" />
                 <element signature="e#1107#1108#0" expanded="true" />
-                <element signature="e#2548#2836#0" expanded="true" />
-                <element signature="e#2835#2836#0" expanded="true" />
                 <marker date="1533203137000" expanded="true" signature="5698:5730" ph="{...}" />
               </folding>
             </state>
@@ -126,18 +105,9 @@
       <file leaf-file-name="ConnectionActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/ConnectionActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-829">
+            <state relative-caret-position="1958">
               <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding>
-                <element signature="e#6472#6824#0" expanded="true" />
-                <element signature="e#6823#6824#0" expanded="true" />
-                <element signature="e#8266#8357#0" expanded="true" />
-                <element signature="e#8411#8571#0" expanded="true" />
-                <element signature="e#8570#8571#0" expanded="true" />
-                <element signature="e#9363#9391#0" expanded="true" />
-                <element signature="e#9436#9461#0" expanded="true" />
-                <element signature="e#9874#10062#0" expanded="true" />
-                <element signature="e#10061#10062#0" expanded="true" />
                 <marker date="1533203177000" expanded="true" signature="10064:10070" ph="{...}" />
               </folding>
             </state>
@@ -146,22 +116,22 @@
       </file>
       <file leaf-file-name="dialog_waypointsetting.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_waypointsetting.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="792">
               <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="64" column="43" lean-forward="false" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+            <state relative-caret-position="1408">
+              <caret line="64" column="45" lean-forward="false" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -261,11 +231,6 @@
                 <option name="description" value="Prepare com.android.support:support-compat:26.1.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComAndroidSupportSupportCompat2610Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.dji:dji-sdk:4.6" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComDjiDjiSdk46Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -797,6 +762,11 @@
                 <option name="name" value="generateReleaseResValues" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.dji:library-anti-distortion:4.7" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComDjiLibraryAntiDistortion47Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.google.firebase:firebase-analytics:9.2.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComGoogleFirebaseFirebaseAnalytics920Library" />
@@ -809,6 +779,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="assembleReleaseUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.dji:dji-sdk:4.7.1" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComDjiDjiSdk471Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1269,11 +1244,6 @@
                 <option name="description" value="Prepare com.android.support:support-compat:26.1.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareComAndroidSupportSupportCompat2610Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.dji:dji-sdk:4.6" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComDjiDjiSdk46Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -1805,6 +1775,11 @@
                 <option name="name" value="generateReleaseResValues" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.dji:library-anti-distortion:4.7" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComDjiLibraryAntiDistortion47Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.google.firebase:firebase-analytics:9.2.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareComGoogleFirebaseFirebaseAnalytics920Library" />
@@ -1817,6 +1792,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="assembleReleaseUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.dji:dji-sdk:4.7.1" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComDjiDjiSdk471Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -2655,16 +2635,16 @@
         <option value="$PROJECT_DIR$/gradle.properties" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/MApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/DJIDemoApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/ConnectionActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2567" />
+    <option name="x" value="482" />
     <option name="y" value="23" />
     <option name="width" value="1748" />
     <option name="height" value="1177" />
@@ -2684,9 +2664,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2707,28 +2687,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GSDemo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2879,7 +2837,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533205478120" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1536153851842" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2927,7 +2885,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533205478120" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1536153851842" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3064,7 +3022,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1533205478120" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1536153851842" />
       </method>
     </configuration>
     <list size="1">
@@ -3100,7 +3058,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2567" y="23" width="1748" height="1177" extended-state="0" />
+    <frame x="482" y="23" width="1748" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3169,29 +3127,6 @@
           <caret line="56" column="13" lean-forward="false" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2759#2776#0" expanded="true" />
-            <element signature="e#3899#4079#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
-            <element signature="e#7735#8186#0" expanded="true" />
-            <element signature="e#8185#8186#0" expanded="true" />
-            <element signature="e#11263#11624#0" expanded="true" />
-            <element signature="e#11623#11624#0" expanded="true" />
-            <element signature="e#12430#12595#0" expanded="true" />
-            <element signature="e#12594#12595#0" expanded="true" />
-            <element signature="e#14331#14782#0" expanded="true" />
-            <element signature="e#14781#14782#0" expanded="true" />
-            <element signature="e#14844#15638#0" expanded="true" />
-            <element signature="e#15637#15638#0" expanded="true" />
-            <element signature="e#15688#16485#0" expanded="true" />
-            <element signature="e#16484#16485#0" expanded="true" />
-            <element signature="e#16644#17268#0" expanded="true" />
-            <element signature="e#17267#17268#0" expanded="true" />
-            <element signature="e#19323#19801#0" expanded="true" />
-            <element signature="e#19800#19801#0" expanded="true" />
-            <element signature="e#19904#20156#0" expanded="true" />
-            <element signature="e#20155#20156#0" expanded="true" />
-            <element signature="e#20256#20507#0" expanded="true" />
-            <element signature="e#20506#20507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3223,7 +3158,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#1951#1969#0" expanded="true" />
+            <element signature="e#2552#2591#0" expanded="true" />
+            <element signature="e#3364#3382#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3248,29 +3187,6 @@
           <caret line="56" column="13" lean-forward="false" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2759#2776#0" expanded="true" />
-            <element signature="e#3899#4079#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
-            <element signature="e#7735#8186#0" expanded="true" />
-            <element signature="e#8185#8186#0" expanded="true" />
-            <element signature="e#11263#11624#0" expanded="true" />
-            <element signature="e#11623#11624#0" expanded="true" />
-            <element signature="e#12430#12595#0" expanded="true" />
-            <element signature="e#12594#12595#0" expanded="true" />
-            <element signature="e#14331#14782#0" expanded="true" />
-            <element signature="e#14781#14782#0" expanded="true" />
-            <element signature="e#14844#15638#0" expanded="true" />
-            <element signature="e#15637#15638#0" expanded="true" />
-            <element signature="e#15688#16485#0" expanded="true" />
-            <element signature="e#16484#16485#0" expanded="true" />
-            <element signature="e#16644#17268#0" expanded="true" />
-            <element signature="e#17267#17268#0" expanded="true" />
-            <element signature="e#19323#19801#0" expanded="true" />
-            <element signature="e#19800#19801#0" expanded="true" />
-            <element signature="e#19904#20156#0" expanded="true" />
-            <element signature="e#20155#20156#0" expanded="true" />
-            <element signature="e#20256#20507#0" expanded="true" />
-            <element signature="e#20506#20507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3303,7 +3219,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#1951#1969#0" expanded="true" />
+            <element signature="e#2552#2591#0" expanded="true" />
+            <element signature="e#3364#3382#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3328,29 +3248,6 @@
           <caret line="56" column="13" lean-forward="false" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2759#2776#0" expanded="true" />
-            <element signature="e#3899#4079#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
-            <element signature="e#7735#8186#0" expanded="true" />
-            <element signature="e#8185#8186#0" expanded="true" />
-            <element signature="e#11263#11624#0" expanded="true" />
-            <element signature="e#11623#11624#0" expanded="true" />
-            <element signature="e#12430#12595#0" expanded="true" />
-            <element signature="e#12594#12595#0" expanded="true" />
-            <element signature="e#14331#14782#0" expanded="true" />
-            <element signature="e#14781#14782#0" expanded="true" />
-            <element signature="e#14844#15638#0" expanded="true" />
-            <element signature="e#15637#15638#0" expanded="true" />
-            <element signature="e#15688#16485#0" expanded="true" />
-            <element signature="e#16484#16485#0" expanded="true" />
-            <element signature="e#16644#17268#0" expanded="true" />
-            <element signature="e#17267#17268#0" expanded="true" />
-            <element signature="e#19323#19801#0" expanded="true" />
-            <element signature="e#19800#19801#0" expanded="true" />
-            <element signature="e#19904#20156#0" expanded="true" />
-            <element signature="e#20155#20156#0" expanded="true" />
-            <element signature="e#20256#20507#0" expanded="true" />
-            <element signature="e#20506#20507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3376,7 +3273,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#1951#1969#0" expanded="true" />
+            <element signature="e#2552#2591#0" expanded="true" />
+            <element signature="e#3364#3382#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3394,29 +3295,6 @@
           <caret line="56" column="13" lean-forward="false" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2759#2776#0" expanded="true" />
-            <element signature="e#3899#4079#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
-            <element signature="e#7735#8186#0" expanded="true" />
-            <element signature="e#8185#8186#0" expanded="true" />
-            <element signature="e#11263#11624#0" expanded="true" />
-            <element signature="e#11623#11624#0" expanded="true" />
-            <element signature="e#12430#12595#0" expanded="true" />
-            <element signature="e#12594#12595#0" expanded="true" />
-            <element signature="e#14331#14782#0" expanded="true" />
-            <element signature="e#14781#14782#0" expanded="true" />
-            <element signature="e#14844#15638#0" expanded="true" />
-            <element signature="e#15637#15638#0" expanded="true" />
-            <element signature="e#15688#16485#0" expanded="true" />
-            <element signature="e#16484#16485#0" expanded="true" />
-            <element signature="e#16644#17268#0" expanded="true" />
-            <element signature="e#17267#17268#0" expanded="true" />
-            <element signature="e#19323#19801#0" expanded="true" />
-            <element signature="e#19800#19801#0" expanded="true" />
-            <element signature="e#19904#20156#0" expanded="true" />
-            <element signature="e#20155#20156#0" expanded="true" />
-            <element signature="e#20256#20507#0" expanded="true" />
-            <element signature="e#20506#20507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3442,7 +3320,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1210">
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1951#1969#0" expanded="true" />
+            <element signature="e#2552#2591#0" expanded="true" />
+            <element signature="e#3364#3382#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3460,29 +3342,6 @@
           <caret line="56" column="13" lean-forward="false" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2759#2776#0" expanded="true" />
-            <element signature="e#3899#4079#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
-            <element signature="e#7735#8186#0" expanded="true" />
-            <element signature="e#8185#8186#0" expanded="true" />
-            <element signature="e#11263#11624#0" expanded="true" />
-            <element signature="e#11623#11624#0" expanded="true" />
-            <element signature="e#12430#12595#0" expanded="true" />
-            <element signature="e#12594#12595#0" expanded="true" />
-            <element signature="e#14331#14782#0" expanded="true" />
-            <element signature="e#14781#14782#0" expanded="true" />
-            <element signature="e#14844#15638#0" expanded="true" />
-            <element signature="e#15637#15638#0" expanded="true" />
-            <element signature="e#15688#16485#0" expanded="true" />
-            <element signature="e#16484#16485#0" expanded="true" />
-            <element signature="e#16644#17268#0" expanded="true" />
-            <element signature="e#17267#17268#0" expanded="true" />
-            <element signature="e#19323#19801#0" expanded="true" />
-            <element signature="e#19800#19801#0" expanded="true" />
-            <element signature="e#19904#20156#0" expanded="true" />
-            <element signature="e#20155#20156#0" expanded="true" />
-            <element signature="e#20256#20507#0" expanded="true" />
-            <element signature="e#20506#20507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3507,7 +3366,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1951#1969#0" expanded="true" />
+            <element signature="e#2552#2591#0" expanded="true" />
+            <element signature="e#3364#3382#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3532,7 +3395,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#1951#1969#0" expanded="true" />
+            <element signature="e#2552#2591#0" expanded="true" />
+            <element signature="e#3364#3382#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3540,7 +3407,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="e#1951#1969#0" expanded="true" />
+            <element signature="e#2552#2591#0" expanded="true" />
+            <element signature="e#3364#3382#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3569,39 +3440,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_waypointsetting.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/VirtualStickView.java" />
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="64" column="43" lean-forward="false" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
-          <folding />
-        </state>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/VirtualStickView.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/ConnectionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-829">
+        <state relative-caret-position="1958">
           <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding>
-            <element signature="e#6472#6824#0" expanded="true" />
-            <element signature="e#6823#6824#0" expanded="true" />
-            <element signature="e#8266#8357#0" expanded="true" />
-            <element signature="e#8411#8571#0" expanded="true" />
-            <element signature="e#8570#8571#0" expanded="true" />
-            <element signature="e#9363#9391#0" expanded="true" />
-            <element signature="e#9436#9461#0" expanded="true" />
-            <element signature="e#9874#10062#0" expanded="true" />
-            <element signature="e#10061#10062#0" expanded="true" />
             <marker date="1533203177000" expanded="true" signature="10064:10070" ph="{...}" />
           </folding>
         </state>
@@ -3617,15 +3471,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/DJIDemoApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
+        <state relative-caret-position="418">
           <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
           <folding>
             <element signature="e#978#979#0" expanded="true" />
             <element signature="e#1016#1017#0" expanded="true" />
             <element signature="e#1076#1077#0" expanded="true" />
             <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#2548#2836#0" expanded="true" />
-            <element signature="e#2835#2836#0" expanded="true" />
             <marker date="1533203137000" expanded="true" signature="5698:5730" ph="{...}" />
           </folding>
         </state>
@@ -3633,33 +3485,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/GSDemo/GoogleMap/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
+        <state relative-caret-position="198">
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2759#2776#0" expanded="true" />
-            <element signature="e#3899#4079#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
-            <element signature="e#7735#8186#0" expanded="true" />
-            <element signature="e#8185#8186#0" expanded="true" />
-            <element signature="e#11263#11624#0" expanded="true" />
-            <element signature="e#11623#11624#0" expanded="true" />
-            <element signature="e#12430#12595#0" expanded="true" />
-            <element signature="e#12594#12595#0" expanded="true" />
-            <element signature="e#14331#14782#0" expanded="true" />
-            <element signature="e#14781#14782#0" expanded="true" />
-            <element signature="e#14844#15638#0" expanded="true" />
-            <element signature="e#15637#15638#0" expanded="true" />
-            <element signature="e#15688#16485#0" expanded="true" />
-            <element signature="e#16484#16485#0" expanded="true" />
-            <element signature="e#16644#17268#0" expanded="true" />
-            <element signature="e#17267#17268#0" expanded="true" />
-            <element signature="e#19323#19801#0" expanded="true" />
-            <element signature="e#19800#19801#0" expanded="true" />
-            <element signature="e#19904#20156#0" expanded="true" />
-            <element signature="e#20155#20156#0" expanded="true" />
-            <element signature="e#20256#20507#0" expanded="true" />
-            <element signature="e#20506#20507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3672,15 +3501,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+        <state relative-caret-position="1408">
+          <caret line="64" column="45" lean-forward="false" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding>
+            <element signature="e#1951#1969#0" expanded="true" />
+            <element signature="e#2552#2591#0" expanded="true" />
+            <element signature="e#3364#3382#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
   </component>

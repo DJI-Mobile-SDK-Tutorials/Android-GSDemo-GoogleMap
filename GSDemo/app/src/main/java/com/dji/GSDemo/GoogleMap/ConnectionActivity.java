@@ -10,14 +10,18 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -173,6 +177,11 @@ public class ConnectionActivity extends Activity implements View.OnClickListener
                         public void onInitProcess(DJISDKInitEvent djisdkInitEvent, int i) {
 
                         }
+
+                        @Override
+                        public void onDatabaseDownloadProgress(long l, long l1) {
+
+                        }
                     });
                 }
             });
@@ -259,8 +268,14 @@ public class ConnectionActivity extends Activity implements View.OnClickListener
         switch (v.getId()) {
 
             case R.id.btn_open: {
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+                int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
+                if(status != ConnectionResult.SUCCESS) {
+                    GooglePlayServicesUtil.getErrorDialog(status, this, status);
+                    showToast("Cannot run without Google Play, please check！");
+                } else {
+                    Intent intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
+                }
                 break;
             }
             default:

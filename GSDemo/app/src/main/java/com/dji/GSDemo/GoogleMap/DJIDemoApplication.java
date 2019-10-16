@@ -6,8 +6,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.multidex.MultiDex;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
+import androidx.multidex.MultiDex;
+
 import android.util.Log;
 import android.widget.Toast;
 
@@ -127,6 +128,11 @@ public class DJIDemoApplication extends Application {
             }
             @Override
             public void onInitProcess(DJISDKInitEvent djisdkInitEvent, int i) {
+
+            }
+
+            @Override
+            public void onDatabaseDownloadProgress(long l, long l1) {
 
             }
         };

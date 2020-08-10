@@ -55,18 +55,6 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name="dji.sdk.sdkmanager.DJIAoaControllerActivity"
-            android:theme="@android:style/Theme.Translucent">
-            <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
-                android:resource="@xml/accessory_filter" />
-        </activity>
-
         <service android:name="dji.sdk.sdkmanager.DJIGlobalService"></service>
 
         <!-- DJI SDK -->
@@ -81,10 +69,20 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"></activity>
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+            </intent-filter>
 
+            <meta-data
+                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+                android:resource="@xml/accessory_filter" />
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Waypoint1Activity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Waypoint2Activity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

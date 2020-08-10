@@ -105,6 +105,13 @@ public class DJIDemoApplication extends Application {
                 notifyStatusChange();
 
             }
+
+            @Override
+            public void onProductChanged(BaseProduct baseProduct) {
+                Log.d("TAG", String.format("onProductChanged newProduct:%s", baseProduct));
+                notifyStatusChange();
+            }
+
             @Override
             public void onComponentChange(BaseProduct.ComponentKey componentKey, BaseComponent oldComponent,
                                           BaseComponent newComponent) {

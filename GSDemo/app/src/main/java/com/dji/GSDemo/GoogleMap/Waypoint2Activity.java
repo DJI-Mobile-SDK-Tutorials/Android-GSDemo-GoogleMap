@@ -521,11 +521,7 @@ public class Waypoint2Activity extends FragmentActivity implements View.OnClickL
 
                 });
 
-                if (waypointMissionBuilder != null) {
-                    for (WaypointV2 waypointV2 : waypointMissionBuilder.getWaypointList()) {
-                        waypointMissionBuilder.removeWaypoint(waypointV2);
-                    }
-                }
+                waypointMissionBuilder = null;
                 updateDroneLocation();
                 break;
             }

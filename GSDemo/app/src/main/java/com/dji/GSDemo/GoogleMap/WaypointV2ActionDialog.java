@@ -47,7 +47,7 @@ import dji.common.mission.waypointv2.Action.WaypointActuator;
 import dji.common.mission.waypointv2.Action.WaypointTrigger;
 import dji.common.mission.waypointv2.Action.WaypointV2Action;
 
-public class WaypointV2ActionDialog extends DialogFragment {
+public class WaypointV2ActionDialog extends DialogFragment implements ITriggerCallback {
     @BindView(R.id.tv_title)
     TextView tvTitle;
     @BindView(R.id.view_division)
@@ -78,6 +78,7 @@ public class WaypointV2ActionDialog extends DialogFragment {
 
     List<String> triggerType;
     List<String> actuatorType;
+    List<String> actuatorNames;
 
     private AssociateTriggerFragment associateTriggerFragment;
     private SimpleIntervalTriggerFragment simpleIntervalTriggerFragment;
@@ -92,6 +93,7 @@ public class WaypointV2ActionDialog extends DialogFragment {
     private Fragment currentActuatorFragment;
 
     private IActionCallback actionCallback;
+    ArrayAdapter<String> actuatorAdapter;
 
     private int position;
     private int size;
@@ -119,7 +121,6 @@ public class WaypointV2ActionDialog extends DialogFragment {
         triggerType = new ArrayList<>();
         actuatorType = new ArrayList<>();
         triggerType.add("Please select trigger type");
-        actuatorType.add("Please select actuator type");
         for (ActionTypes.ActionTriggerType type : ActionTypes.ActionTriggerType.values()) {
             if (type == ActionTypes.ActionTriggerType.COMPLEX_REACH_POINTS) {
                 // not support
@@ -127,10 +128,12 @@ public class WaypointV2ActionDialog extends DialogFragment {
             }
             triggerType.add(type.name());
         }
-
-        actuatorType.add(ActionTypes.ActionActuatorType.GIMBAL.name());
-        actuatorType.add(ActionTypes.ActionActuatorType.CAMERA.name());
-        actuatorType.add(ActionTypes.ActionActuatorType.AIRCRAFT_CONTROL.name());
+        actuatorNames = new ArrayList();
+        actuatorNames.add("Please select actuator type");
+        actuatorNames.add(ActionTypes.ActionActuatorType.GIMBAL.name());
+        actuatorNames.add(ActionTypes.ActionActuatorType.CAMERA.name());
+        actuatorNames.add(ActionTypes.ActionActuatorType.AIRCRAFT_CONTROL.name());
+        actuatorType.addAll(actuatorNames);
     }
 
     private void initView() {
@@ -187,6 +190,7 @@ public class WaypointV2ActionDialog extends DialogFragment {
                         hideTriggerFragment();
                         break;
                 }
+                hideActuatorFragment();
                 changeActuatorAdapter(ActionTypes.ActionTriggerType.valueOf(triggerType.get(position)));
             }
 
@@ -195,8 +199,7 @@ public class WaypointV2ActionDialog extends DialogFragment {
 
             }
         });
-
-        ArrayAdapter<String> actuatorAdapter = new ArrayAdapter(getActivity(),
+        actuatorAdapter = new ArrayAdapter(getActivity(),
                 android.R.layout.simple_spinner_dropdown_item, actuatorType);
         spinnerActuatorType.setAdapter(actuatorAdapter);
         spinnerActuatorType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -225,10 +228,11 @@ public class WaypointV2ActionDialog extends DialogFragment {
                         break;
                     case GIMBAL:
                         if (gimbalActuatorFragment == null) {
-                            gimbalActuatorFragment = GimbalActuatorFragment.newInstance();
+                            gimbalActuatorFragment = GimbalActuatorFragment.newInstance(WaypointV2ActionDialog.this);
                         }
                         showFragment(gimbalActuatorFragment, R.id.fl_actuator_info);
                         currentActuatorFragment = gimbalActuatorFragment;
+                        gimbalActuatorFragment.flush();
                         break;
                     case AIRCRAFT_CONTROL:
                         if (aircraftActuatorFragment == null) {
@@ -257,16 +261,32 @@ public class WaypointV2ActionDialog extends DialogFragment {
     private void changeActuatorAdapter(ActionTypes.ActionTriggerType triggerType) {
         switch (triggerType) {
             case COMPLEX_REACH_POINTS:
+                flushActuator();
                 break;
             case ASSOCIATE:
+                flushActuator();
                 break;
             case SIMPLE_INTERVAL:
+                flushActuator();
                 break;
             case REACH_POINT:
+                flushActuator();
                 break;
             case TRAJECTORY:
+                // this trigger is one by one with ActionTypes.GimbalOperationType#AIRCRAFT_CONTROL_GIMBAL.
+                actuatorType.removeAll(actuatorNames);
+                actuatorType.add("Please select actuator type");
+                actuatorType.add(ActionTypes.ActionActuatorType.GIMBAL.name());
+                break;
+            default:
                 break;
         }
+    }
+
+    private void flushActuator() {
+        actuatorType.clear();
+        actuatorType.addAll(actuatorNames);
+        actionAdapter.notifyDataSetChanged();
     }
 
     private void hideActuatorFragment() {
@@ -280,7 +300,7 @@ public class WaypointV2ActionDialog extends DialogFragment {
 
 
     private void showFragment(Fragment fragment, @IdRes int id) {
-        if (fragment == null || fragment.isResumed()) {
+        if (fragment == null || fragment.isVisible()) {
             return;
         }
 
@@ -335,8 +355,8 @@ public class WaypointV2ActionDialog extends DialogFragment {
             case R.id.tv_add:
                 WaypointTrigger trigger = getWaypointTrigger();
                 WaypointActuator actuator = getWaypointActuator();
-                if (trigger == null || actuator == null) {
-                    Tools.showToast(getActivity(), "add fail");
+                boolean result = verifyAction(trigger, actuator);
+                if (!result) {
                     break;
                 }
                 WaypointV2Action action = new WaypointV2Action.Builder()
@@ -348,6 +368,28 @@ public class WaypointV2ActionDialog extends DialogFragment {
                 updateSize();
                 break;
         }
+    }
+
+    private boolean verifyAction(WaypointTrigger trigger, WaypointActuator actuator) {
+        if (trigger == null || actuator == null) {
+            Tools.showToast(getActivity(), "add fail");
+            return false;
+        }
+        if (actuator.getActuatorType() == ActionTypes.ActionActuatorType.GIMBAL
+                && actuator.getGimbalActuatorParam().getOperationType() == ActionTypes.GimbalOperationType.AIRCRAFT_CONTROL_GIMBAL) {
+            if (trigger.getTriggerType() != ActionTypes.ActionTriggerType.TRAJECTORY) {
+                Tools.showToast(getActivity(), "this trigger `TRAJECTORY` is one by one with `ActionTypes.GimbalOperationType.AIRCRAFT_CONTROL_GIMBAL`");
+                return false;
+            }
+        }
+        if (trigger.getTriggerType() == ActionTypes.ActionTriggerType.TRAJECTORY) {
+            if (actuator.getActuatorType() != ActionTypes.ActionActuatorType.GIMBAL
+                    || actuator.getGimbalActuatorParam().getOperationType() != ActionTypes.GimbalOperationType.AIRCRAFT_CONTROL_GIMBAL) {
+                Tools.showToast(getActivity(), "this trigger `TRAJECTORY` is one by one with `ActionTypes.GimbalOperationType.AIRCRAFT_CONTROL_GIMBAL`");
+                return false;
+            }
+        }
+        return true;
     }
 
     private void updateSize() {
@@ -383,6 +425,11 @@ public class WaypointV2ActionDialog extends DialogFragment {
             return ((ITriggerCallback) currentTriggerFragment).getTrigger();
         }
         return null;
+    }
+
+    @Override
+    public WaypointTrigger getTrigger() {
+        return getWaypointTrigger();
     }
 
     public interface IActionCallback {

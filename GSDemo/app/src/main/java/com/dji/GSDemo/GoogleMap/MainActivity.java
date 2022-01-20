@@ -7,6 +7,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.isoObject.*;
+
 public class MainActivity extends AppCompatActivity {
 
     private View.OnClickListener clickListener = v -> {
@@ -31,5 +33,12 @@ public class MainActivity extends AppCompatActivity {
     public static void startActivity(Context context, Class activity) {
         Intent intent = new Intent(context, activity);
         context.startActivity(intent);
+
+        //Här Sepast
+        timeval timevalExample = new timeval();
+        isoObject.encodeSTRTMessage(timevalExample, "data", 123, '1');
+
+        TestObject droneObject = new TestObject(123, true);
+        droneObject.getSpeed();
     }
 }

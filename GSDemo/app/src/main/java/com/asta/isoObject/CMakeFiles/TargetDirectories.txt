@@ -1,0 +1,10 @@
+/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/ISO_object.dir
+/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/ISO_objectTest.dir
+/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/isoObject_wrap.dir
+/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/isoObject_wrap_swig_compilation.dir
+/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/edit_cache.dir
+/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/rebuild_cache.dir
+/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/list_install_components.dir
+/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/install.dir
+/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/install/local.dir
+/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/install/strip.dir

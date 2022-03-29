@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g -shared -Wl,-soname,libISO_object.so -o libISO_object.so CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o  -Wl,-rpath,/usr/local/lib: /usr/local/lib/libTCPUDPSocket.so /usr/local/lib/libISO22133.so -latomic 

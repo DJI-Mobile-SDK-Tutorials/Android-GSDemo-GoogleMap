@@ -8,9 +8,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +16,10 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -35,6 +36,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import dji.common.error.DJIError;
 import dji.common.flightcontroller.FlightControllerState;
 import dji.common.mission.waypoint.Waypoint;
 import dji.common.mission.waypoint.WaypointMission;
@@ -44,16 +46,23 @@ import dji.common.mission.waypoint.WaypointMissionFinishedAction;
 import dji.common.mission.waypoint.WaypointMissionFlightPathMode;
 import dji.common.mission.waypoint.WaypointMissionHeadingMode;
 import dji.common.mission.waypoint.WaypointMissionUploadEvent;
+import dji.common.model.LocationCoordinate2D;
 import dji.common.useraccount.UserAccountState;
 import dji.common.util.CommonCallbacks;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.flightcontroller.FlightController;
-import dji.common.error.DJIError;
 import dji.sdk.mission.waypoint.WaypointMissionOperator;
 import dji.sdk.mission.waypoint.WaypointMissionOperatorListener;
 import dji.sdk.products.Aircraft;
 import dji.sdk.sdkmanager.DJISDKManager;
 import dji.sdk.useraccount.UserAccountManager;
+
+
+import org.locationtech.proj4j.CRSFactory;
+import org.locationtech.proj4j.CoordinateReferenceSystem;
+import org.locationtech.proj4j.CoordinateTransform;
+import org.locationtech.proj4j.CoordinateTransformFactory;
+import org.locationtech.proj4j.ProjCoordinate;
 
 public class Waypoint1Activity extends FragmentActivity implements View.OnClickListener, GoogleMap.OnMapClickListener, OnMapReadyCallback {
 
@@ -61,7 +70,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
     private GoogleMap gMap;
 
-    private Button locate, add, clear;
+    private Button locate, add, clear, testcircle;
     private Button config, upload, start, stop;
 
     private boolean isAdd = false;
@@ -80,6 +89,13 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
     private WaypointMissionOperator instance;
     private WaypointMissionFinishedAction mFinishedAction = WaypointMissionFinishedAction.NO_ACTION;
     private WaypointMissionHeadingMode mHeadingMode = WaypointMissionHeadingMode.AUTO;
+    public CRSFactory crsFactory = new CRSFactory();
+    public  CoordinateReferenceSystem WGS84 = crsFactory.createFromParameters("WGS84","+proj=longlat +datum=WGS84 +no_defs");
+
+    private List<ProjCoordinate> circleTestCoordinates = new ArrayList<>();
+    private List<Double> mheading = new ArrayList<>();
+
+
 
     @Override
     protected void onResume(){
@@ -121,6 +137,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         locate = (Button) findViewById(R.id.locate);
         add = (Button) findViewById(R.id.add);
         clear = (Button) findViewById(R.id.clear);
+        testcircle = (Button) findViewById(R.id.testcircle);
         config = (Button) findViewById(R.id.config);
         upload = (Button) findViewById(R.id.upload);
         start = (Button) findViewById(R.id.start);
@@ -129,11 +146,45 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         locate.setOnClickListener(this);
         add.setOnClickListener(this);
         clear.setOnClickListener(this);
+        testcircle.setOnClickListener(this);
         config.setOnClickListener(this);
         upload.setOnClickListener(this);
         start.setOnClickListener(this);
         stop.setOnClickListener(this);
 
+    }
+
+    private void generateCircleTestCoordinates(LatLng origin, double radius, double altitude, int nofPoints){
+
+        double angularStep = 2*Math.PI/nofPoints;
+        double currentAngle = 0;
+        for(int i = 0; i <= nofPoints; i ++){
+            this.circleTestCoordinates.add(coordCartToGeo(origin, new ProjCoordinate(radius*Math.cos(currentAngle), radius*Math.sin(currentAngle), altitude)));
+            //if(currentAngle*(180/Math.PI) < 90) this.mheading.add(90 - currentAngle*(180/Math.PI));
+            //else if(currentAngle*(180/Math.PI) >= 90) this.mheading.add(450 - currentAngle*(180/Math.PI));
+            if(currentAngle*(180/Math.PI) < 90) this.mheading.add(90 + currentAngle*(180/Math.PI));
+            else if(currentAngle*(180/Math.PI) >= 90 && currentAngle*(180/Math.PI) <= 270) this.mheading.add(-180 + 90 - currentAngle*(180/Math.PI));
+            else if(currentAngle*(180/Math.PI) > 270) this.mheading.add( 270 - currentAngle*(180/Math.PI));
+
+            currentAngle += angularStep;
+        }
+        this.circleTestCoordinates.add(coordCartToGeo(origin, new ProjCoordinate(0, 0)));
+    }
+
+    private String buildOriginProjString(double latitude, double longitude){
+        final StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("+proj=tmerc +lat_0=" + latitude + " +lon_0=" + longitude + " +k=0.9996 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs");
+        return stringBuffer.toString();
+    }
+
+    private ProjCoordinate coordCartToGeo(LatLng origin, ProjCoordinate xyz){
+        String projStr = buildOriginProjString(origin.latitude, origin.longitude);
+        CoordinateTransformFactory ctFactory = new CoordinateTransformFactory();
+        CoordinateReferenceSystem UTM = crsFactory.createFromParameters("UTM", projStr);
+        CoordinateTransform utmToWgs = ctFactory.createTransform(UTM, WGS84);
+        ProjCoordinate result = new ProjCoordinate();
+        utmToWgs.transform(new ProjCoordinate(xyz.x, xyz.y), result);
+        return result;
     }
 
     @Override
@@ -154,6 +205,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                             Manifest.permission.READ_PHONE_STATE,
                     }
                     , 1);
+
         }
 
         setContentView(R.layout.activity_waypoint1);
@@ -286,15 +338,17 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
             //Add Waypoints to Waypoint arraylist;
             if (waypointMissionBuilder != null) {
                 waypointList.add(mWaypoint);
-                waypointMissionBuilder.waypointList(waypointList).waypointCount(waypointList.size());
+                //waypointMissionBuilder.waypointList(waypointList).waypointCount(waypointList.size());
+                waypointMissionBuilder.waypointCount(waypointList.size());
             }else
             {
                 waypointMissionBuilder = new WaypointMission.Builder();
                 waypointList.add(mWaypoint);
-                waypointMissionBuilder.waypointList(waypointList).waypointCount(waypointList.size());
+                //waypointMissionBuilder.waypointList(waypointList).waypointCount(waypointList.size());
+                waypointMissionBuilder.waypointCount(waypointList.size());
             }
         }else{
-            setResultToToast("Cannot Add Waypoint");
+            //setResultToToast("Cannot Add Waypoint");
         }
     }
 
@@ -343,7 +397,33 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 break;
             }
             case R.id.add:{
-                enableDisableAdd();
+               // enableDisableAdd();
+                waypointMissionBuilder = new WaypointMission.Builder();
+                //setResultToToast("First z = "+ (float)this.circleTestCoordinates.get(0).z + 0*0.2f);
+                int astep = 360/(this.circleTestCoordinates.size() - 1);
+                for (int i = 0; i < this.circleTestCoordinates.size(); i ++)
+                {
+                    Waypoint wp = new Waypoint();
+                    wp.coordinate = new LocationCoordinate2D(this.circleTestCoordinates.get(i).y, this.circleTestCoordinates.get(i).x);
+                   // wp.altitude = (float)this.circleTestCoordinates.get(i).z + i*0.2f;
+                    wp.altitude = 1 + i*0.0f;
+                    wp.speed = 1 + i*0.0f;
+
+                    //setResultToToast("Mheading = "+ this.mheading.get(3).intValue());
+                    if(astep*i + 90 <= 180) wp.heading = 90 + astep * i ;
+                    else if(astep*i + 90 >= 180 && astep*i + 90 <= 270) wp.heading = -180 + astep * i;
+                    else if(astep*i + 90 > 270 ) wp.heading = 270 - astep * i;
+                    //setResultToToast("wp.heading = "+ wp.heading);
+                    //wp.heading = 180;
+                    waypointList.add(wp);
+                    waypointMissionBuilder.waypointList(waypointList).waypointCount(waypointList.size());
+                }
+                mFinishedAction = WaypointMissionFinishedAction.AUTO_LAND;
+                mSpeed = 5.0f;
+                mHeadingMode = WaypointMissionHeadingMode.USING_WAYPOINT_HEADING;
+                altitude = 1;
+                configWayPointMission();
+
                 break;
             }
             case R.id.clear:{
@@ -355,8 +435,18 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
                 });
                 waypointList.clear();
-                waypointMissionBuilder.waypointList(waypointList);
+                waypointMissionBuilder.waypointCount(0);
                 updateDroneLocation();
+
+                break;
+            }
+            case R.id.testcircle:{
+                this.circleTestCoordinates.clear();
+                generateCircleTestCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 1,19);
+                for(int i = 0; i < this.circleTestCoordinates.size(); i ++){
+                    LatLng mpoint = new LatLng(this.circleTestCoordinates.get(i).y, this.circleTestCoordinates.get(i).x);
+                    markWaypoint(mpoint);
+                }
                 break;
             }
             case R.id.config:{
@@ -382,7 +472,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
     private void cameraUpdate(){
         LatLng pos = new LatLng(droneLocationLat, droneLocationLng);
-        float zoomlevel = (float) 18.0;
+        float zoomlevel = (float) 22.0;
         CameraUpdate cu = CameraUpdateFactory.newLatLngZoom(pos, zoomlevel);
         gMap.moveCamera(cu);
 
@@ -504,7 +594,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                     .headingMode(mHeadingMode)
                     .autoFlightSpeed(mSpeed)
                     .maxFlightSpeed(mSpeed)
-                    .flightPathMode(WaypointMissionFlightPathMode.NORMAL);
+                    .flightPathMode(WaypointMissionFlightPathMode.CURVED);
 
         }else
         {
@@ -512,24 +602,24 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                     .headingMode(mHeadingMode)
                     .autoFlightSpeed(mSpeed)
                     .maxFlightSpeed(mSpeed)
-                    .flightPathMode(WaypointMissionFlightPathMode.NORMAL);
+                    .flightPathMode(WaypointMissionFlightPathMode.CURVED);
 
         }
 
         if (waypointMissionBuilder.getWaypointList().size() > 0){
 
-            for (int i=0; i< waypointMissionBuilder.getWaypointList().size(); i++){
-                waypointMissionBuilder.getWaypointList().get(i).altitude = altitude;
-            }
+           // for (int i=0; i< waypointMissionBuilder.getWaypointList().size(); i++){
+            //    waypointMissionBuilder.getWaypointList().get(i).altitude = altitude;
+           // }
 
-            setResultToToast("Set Waypoint attitude successfully");
+           // setResultToToast("Set Waypoint altitude successfully");
         }
 
         DJIError error = getWaypointMissionOperator().loadMission(waypointMissionBuilder.build());
         if (error == null) {
             setResultToToast("loadWaypoint succeeded");
         } else {
-            setResultToToast("loadWaypoint failed " + error.getDescription());
+            setResultToToast("loadWaypoint failed " + error.getDescription() + " " + error.toString());
         }
     }
 
@@ -577,9 +667,10 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
             setUpMap();
         }
 
-        LatLng shenzhen = new LatLng(22.5362, 113.9454);
-        gMap.addMarker(new MarkerOptions().position(shenzhen).title("Marker in Shenzhen"));
-        gMap.moveCamera(CameraUpdateFactory.newLatLng(shenzhen));
+        //LatLng shenzhen = new LatLng(22.5362, 113.9454);
+        LatLng astazero = new LatLng(57.777521, 12.781442);
+        gMap.addMarker(new MarkerOptions().position(astazero).title("Marker at AstaZero"));
+        cameraUpdate(); // Locate the drone's place
     }
 
 }

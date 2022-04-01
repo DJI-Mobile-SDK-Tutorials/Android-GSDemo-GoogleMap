@@ -93,6 +93,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
     public  CoordinateReferenceSystem WGS84 = crsFactory.createFromParameters("WGS84","+proj=longlat +datum=WGS84 +no_defs");
 
     private List<ProjCoordinate> circleTestCoordinates = new ArrayList<>();
+    private List<Double> mheading = new ArrayList<>();
 
 
 
@@ -159,6 +160,12 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         double currentAngle = 0;
         for(int i = 0; i <= nofPoints; i ++){
             this.circleTestCoordinates.add(coordCartToGeo(origin, new ProjCoordinate(radius*Math.cos(currentAngle), radius*Math.sin(currentAngle), altitude)));
+            //if(currentAngle*(180/Math.PI) < 90) this.mheading.add(90 - currentAngle*(180/Math.PI));
+            //else if(currentAngle*(180/Math.PI) >= 90) this.mheading.add(450 - currentAngle*(180/Math.PI));
+            if(currentAngle*(180/Math.PI) < 90) this.mheading.add(90 + currentAngle*(180/Math.PI));
+            else if(currentAngle*(180/Math.PI) >= 90 && currentAngle*(180/Math.PI) <= 270) this.mheading.add(-180 + 90 - currentAngle*(180/Math.PI));
+            else if(currentAngle*(180/Math.PI) > 270) this.mheading.add( 270 - currentAngle*(180/Math.PI));
+
             currentAngle += angularStep;
         }
         this.circleTestCoordinates.add(coordCartToGeo(origin, new ProjCoordinate(0, 0)));
@@ -341,7 +348,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 waypointMissionBuilder.waypointCount(waypointList.size());
             }
         }else{
-            setResultToToast("Cannot Add Waypoint");
+            //setResultToToast("Cannot Add Waypoint");
         }
     }
 
@@ -391,49 +398,31 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
             }
             case R.id.add:{
                // enableDisableAdd();
-
                 waypointMissionBuilder = new WaypointMission.Builder();
+                //setResultToToast("First z = "+ (float)this.circleTestCoordinates.get(0).z + 0*0.2f);
+                int astep = 360/(this.circleTestCoordinates.size() - 1);
                 for (int i = 0; i < this.circleTestCoordinates.size(); i ++)
                 {
                     Waypoint wp = new Waypoint();
                     wp.coordinate = new LocationCoordinate2D(this.circleTestCoordinates.get(i).y, this.circleTestCoordinates.get(i).x);
                    // wp.altitude = (float)this.circleTestCoordinates.get(i).z + i*0.2f;
-                    wp.altitude = 1 + i*0.2f;
-                    wp.speed = 1 + i*0.3f;
+                    wp.altitude = 1 + i*0.0f;
+                    wp.speed = 1 + i*0.0f;
+
+                    //setResultToToast("Mheading = "+ this.mheading.get(3).intValue());
+                    if(astep*i + 90 <= 180) wp.heading = 90 + astep * i ;
+                    else if(astep*i + 90 >= 180 && astep*i + 90 <= 270) wp.heading = -180 + astep * i;
+                    else if(astep*i + 90 > 270 ) wp.heading = 270 - astep * i;
+                    //setResultToToast("wp.heading = "+ wp.heading);
+                    //wp.heading = 180;
                     waypointList.add(wp);
                     waypointMissionBuilder.waypointList(waypointList).waypointCount(waypointList.size());
                 }
-
-
-                /*
-                if (waypointMissionBuilder.getWaypointList().size() > 0) {
-                    for (int i = 0; i < waypointMissionBuilder.getWaypointList().size(); i++) {
-                    //    waypointMissionBuilder.getWaypointList().get(i).altitude =  1 + i*0.2f;
-                    }
-                    setResultToToast("Set Waypoint altitude successfully. Waypointlist size =" + waypointMissionBuilder.getWaypointList().size());
-                } else {
-                    setResultToToast("Set Waypoint altitude failed. Waypointlist size =" + waypointMissionBuilder.getWaypointList().size());
-                }
-                */
-
                 mFinishedAction = WaypointMissionFinishedAction.AUTO_LAND;
                 mSpeed = 5.0f;
-                mHeadingMode = WaypointMissionHeadingMode.AUTO;
+                mHeadingMode = WaypointMissionHeadingMode.USING_WAYPOINT_HEADING;
                 altitude = 1;
                 configWayPointMission();
-                /*waypointMissionBuilder = new WaypointMission.Builder().finishedAction(mFinishedAction)
-                        .headingMode(mHeadingMode)
-                        .autoFlightSpeed(mSpeed)
-                        .maxFlightSpeed(mSpeed)
-                        .flightPathMode(WaypointMissionFlightPathMode.NORMAL);
-
-                DJIError error = getWaypointMissionOperator().loadMission(waypointMissionBuilder.build());
-                if (error == null) {
-                    setResultToToast("LoadWaypoints succeeded,starting mission.");
-                    //startWaypointMission();
-                } else {
-                    setResultToToast("LoadWaypoint failed " + error.getDescription() + " " + error.toString());
-                }*/
 
                 break;
             }
@@ -449,12 +438,11 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 waypointMissionBuilder.waypointCount(0);
                 updateDroneLocation();
 
-
                 break;
             }
             case R.id.testcircle:{
                 this.circleTestCoordinates.clear();
-                generateCircleTestCoordinates(new LatLng(droneLocationLat, droneLocationLng), 3, 1,9);
+                generateCircleTestCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 1,19);
                 for(int i = 0; i < this.circleTestCoordinates.size(); i ++){
                     LatLng mpoint = new LatLng(this.circleTestCoordinates.get(i).y, this.circleTestCoordinates.get(i).x);
                     markWaypoint(mpoint);

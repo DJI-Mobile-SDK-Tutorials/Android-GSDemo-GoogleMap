@@ -10,6 +10,7 @@ public class WaypointSetting {
     public ProjCoordinate geo;
     public ProjCoordinate poi;
     public int heading;
+    public float speed;
 
     public WaypointSetting(ProjCoordinate geollh, ProjCoordinate poiXyz)
     {

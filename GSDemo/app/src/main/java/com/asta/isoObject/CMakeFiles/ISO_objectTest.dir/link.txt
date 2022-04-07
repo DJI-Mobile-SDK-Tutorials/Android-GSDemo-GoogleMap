@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -rdynamic CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.o -o ISO_objectTest  -Wl,-rpath,/home/jesper/Documents/gitz/util/C/isoObject/build:/usr/local/lib libISO_object.so /usr/local/lib/libTCPUDPSocket.so /usr/local/lib/libISO22133.so -latomic 

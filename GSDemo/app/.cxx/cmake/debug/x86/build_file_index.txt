@@ -1,0 +1,3 @@
+/home/konglobemeralt/Documents/gitz/util/C/iso22133/CMakeLists.txt
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/CMakeLists.txt
+/home/konglobemeralt/Documents/gitz/util/C/sockets/CMakeLists.txt

@@ -1,0 +1,15 @@
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- /home/konglobemeralt/Documents/gitz/util/C/isoObject
+-- Found SWIG: /usr/bin/swig4.0 (found version "4.0.1") found components: java 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a

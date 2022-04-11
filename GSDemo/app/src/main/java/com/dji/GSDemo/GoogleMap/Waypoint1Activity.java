@@ -75,7 +75,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
     private boolean isAdd = false;
 
-    private double droneLocationLat = 181, droneLocationLng = 181;
+    private LatLng startLatLong;
+    private double droneLocationLat = 181, droneLocationLng = 181, droneAltitude = 0;
     private final Map<Integer, Marker> mMarkers = new ConcurrentHashMap<Integer, Marker>();
     private Marker droneMarker = null;
 
@@ -93,6 +94,9 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
     public CoordinateReferenceSystem WGS84 = crsFactory.createFromParameters("WGS84","+proj=longlat +datum=WGS84 +no_defs");
 
     private ArrayList<WaypointSetting> waypointSettings = new ArrayList<>();
+
+    private Double mRot = 0.0;
+    private boolean missionUploaded = false;
 
     @Override
     protected void onResume(){
@@ -135,8 +139,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         add = (Button) findViewById(R.id.add);
         clear = (Button) findViewById(R.id.clear);
         testcircle = (Button) findViewById(R.id.testcircle);
-        config = (Button) findViewById(R.id.config);
-        upload = (Button) findViewById(R.id.upload);
+        config = (Button) findViewById(R.id.pauseresume);
+        upload = (Button) findViewById(R.id.arm);
         start = (Button) findViewById(R.id.start);
         stop = (Button) findViewById(R.id.stop);
 
@@ -156,17 +160,13 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         double angularStep = 2*Math.PI/nofPoints;
         double currentAngle = 0;
         double currentAngleRot = 0;
+        int wpHeading = 0;
         for(int i = 0; i <= nofPoints; i ++){
-            int wpHeading = 0;
 
             if(headingTowardsCenter) {
-                if (currentAngle >= 0 && currentAngle <= Math.PI) currentAngleRot = currentAngle + Math.PI;
-                else if (currentAngle > Math.PI && currentAngle <= 2 * Math.PI) currentAngleRot = currentAngle - Math.PI;
+                currentAngleRot = rotateUnitCircleAngleToDroneYawRad(currentAngle, Math.PI);
             } else currentAngleRot = currentAngle;
-
-            if(currentAngleRot*(180/Math.PI) >= 0 && currentAngleRot*(180/Math.PI) <= 90) wpHeading = 90 - (int)(currentAngleRot*(180/Math.PI));
-            else if(currentAngleRot*(180/Math.PI) > 90 && currentAngleRot*(180/Math.PI) < 270) wpHeading = (90 - (int) (currentAngleRot*(180/Math.PI)));
-            else if(currentAngleRot*(180/Math.PI) >= 270) wpHeading = ( 450 - (int)(currentAngleRot*(180/Math.PI)));
+            wpHeading = convertToDroneYawRangeDeg((180/Math.PI)*currentAngleRot);
 
             WaypointSetting wps = new WaypointSetting(coordCartToGeo(origin, new ProjCoordinate(radius*Math.cos(currentAngle), radius*Math.sin(currentAngle), 0)), new ProjCoordinate());
             this.waypointSettings.add(wps);
@@ -180,6 +180,28 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         wps.speed = speed;
         wps.geo.z = altitude;
         this.waypointSettings.add(wps);
+    }
+
+    private Double rotateUnitCircleAngleToNorthHeadingRad(double yaw){
+        Double yawRot = 0.0;
+        if (yaw >= 0 && yaw <= Math.PI/2) yawRot = Math.PI/2 - yaw;
+        else if (yaw > Math.PI/2 && yaw <= 2*Math.PI) yawRot = Math.PI/2 + 2*Math.PI - yaw;
+        return yawRot;
+    }
+
+    private Double rotateUnitCircleAngleToDroneYawRad(double yaw, double rot){
+        Double yawRot = 0.0;
+        if (yaw >= 0 && yaw <= Math.PI) yawRot = yaw + rot;
+        else if (yaw > Math.PI && yaw <= 2 * Math.PI) yawRot = yaw - rot;
+        return yawRot;
+    }
+
+    private int convertToDroneYawRangeDeg(double yaw){
+        int droneYaw = 0;
+        if(yaw >= 0 && yaw <= 90) droneYaw = 90 - (int)(yaw);
+        else if(yaw > 90 && yaw < 270) droneYaw = (90 - (int) (yaw));
+        else if(yaw >= 270) droneYaw = ( 450 - (int)(yaw));
+        return droneYaw;
     }
 
     private String buildOriginProjString(double latitude, double longitude){
@@ -197,6 +219,18 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         utmToWgs.transform(new ProjCoordinate(xyz.x, xyz.y), result);
         return result;
     }
+
+    private ProjCoordinate coordGeoToCart(LatLng origin, ProjCoordinate llh){
+        String projStr = buildOriginProjString(origin.latitude, origin.longitude);
+        CoordinateTransformFactory ctFactory = new CoordinateTransformFactory();
+        CoordinateReferenceSystem UTM = crsFactory.createFromParameters("UTM", projStr);
+        CoordinateTransform wgsToUtm = ctFactory.createTransform(WGS84, UTM);
+        ProjCoordinate result = new ProjCoordinate();
+        wgsToUtm.transform(new ProjCoordinate(llh.y, llh.x), result);
+        result.z = llh.z;
+        return result;
+    }
+
 
 
     @Override
@@ -282,7 +316,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 public void onUpdate(FlightControllerState djiFlightControllerCurrentState) {
                     droneLocationLat = djiFlightControllerCurrentState.getAircraftLocation().getLatitude();
                     droneLocationLng = djiFlightControllerCurrentState.getAircraftLocation().getLongitude();
-                    updateDroneLocation();
+                    droneAltitude = djiFlightControllerCurrentState.getAircraftLocation().getAltitude();
+                    updateDroneLocationData();
                 }
             });
         }
@@ -369,13 +404,40 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
     }
 
     // Update the drone location based on states from MCU.
-    private void updateDroneLocation(){
+    private void updateDroneLocationData(){
 
         LatLng pos = new LatLng(droneLocationLat, droneLocationLng);
         //Create MarkerOptions object
         final MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(pos);
-        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.aircraft));
+        if(missionUploaded) {
+            ProjCoordinate pc = coordGeoToCart(startLatLong, new ProjCoordinate(droneLocationLat, droneLocationLng));
+            try {
+                //Mark the drone on map
+                mRot = Math.acos(pc.x / (Math.sqrt(Math.pow(pc.x, 2) + Math.pow(pc.y, 2))));
+                if((pc.x < 0 && pc.y < 0) || (pc.x > 0 && pc.y < 0)) {
+                    mRot = 2*Math.PI - mRot;
+                }
+                mRot = rotateUnitCircleAngleToNorthHeadingRad(mRot);
+                mRot = mRot * 180 / Math.PI;
+                markerOptions.rotation(mRot.floatValue()).icon(BitmapDescriptorFactory.fromResource(R.drawable.aircraft));;
+
+                //Check
+                ProjCoordinate fp = coordGeoToCart(startLatLong, new ProjCoordinate(waypointSettings.get(1).geo.y, waypointSettings.get(1).geo.x));
+
+                Double radlim = 0.5;
+                Double xlim = (radlim*Math.cos(0));
+                Double ylim =  (radlim*Math.sin(Math.PI/2));
+                Button button = (Button)findViewById(R.id.pauseresume);
+                if(pc.x > fp.x - xlim  &&  pc.x < fp.x + xlim && pc.y > fp.y - ylim  &&  pc.y < fp.y + ylim && button.getText().equals("Arming")){
+                   pauseWaypointMission();
+                   button.setText("Armed");
+                }
+
+            } catch (Exception e) {
+
+            }
+        } else markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.aircraft));
 
         runOnUiThread(new Runnable() {
             @Override
@@ -400,55 +462,59 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         mMarkers.put(mMarkers.size(), marker);
     }
 
+    private void deployTestCircle(){
+        waypointMissionBuilder = new WaypointMission.Builder();
+        for (int i = 0; i < this.waypointSettings.size(); i ++)
+        {
+            Waypoint wp = new Waypoint();
+            wp.coordinate = new LocationCoordinate2D(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
+            wp.altitude = (float)this.waypointSettings.get(i).geo.z + i*0.0f;
+            wp.speed = (float)this.waypointSettings.get(i).speed + i*0.0f;
+            try {
+                wp.heading = this.waypointSettings.get(i).heading;
+            } catch (Exception e){
+                setResultToToast("e = "+ e.getCause() + ", " + e.getMessage());
+            }
+            //setResultToToast("wp.heading = "+ waypointSettings.get(i).geo.y + ", " + waypointSettings.get(i).geo.x + ", " + waypointSettings.get(i).geo.z);
+            waypointList.add(wp);
+            waypointMissionBuilder.waypointList(waypointList).waypointCount(waypointList.size());
+        }
+        setResultToToast("Number of waypoints " + this.waypointSettings.size());
+        mFinishedAction = WaypointMissionFinishedAction.NO_ACTION;
+        mSpeed = 5.0f;
+        mHeadingMode = WaypointMissionHeadingMode.USING_WAYPOINT_HEADING;
+        altitude = (float)this.waypointSettings.get(0).geo.z;
+        configWayPointMission();
+        startLatLong = new LatLng(droneLocationLat, droneLocationLng);
+        uploadWayPointMission();
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.locate:{
-                updateDroneLocation();
+                updateDroneLocationData();
                 cameraUpdate(); // Locate the drone's place
                 break;
             }
             case R.id.add:{
-               // enableDisableAdd();
-                waypointMissionBuilder = new WaypointMission.Builder();
-
-                for (int i = 0; i < this.waypointSettings.size(); i ++)
-                {
-                    Waypoint wp = new Waypoint();
-                    wp.coordinate = new LocationCoordinate2D(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
-                    wp.altitude = (float)this.waypointSettings.get(i).geo.z + i*0.0f;
-                    wp.speed = (float)this.waypointSettings.get(i).speed + i*0.0f;
-
-                    try {
-                        wp.heading = this.waypointSettings.get(i).heading;
-                    } catch (Exception e){
-                        setResultToToast("e = "+ e.getCause() + ", " + e.getMessage());
-                    }
-                    //setResultToToast("wp.heading = "+ waypointSettings.get(i).geo.y + ", " + waypointSettings.get(i).geo.x + ", " + waypointSettings.get(i).geo.z);
-                    waypointList.add(wp);
-                    waypointMissionBuilder.waypointList(waypointList).waypointCount(waypointList.size());
-                }
-                setResultToToast("Number of waypoints " + this.waypointSettings.size());
-                mFinishedAction = WaypointMissionFinishedAction.AUTO_LAND;
-                mSpeed = 5.0f;
-                mHeadingMode = WaypointMissionHeadingMode.USING_WAYPOINT_HEADING;
-                altitude = (float)this.waypointSettings.get(0).geo.z;
-                configWayPointMission();
-
                 break;
             }
-            case R.id.clear:{
+            case R.id.clear: {
+                setResultToToast("Clear map!");
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+
                         gMap.clear();
                     }
 
                 });
                 waypointList.clear();
                 waypointMissionBuilder.waypointCount(0);
-                updateDroneLocation();
-
+                updateDroneLocationData();
+                Button button = (Button)findViewById(R.id.pauseresume);
+                button.setText("Pause");
                 break;
             }
             case R.id.testcircle:{
@@ -458,18 +524,35 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                     LatLng mpoint = new LatLng(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
                     markWaypoint(mpoint);
                 }
+                deployTestCircle();
                 break;
             }
-            case R.id.config:{
-                showSettingDialog();
+            case R.id.pauseresume:{
+                //showSettingDialog();
+                Button button = (Button)findViewById(R.id.pauseresume);
+                if(button.getText().equals("Pause")){
+                    pauseWaypointMission();
+                    button.setText("Resume");
+                } else if(button.getText().equals("Resume")){
+                    resumeWaypointMission();
+                    button.setText("Pause");
+                } else if(button.getText().equals("Armed")){
+                    resumeWaypointMission();
+                    button.setText("Running");
+                }
                 break;
             }
-            case R.id.upload:{
-                uploadWayPointMission();
+            case R.id.arm:{
+                //startLatLong = new LatLng(droneLocationLat, droneLocationLng);
+                //uploadWayPointMission();
+                startWaypointMission();
+                Button button = (Button)findViewById(R.id.pauseresume);
+                button.setText("Arming");
                 break;
             }
             case R.id.start:{
-                startWaypointMission();
+                //startWaypointMission();
+                resumeWaypointMission();
                 break;
             }
             case R.id.stop:{
@@ -641,7 +724,9 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
             public void onResult(DJIError error) {
                 if (error == null) {
                     setResultToToast("Mission upload successfully!");
+                    missionUploaded = true;
                 } else {
+                    missionUploaded = false;
                     setResultToToast("Mission upload failed, error: " + error.getDescription() + " retrying...");
                     getWaypointMissionOperator().retryUploadMission(null);
                 }
@@ -656,6 +741,26 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
             @Override
             public void onResult(DJIError error) {
                 setResultToToast("Mission Start: " + (error == null ? "Successfully" : error.getDescription()));
+            }
+        });
+    }
+
+    private void pauseWaypointMission(){
+
+        getWaypointMissionOperator().pauseMission(new CommonCallbacks.CompletionCallback() {
+            @Override
+            public void onResult(DJIError error) {
+                setResultToToast("Mission paused: " + (error == null ? "Successfully" : error.getDescription()));
+            }
+        });
+    }
+
+    private void resumeWaypointMission(){
+
+        getWaypointMissionOperator().resumeMission(new CommonCallbacks.CompletionCallback() {
+            @Override
+            public void onResult(DJIError error) {
+                setResultToToast("Mission resumed: " + (error == null ? "Successfully" : error.getDescription()));
             }
         });
     }

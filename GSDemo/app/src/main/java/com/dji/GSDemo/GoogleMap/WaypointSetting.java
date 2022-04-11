@@ -17,7 +17,4 @@ public class WaypointSetting {
       this.geo = geollh;
       this.poi = poiXyz;
     }
-    public int getHeading(){return heading;}
-    public void setHeading(int heading){this.heading = heading;}
-
 }

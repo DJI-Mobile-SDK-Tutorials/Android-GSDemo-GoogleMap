@@ -422,9 +422,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 mRot = mRot * 180 / Math.PI;
                 markerOptions.rotation(mRot.floatValue()).icon(BitmapDescriptorFactory.fromResource(R.drawable.aircraft));;
 
-                //Check
+                //Check waiting position, when reached wait for start/resume mission
                 ProjCoordinate fp = coordGeoToCart(startLatLong, new ProjCoordinate(waypointSettings.get(1).geo.y, waypointSettings.get(1).geo.x));
-
                 Double radlim = 0.5;
                 Double xlim = (radlim*Math.cos(0));
                 Double ylim =  (radlim*Math.sin(Math.PI/2));
@@ -505,10 +504,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
                         gMap.clear();
                     }
-
                 });
                 waypointList.clear();
                 waypointMissionBuilder.waypointCount(0);
@@ -528,7 +525,6 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 break;
             }
             case R.id.pauseresume:{
-                //showSettingDialog();
                 Button button = (Button)findViewById(R.id.pauseresume);
                 if(button.getText().equals("Pause")){
                     pauseWaypointMission();
@@ -543,15 +539,12 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 break;
             }
             case R.id.arm:{
-                //startLatLong = new LatLng(droneLocationLat, droneLocationLng);
-                //uploadWayPointMission();
                 startWaypointMission();
                 Button button = (Button)findViewById(R.id.pauseresume);
                 button.setText("Arming");
                 break;
             }
             case R.id.start:{
-                //startWaypointMission();
                 resumeWaypointMission();
                 break;
             }

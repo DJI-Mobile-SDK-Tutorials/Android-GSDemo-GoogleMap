@@ -18,6 +18,9 @@ public class MApplication extends Application {
 
         Task droneTask = new Task();
         droneTask.run();
+
+        IsoDrone drone = new IsoDrone("192.168.21.87");
+        Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
     }
 
 
@@ -51,17 +54,17 @@ public class MApplication extends Application {
 class Task implements Runnable {
     @Override
     public void run() {
-       IsoDrone drone = new IsoDrone();
-    while(true) {
-       try {
-          Thread.sleep(1000);
-          Log.wtf("Name", drone.getName());
-          Log.wtf("State", drone.getCurrentStateName());
-          Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
 
-       } catch (InterruptedException e) {
-           e.printStackTrace();
-       }
-    }
+   // while(true) {
+   //    try {
+   //       //Thread.sleep(1000);
+   //       //Log.wtf("Name", drone.getName());
+   //       //Log.wtf("State", drone.getCurrentStateName());
+   //       //Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
+//
+   //    } catch (InterruptedException e) {
+   //        e.printStackTrace();
+   //    }
+   // }
     }
 }

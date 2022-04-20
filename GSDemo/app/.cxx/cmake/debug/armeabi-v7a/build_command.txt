@@ -15,6 +15,7 @@ arguments :
 -DCMAKE_MAKE_PROGRAM=/home/konglobemeralt/Android/Sdk/cmake/3.18.1/bin/ninja
 -DCMAKE_SYSTEM_NAME=Android
 -DCMAKE_SYSTEM_VERSION=19
+-DANDROID_STL=c++_static
 -B/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/armeabi-v7a
 -GNinja
 jvmArgs : 

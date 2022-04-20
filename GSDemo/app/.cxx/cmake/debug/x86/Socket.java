@@ -37,15 +37,15 @@ public class Socket extends BasicSocket {
   }
 
   public Socket(Socket other) {
-    this(isoObject_wrapJNI.new_socketRefconst(Socket.getCPtr(other), other), true);
+    this(isoObject_wrapJNI.new_Socket(Socket.getCPtr(other), other), true);
   }
 
   public Socket(Socket other) {
     this(isoObject_wrapJNI.new_socketRefRef(Socket.getCPtr(other), other), true);
   }
 
-  public Socket sockEqualsRefConst(Socket other) {
-    return new Socket(isoObject_wrapJNI.Socket_sockEqualsRefConst(swigCPtr, this, Socket.getCPtr(other), other), false);
+  public Socket sockEqualsRef(Socket other) {
+    return new Socket(isoObject_wrapJNI.Socket_sockEqualsRef(swigCPtr, this, Socket.getCPtr(other), other), false);
   }
 
   public Socket sockEqualsRefRef(Socket other) {

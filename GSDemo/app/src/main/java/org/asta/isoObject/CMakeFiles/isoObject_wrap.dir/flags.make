@@ -6,7 +6,7 @@ CXX_FLAGS = -funwind-tables -no-canonical-prefixes -fexceptions -frtti -stdlib=l
 
 CXX_DEFINES = -DisoObject_wrap_EXPORTS
 
-CXX_INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/sockets -I/home/konglobemeralt/Documents/gitz/util/C/iso22133 
+CXX_INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/../../iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/../../sockets -I/home/konglobemeralt/Documents/gitz/util/C/isoObject../iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets -I/home/konglobemeralt/Documents/gitz/util/C/iso22133 
 
 # Custom options: CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o_OPTIONS = 
 

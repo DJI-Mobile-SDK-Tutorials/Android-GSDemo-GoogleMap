@@ -1217,7 +1217,21 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_language_1ge
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1TestObject_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1TestObject_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  ISO22133::TestObject *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (ISO22133::TestObject *)new ISO22133::TestObject(arg1);
+  *(ISO22133::TestObject **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1TestObject_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jlong jresult = 0 ;
   std::string *arg1 = 0 ;
   ISO22133::TestObject *result = 0 ;
@@ -1239,7 +1253,7 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1TestObj
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1TestObject_1_1SWIG_11(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1TestObject_1_1SWIG_12(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   ISO22133::TestObject *result = 0 ;
   
@@ -1434,110 +1448,6 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1
   result = (uint32_t)((ISO22133::TestObject const *)arg1)->getTransmitterID();
   jresult = (jlong)result; 
   return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1handleAbort(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(ISO22133::TestObject **)&jarg1; 
-  (arg1)->handleAbort();
-}
-
-
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1onStateChange(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(ISO22133::TestObject **)&jarg1; 
-  (arg1)->onStateChange();
-}
-
-
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1onOSEM(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
-  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
-  ObjectSettingsType *arg2 = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  arg1 = *(ISO22133::TestObject **)&jarg1; 
-  arg2 = *(ObjectSettingsType **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "ObjectSettingsType & reference is null");
-    return ;
-  } 
-  (arg1)->onOSEM(*arg2);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1onHEAB(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
-  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
-  HeabMessageDataType *arg2 = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  arg1 = *(ISO22133::TestObject **)&jarg1; 
-  arg2 = *(HeabMessageDataType **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "HeabMessageDataType & reference is null");
-    return ;
-  } 
-  (arg1)->onHEAB(*arg2);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1onTRAJ(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(ISO22133::TestObject **)&jarg1; 
-  (arg1)->onTRAJ();
-}
-
-
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1onOSTM(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
-  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
-  ObjectCommandType *arg2 = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(ISO22133::TestObject **)&jarg1; 
-  arg2 = *(ObjectCommandType **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "ObjectCommandType & reference is null");
-    return ;
-  } 
-  (arg1)->onOSTM(*arg2);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1onSTRT(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
-  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
-  StartMessageType *arg2 = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  arg1 = *(ISO22133::TestObject **)&jarg1; 
-  arg2 = *(StartMessageType **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "StartMessageType & reference is null");
-    return ;
-  } 
-  (arg1)->onSTRT(*arg2);
 }
 
 
@@ -2062,7 +1972,7 @@ SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_BasicSocket_1
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1socketRefconst(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1Socket(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   Socket *arg1 = 0 ;
   Socket *result = 0 ;
@@ -2100,7 +2010,7 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1socketR
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_Socket_1sockEqualsRefConst(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_Socket_1sockEqualsRef(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jlong jresult = 0 ;
   Socket *arg1 = (Socket *) 0 ;
   Socket *arg2 = 0 ;

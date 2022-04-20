@@ -101,7 +101,7 @@ build CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_
   DEFINES = -DisoObject_wrap_EXPORTS
   DEP_FILE = CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC -std=gnu++17
-  INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/sockets -I/home/konglobemeralt/Documents/gitz/util/C/iso22133
+  INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/../../iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/../../sockets -I/home/konglobemeralt/Documents/gitz/util/C/isoObject../iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets -I/home/konglobemeralt/Documents/gitz/util/C/iso22133
   OBJECT_DIR = CMakeFiles/isoObject_wrap.dir
   OBJECT_FILE_DIR = CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir
 
@@ -116,7 +116,7 @@ build CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_
 build /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libisoObject_wrap.so: CXX_SHARED_LIBRARY_LINKER__isoObject_wrap_Debug CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o | /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libISO_object.so /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libTCPUDPSocket.so /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libISO22133.so || /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libISO22133.so /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libISO_object.so /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libTCPUDPSocket.so
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
-  LINK_LIBRARIES = /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libISO_object.so  -latomic  /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libTCPUDPSocket.so  /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libISO22133.so  -lm  -latomic -lm
+  LINK_LIBRARIES = /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libISO_object.so  /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libTCPUDPSocket.so  /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libISO22133.so  -latomic  -lm  -latomic -lm
   OBJECT_DIR = CMakeFiles/isoObject_wrap.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -137,7 +137,7 @@ build cmake_object_order_depends_target_ISO_objectTest: phony || cmake_object_or
 build CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.o: CXX_COMPILER__ISO_objectTest_Debug /home/konglobemeralt/Documents/gitz/util/C/isoObject/testIsoObject.cpp || cmake_object_order_depends_target_ISO_objectTest
   DEP_FILE = CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIE -std=gnu++17
-  INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets
+  INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/isoObject../iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets -I/home/konglobemeralt/Documents/gitz/util/C/iso22133
   OBJECT_DIR = CMakeFiles/ISO_objectTest.dir
   OBJECT_FILE_DIR = CMakeFiles/ISO_objectTest.dir
 
@@ -183,7 +183,7 @@ build CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: CXX_COMPILER__ISO_obje
   DEFINES = -DISO_object_EXPORTS
   DEP_FILE = CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC -std=gnu++17
-  INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets
+  INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/isoObject../iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets -I/home/konglobemeralt/Documents/gitz/util/C/iso22133
   OBJECT_DIR = CMakeFiles/ISO_object.dir
   OBJECT_FILE_DIR = CMakeFiles/ISO_object.dir/src
 
@@ -191,7 +191,7 @@ build CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: CXX_COMPILER__ISO_objec
   DEFINES = -DISO_object_EXPORTS
   DEP_FILE = CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC -std=gnu++17
-  INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets
+  INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/isoObject../iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets -I/home/konglobemeralt/Documents/gitz/util/C/iso22133
   OBJECT_DIR = CMakeFiles/ISO_object.dir
   OBJECT_FILE_DIR = CMakeFiles/ISO_object.dir/src
 
@@ -199,7 +199,7 @@ build CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: CXX_COMPILER__ISO_object_
   DEFINES = -DISO_object_EXPORTS
   DEP_FILE = CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC -std=gnu++17
-  INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets
+  INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/isoObject../iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets -I/home/konglobemeralt/Documents/gitz/util/C/iso22133
   OBJECT_DIR = CMakeFiles/ISO_object.dir
   OBJECT_FILE_DIR = CMakeFiles/ISO_object.dir/src
 
@@ -228,7 +228,7 @@ build /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/bu
 # Custom command for CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx
 
 build CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx isoObject_wrap.java isoObject_wrapJNI.java: CUSTOM_COMMAND /home/konglobemeralt/Documents/gitz/util/C/isoObject/isoObject.i /home/konglobemeralt/Documents/gitz/util/C/isoObject/isoObject.i || /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libISO22133.so /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libISO_object.so /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libTCPUDPSocket.so
-  COMMAND = cd /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a && /home/konglobemeralt/Android/Sdk/cmake/3.18.1/bin/cmake -E make_directory /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/isoObject_wrap.dir && /home/konglobemeralt/Android/Sdk/cmake/3.18.1/bin/cmake -E env SWIG_LIB=/usr/share/swig4.0 /usr/bin/swig4.0 -java -package org.asta.isoObject -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/sockets -I/home/konglobemeralt/Documents/gitz/util/C/iso22133 -outdir /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a -c++ -o /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx /home/konglobemeralt/Documents/gitz/util/C/isoObject/isoObject.i
+  COMMAND = cd /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a && /home/konglobemeralt/Android/Sdk/cmake/3.18.1/bin/cmake -E make_directory /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/isoObject_wrap.dir && /home/konglobemeralt/Android/Sdk/cmake/3.18.1/bin/cmake -E env SWIG_LIB=/usr/share/swig4.0 /usr/bin/swig4.0 -java -package org.asta.isoObject -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/../../iso22133 -outdir /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a -c++ -o /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx /home/konglobemeralt/Documents/gitz/util/C/isoObject/isoObject.i
   DESC = Swig compile isoObject.i for java
   restat = 1
 

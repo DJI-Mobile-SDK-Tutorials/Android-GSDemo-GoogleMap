@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+/home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.h
+inttypes.h
+-
+stddef.h
+-
+stdio.h
+-
+math.h
+-
+positioning.h
+/home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.h
+
+/home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.h
+inttypes.h
+-
+time.h
+-
+stdbool.h
+-
+stddef.h
+-
+sys/time.h
+-
+
 /home/konglobemeralt/Documents/gitz/util/C/isoObject/isoObject.i
 std_string.i
 -
@@ -35,10 +59,14 @@ iso22133state.hpp
 /home/konglobemeralt/Documents/gitz/util/C/isoObject/iso22133state.hpp
 iso22133object.hpp
 /home/konglobemeralt/Documents/gitz/util/C/isoObject/iso22133object.hpp
+../../sockets/socket.hpp
+/home/konglobemeralt/Documents/gitz/util/sockets/socket.hpp
+../sockets/server.hpp
+/home/konglobemeralt/Documents/gitz/util/C/sockets/server.hpp
+../iso22133/iso22133.h
+/home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.h
+
+/home/konglobemeralt/Documents/gitz/util/C/sockets/server.hpp
 socket.hpp
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/socket.hpp
-server.hpp
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/server.hpp
-iso22133.h
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/iso22133.h
+/home/konglobemeralt/Documents/gitz/util/C/sockets/socket.hpp
 

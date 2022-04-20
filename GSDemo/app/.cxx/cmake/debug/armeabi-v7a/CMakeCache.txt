@@ -23,6 +23,9 @@ ANDROID_NDK:UNINITIALIZED=/home/konglobemeralt/Android/Sdk/ndk/21.4.7075529
 //No help, variable specified on the command line.
 ANDROID_PLATFORM:UNINITIALIZED=android-19
 
+//No help, variable specified on the command line.
+ANDROID_STL:UNINITIALIZED=c++_static
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/arm-linux-androideabi-addr2line
 
@@ -293,12 +296,6 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Value Computed by CMake
 ISO22133_BINARY_DIR:STATIC=/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/armeabi-v7a/iso22133
 
-//Path to a file.
-ISO22133_HEADER_DIR:PATH=/home/konglobemeralt/Documents/gitz/util/C/iso22133
-
-//Path to a library.
-ISO22133_LIBRARY:FILEPATH=ISO22133_LIBRARY-NOTFOUND
-
 //Dependencies for the target
 ISO22133_LIB_DEPENDS:STATIC=general;m;
 
@@ -315,12 +312,6 @@ ISO_object_LIB_DEPENDS:STATIC=general;TCPUDPSocket;general;ISO22133;general;atom
 ISO_object_SOURCE_DIR:STATIC=/home/konglobemeralt/Documents/gitz/util/C/isoObject
 
 //Path to a file.
-SOCKET_HEADER_DIR:PATH=/home/konglobemeralt/Documents/gitz/util/C/sockets
-
-//Path to a library.
-SOCKET_LIBRARY:FILEPATH=SOCKET_LIBRARY-NOTFOUND
-
-//Path to a file.
 SWIG_DIR:PATH=/usr/share/swig4.0
 
 //Path to a program.
@@ -329,11 +320,20 @@ SWIG_EXECUTABLE:FILEPATH=/usr/bin/swig4.0
 //Swig version
 SWIG_VERSION:STRING=4.0.1
 
+//Swig to target-language java
+SWIG_WITH_JAVA:BOOL=ON
+
+//Swig to target-language python
+SWIG_WITH_PYTHON:BOOL=OFF
+
 //Value Computed by CMake
 TCPUDPSocket_BINARY_DIR:STATIC=/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/armeabi-v7a/sockets
 
 //Value Computed by CMake
 TCPUDPSocket_SOURCE_DIR:STATIC=/home/konglobemeralt/Documents/gitz/util/C/sockets
+
+//Enable swigging
+WITH_SWIG:BOOL=ON
 
 
 ########################
@@ -508,7 +508,7 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding SWIG
-FIND_PACKAGE_MESSAGE_DETAILS_SWIG:INTERNAL=[/usr/bin/swig4.0][/usr/share/swig4.0][cfound components: java ][v4.0.1()]
+FIND_PACKAGE_MESSAGE_DETAILS_SWIG:INTERNAL=[/usr/bin/swig4.0][/usr/share/swig4.0][c ][v4.0.1()]
 //ADVANCED property for variable: SWIG_DIR
 SWIG_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SWIG_EXECUTABLE

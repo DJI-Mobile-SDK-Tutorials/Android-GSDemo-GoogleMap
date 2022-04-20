@@ -81,8 +81,9 @@ public class isoObject_wrapJNI {
   public final static native void delete_Transition(long jarg1);
   public final static native boolean LessThan(long jarg1, Transition jarg1_, long jarg2, Transition jarg2_);
   public final static native long language_get();
-  public final static native long new_TestObject__SWIG_0(String jarg1);
-  public final static native long new_TestObject__SWIG_1();
+  public final static native long new_TestObject__SWIG_0(int jarg1);
+  public final static native long new_TestObject__SWIG_1(String jarg1);
+  public final static native long new_TestObject__SWIG_2();
   public final static native void delete_TestObject(long jarg1);
   public final static native void TestObject_disconnect(long jarg1, TestObject jarg1_);
   public final static native String TestObject_getCurrentStateName(long jarg1, TestObject jarg1_);
@@ -96,13 +97,6 @@ public class isoObject_wrapJNI {
   public final static native long TestObject_getOrigin(long jarg1, TestObject jarg1_);
   public final static native String TestObject_getLocalIP(long jarg1, TestObject jarg1_);
   public final static native long TestObject_getTransmitterID(long jarg1, TestObject jarg1_);
-  public final static native void TestObject_handleAbort(long jarg1, TestObject jarg1_);
-  public final static native void TestObject_onStateChange(long jarg1, TestObject jarg1_);
-  public final static native void TestObject_onOSEM(long jarg1, TestObject jarg1_, long jarg2, ObjectSettingsType jarg2_);
-  public final static native void TestObject_onHEAB(long jarg1, TestObject jarg1_, long jarg2, HeabMessageDataType jarg2_);
-  public final static native void TestObject_onTRAJ(long jarg1, TestObject jarg1_);
-  public final static native void TestObject_onOSTM(long jarg1, TestObject jarg1_, long jarg2);
-  public final static native void TestObject_onSTRT(long jarg1, TestObject jarg1_, long jarg2, StartMessageType jarg2_);
   public final static native int BasicSocket_STREAM_get();
   public final static native int BasicSocket_DATAGRAM_get();
   public final static native void BasicSocket_HostInfo_address_set(long jarg1, BasicSocket.HostInfo jarg1_, String jarg2);
@@ -140,9 +134,9 @@ public class isoObject_wrapJNI {
   public final static native int BasicSocket_getLocalPort(long jarg1, BasicSocket jarg1_);
   public final static native void BasicSocket_close(long jarg1, BasicSocket jarg1_);
   public final static native void BasicSocket_open(long jarg1, BasicSocket jarg1_, int jarg2);
-  public final static native long new_socketRefconst(long jarg1, Socket jarg1_);
+  public final static native long new_Socket(long jarg1, Socket jarg1_);
   public final static native long new_socketRefRef(long jarg1, Socket jarg1_);
-  public final static native long Socket_sockEqualsRefConst(long jarg1, Socket jarg1_, long jarg2, Socket jarg2_);
+  public final static native long Socket_sockEqualsRef(long jarg1, Socket jarg1_, long jarg2, Socket jarg2_);
   public final static native long Socket_sockEqualsRefRef(long jarg1, Socket jarg1_, long jarg2, Socket jarg2_);
   public final static native long Socket_recv(long jarg1, Socket jarg1_);
   public final static native void Socket_send__SWIG_0(long jarg1, Socket jarg1_, long jarg2);

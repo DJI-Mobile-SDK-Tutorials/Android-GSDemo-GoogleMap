@@ -19,8 +19,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../inc"
   "../sigslot/include/sigslot"
-  "/home/konglobemeralt/Documents/gitz/util/C/iso22133"
+  "/home/konglobemeralt/Documents/gitz/util/C/isoObject../iso22133"
   "/home/konglobemeralt/Documents/gitz/util/C/sockets"
+  "/home/konglobemeralt/Documents/gitz/util/C/iso22133"
   )
 
 # Targets to which this target links.

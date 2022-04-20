@@ -5,8 +5,16 @@ import android.util.Log;
 import org.asta.isoObject.*;
 
 public class IsoDrone extends TestObject{
+    IsoDrone(int ip) {
+        super(ip);
+        System.out.println("Drone init...int");
+
+    }
+
     IsoDrone(String ip) {
         super(ip);
+        System.out.println("Drone init...ip");
+
     }
     IsoDrone() {
         super();
@@ -14,11 +22,6 @@ public class IsoDrone extends TestObject{
 
     }
 
-    @Override
-    public void onStateChange() {
-        System.out.println("State is now " + this.getCurrentStateName());
-    }
-    @Override
     public void handleAbort() {
         System.out.println("Aborting...");
     }

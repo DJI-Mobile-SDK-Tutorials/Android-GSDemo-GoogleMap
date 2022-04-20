@@ -15,6 +15,9 @@ public class MApplication extends Application {
         {
             Log.wtf("Error", e);
         }
+
+        Task droneTask = new Task();
+        droneTask.run();
     }
 
 
@@ -37,10 +40,8 @@ public class MApplication extends Application {
     public void onCreate() {
 
         super.onCreate();
-        fpvDemoApplication.onCreate();
+        //fpvDemoApplication.onCreate();
 
-        Task droneTask = new Task();
-        droneTask.run();
     }
 }
 
@@ -50,17 +51,17 @@ public class MApplication extends Application {
 class Task implements Runnable {
     @Override
     public void run() {
-        IsoDrone drone = new IsoDrone();
-       //while(true) {
-       //     try {
-       //         Thread.sleep(100);
-       //         Log.wtf("Name", drone.getName());
-       //         Log.wtf("State", drone.getCurrentStateName());
-       //         Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
+       IsoDrone drone = new IsoDrone();
+    while(true) {
+       try {
+          Thread.sleep(1000);
+          Log.wtf("Name", drone.getName());
+          Log.wtf("State", drone.getCurrentStateName());
+          Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
 
-       //     } catch (InterruptedException e) {
-       //         e.printStackTrace();
-       //     }
-       //  }
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
+    }
     }
 }

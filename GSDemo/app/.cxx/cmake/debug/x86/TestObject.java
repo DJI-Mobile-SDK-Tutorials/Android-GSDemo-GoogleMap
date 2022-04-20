@@ -36,12 +36,16 @@ public class TestObject {
     }
   }
 
+  public TestObject(int i) {
+    this(isoObject_wrapJNI.new_TestObject__SWIG_0(i), true);
+  }
+
   public TestObject(String listenIP) {
-    this(isoObject_wrapJNI.new_TestObject__SWIG_0(listenIP), true);
+    this(isoObject_wrapJNI.new_TestObject__SWIG_1(listenIP), true);
   }
 
   public TestObject() {
-    this(isoObject_wrapJNI.new_TestObject__SWIG_1(), true);
+    this(isoObject_wrapJNI.new_TestObject__SWIG_2(), true);
   }
 
   public void disconnect() {
@@ -90,34 +94,6 @@ public class TestObject {
 
   public long getTransmitterID() {
     return isoObject_wrapJNI.TestObject_getTransmitterID(swigCPtr, this);
-  }
-
-  public void handleAbort() {
-    isoObject_wrapJNI.TestObject_handleAbort(swigCPtr, this);
-  }
-
-  public void onStateChange() {
-    isoObject_wrapJNI.TestObject_onStateChange(swigCPtr, this);
-  }
-
-  public void onOSEM(ObjectSettingsType arg0) {
-    isoObject_wrapJNI.TestObject_onOSEM(swigCPtr, this, ObjectSettingsType.getCPtr(arg0), arg0);
-  }
-
-  public void onHEAB(HeabMessageDataType arg0) {
-    isoObject_wrapJNI.TestObject_onHEAB(swigCPtr, this, HeabMessageDataType.getCPtr(arg0), arg0);
-  }
-
-  public void onTRAJ() {
-    isoObject_wrapJNI.TestObject_onTRAJ(swigCPtr, this);
-  }
-
-  public void onOSTM(SWIGTYPE_p_ObjectCommandType arg0) {
-    isoObject_wrapJNI.TestObject_onOSTM(swigCPtr, this, SWIGTYPE_p_ObjectCommandType.getCPtr(arg0));
-  }
-
-  public void onSTRT(StartMessageType arg0) {
-    isoObject_wrapJNI.TestObject_onSTRT(swigCPtr, this, StartMessageType.getCPtr(arg0), arg0);
   }
 
 }

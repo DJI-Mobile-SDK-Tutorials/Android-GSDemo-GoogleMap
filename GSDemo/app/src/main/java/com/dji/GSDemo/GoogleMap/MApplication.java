@@ -57,17 +57,7 @@ class Task implements Runnable {
     @Override
     public void run() {
         IsoDrone drone = new IsoDrone("192.168.21.87");
-    while(true) {
-       try {
-          Thread.sleep(100);
-          Log.wtf("Name", drone.getName());
-          Log.wtf("State", drone.getCurrentStateName());
-          Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
 
-       } catch (InterruptedException e) {
-           e.printStackTrace();
-       }
-    }
     }
 }
 

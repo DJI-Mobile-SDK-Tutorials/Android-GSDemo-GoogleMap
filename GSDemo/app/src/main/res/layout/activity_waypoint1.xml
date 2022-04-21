@@ -7,20 +7,34 @@
     android:orientation="vertical"
     tools:context="com.dji.GSDemo.GoogleMap.MainActivity">
 
-    <LinearLayout
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/ConnectStatusTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
             android:gravity="center"
-            android:text="Waypoints"
+            android:text="Drone position"
             android:textColor="#000000"
-            android:textSize="21sp" />
-    </LinearLayout>
+            android:textSize="21sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textStatusxyzhead"
+            android:layout_width="260dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="5dp"
+            android:text="xyzh"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout2"
@@ -74,7 +88,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="76dp">
 
         <Button
             android:id="@+id/pauseresume"

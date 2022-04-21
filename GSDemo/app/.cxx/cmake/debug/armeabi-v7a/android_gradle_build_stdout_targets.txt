@@ -1,2 +1,38 @@
 ninja: Entering directory `/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/armeabi-v7a'
-ninja: no work to do.
+[1/4] Building CXX object CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o
+In file included from /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp:4:
+In file included from /home/konglobemeralt/Documents/gitz/util/C/isoObject/inc/iso22133object.hpp:12:
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc/iso22133state.hpp:166:15: warning: 'onEnter' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+        virtual void onEnter(TestObject& obj);
+                     ^
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc/iso22133state.hpp:105:15: note: overridden virtual function is here
+        virtual void onEnter(TestObject&) {}
+                     ^
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc/iso22133state.hpp:167:15: warning: 'onExit' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+        virtual void onExit(TestObject& obj);
+                     ^
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc/iso22133state.hpp:106:15: note: overridden virtual function is here
+        virtual void onExit(TestObject&) {}
+                     ^
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc/iso22133state.hpp:192:15: warning: 'onEnter' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+        virtual void onEnter(TestObject& obj) {this->handleEvent(obj, Events::N);}
+                     ^
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc/iso22133state.hpp:105:15: note: overridden virtual function is here
+        virtual void onEnter(TestObject&) {}
+                     ^
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc/iso22133state.hpp:198:15: warning: 'onEnter' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+        virtual void onEnter(TestObject& obj) {this->handleEvent(obj, Events::T);}
+                     ^
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc/iso22133state.hpp:105:15: note: overridden virtual function is here
+        virtual void onEnter(TestObject&) {}
+                     ^
+In file included from /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp:4:
+In file included from /home/konglobemeralt/Documents/gitz/util/C/isoObject/inc/iso22133object.hpp:14:
+In file included from /home/konglobemeralt/Documents/gitz/util/C/sockets/server.hpp:2:
+/home/konglobemeralt/Documents/gitz/util/C/sockets/socket.hpp:104:41: warning: control reaches end of non-void function [-Wreturn-type]
+        Socket& operator=(const Socket& other){}
+                                               ^
+5 warnings generated.
+[2/4] Linking CXX shared library /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libISO_object.so
+[3/4] Linking CXX executable /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/ISO_objectTest
+[4/4] Linking CXX shared library /home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libisoObject_wrap.so

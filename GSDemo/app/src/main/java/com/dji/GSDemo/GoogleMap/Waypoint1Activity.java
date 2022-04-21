@@ -99,6 +99,9 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
     private Double mRot = 0.0;
     private boolean missionUploaded = false;
 
+    public double getDroneLocationLat(){return droneLocationLat;}
+    public double getDroneLocationLng(){return droneLocationLng;}
+
     @Override
     protected void onResume(){
         super.onResume();
@@ -273,9 +276,9 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         addListener();
 
         //createIsoDroneTask
-        Task droneTask = new Task();
-        droneTask.run();
-
+        //Task droneTask = new Task();
+        //droneTask.run();
+//
     }
 
     protected BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -449,6 +452,43 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 //positionStatusString.append(" z=" + pc.z);
                 positionStatus.setText(positionStatusString);
 
+
+               //     Log.wtf("Name", drone.getName());
+               //     Log.wtf("State", drone.getCurrentStateName());
+               //     Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
+//
+               //     if(drone.getCurrentStateName() == "Init"){
+               //         generateTestCircleCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 3, 1,19, true);
+               //         for(int i = 0; i < this.waypointSettings.size(); i ++){
+               //             LatLng mpoint = new LatLng(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
+               //             markWaypoint(mpoint);
+               //         }
+               //         deployTestCircle();
+               //     }
+               //     else if(drone.getCurrentStateName() == "PreArming"){
+//
+               //     }
+               //     else if(drone.getCurrentStateName() == "Armed"){
+               //         startWaypointMission();
+               //         button = (Button)findViewById(R.id.pauseresume);
+               //         button.setText("Arming");
+               //     }
+               //     else if(drone.getCurrentStateName() == "Disarmed"){
+//
+               //     }
+               //     else if(drone.getCurrentStateName() == "PreRunning"){
+//
+               //     }
+               //     else if(drone.getCurrentStateName() == "Running"){
+               //         resumeWaypointMission();
+               //     }
+               //     else if(drone.getCurrentStateName() == "NormalStop"){
+//
+               //     }
+               //     else if(drone.getCurrentStateName() == "EmergencyStop"){
+//
+               //     }
+//
 
             } catch (Exception e) {
 
@@ -801,47 +841,55 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
 }
 
-class Task implements Runnable {
-    @Override
-    public void run() {
-        IsoDrone drone = new IsoDrone("192.168.21.87");
-
-        while(true) {
-            try {
-                Thread.sleep(1000);
-                Log.wtf("Name", drone.getName());
-                Log.wtf("State", drone.getCurrentStateName());
-                Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
-
-                if(drone.getCurrentStateName() == "Init"){
-                    generateTestCircleCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 1, 1,19, true);
-                }
-                else if(drone.getCurrentStateName() == "PreArming"){
-
-                }
-                else if(drone.getCurrentStateName() == "Armed"){
-
-                }
-                else if(drone.getCurrentStateName() == "Disarmed"){
-
-                }
-                else if(drone.getCurrentStateName() == "PreRunning"){
-
-                }
-                else if(drone.getCurrentStateName() == "Running"){
-
-                }
-                else if(drone.getCurrentStateName() == "NormalStop"){
-
-                }
-                else if(drone.getCurrentStateName() == "EmergencyStop"){
-
-                }
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
-}
+//class Task implements Runnable {
+//    @Override
+//    public void run() {
+//        IsoDrone drone = new IsoDrone("192.168.21.87");
+//
+//        while(true) {
+//            try {
+//                Thread.sleep(1000);
+//                Log.wtf("Name", drone.getName());
+//                Log.wtf("State", drone.getCurrentStateName());
+//                Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
+//
+//                if(drone.getCurrentStateName() == "Init"){
+//                //    generateTestCircleCoordinates(new LatLng(getDroneLocationLat(), getDroneLocationLng()), 10, 3, 1,19, true);
+//                //    for(int i = 0; i < this.waypointSettings.size(); i ++){
+//                //        LatLng mpoint = new LatLng(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
+//                //        markWaypoint(mpoint);
+//                //    }
+//                //    deployTestCircle();
+//                }
+//                else if(drone.getCurrentStateName() == "PreArming"){
+//
+//                }
+//                else if(drone.getCurrentStateName() == "Armed"){
+//                    //startWaypointMission();
+//                    //Button button = (Button)findViewById(R.id.pauseresume);
+//                    //button.setText("Arming");
+//                }
+//                else if(drone.getCurrentStateName() == "Disarmed"){
+//
+//                }
+//                else if(drone.getCurrentStateName() == "PreRunning"){
+//
+//                }
+//                else if(drone.getCurrentStateName() == "Running"){
+//                 //   resumeWaypointMission();
+//                }
+//                else if(drone.getCurrentStateName() == "NormalStop"){
+//
+//                }
+//                else if(drone.getCurrentStateName() == "EmergencyStop"){
+//
+//                }
+//
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//    }
+//}
+//

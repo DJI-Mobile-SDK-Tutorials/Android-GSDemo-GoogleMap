@@ -72,6 +72,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
     private Button locate, add, clear, testcircle;
     private Button config, upload, start, stop;
+    private TextView positionStatus;
 
     private boolean isAdd = false;
 
@@ -143,6 +144,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         upload = (Button) findViewById(R.id.arm);
         start = (Button) findViewById(R.id.start);
         stop = (Button) findViewById(R.id.stop);
+        positionStatus = (TextView)findViewById(R.id.textStatusxyzhead);
 
         locate.setOnClickListener(this);
         add.setOnClickListener(this);
@@ -152,6 +154,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         upload.setOnClickListener(this);
         start.setOnClickListener(this);
         stop.setOnClickListener(this);
+
+        add.setEnabled(false);;
 
     }
 
@@ -412,6 +416,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         markerOptions.position(pos);
         if(missionUploaded) {
             ProjCoordinate pc = coordGeoToCart(startLatLong, new ProjCoordinate(droneLocationLat, droneLocationLng));
+
             try {
                 //Mark the drone on map
                 mRot = Math.acos(pc.x / (Math.sqrt(Math.pow(pc.x, 2) + Math.pow(pc.y, 2))));
@@ -432,6 +437,14 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                    pauseWaypointMission();
                    button.setText("Armed");
                 }
+
+                final StringBuffer positionStatusString = new StringBuffer();
+                positionStatusString.append("x=" + String.format("%.3f", pc.x) + " y=" + String.format("%.3f", pc.y) + " z=" + String.format("%.2f", droneAltitude));
+                //positionStatusString.append("x=" + pc.x);
+                //positionStatusString.append(" y=" + pc.y);
+                //positionStatusString.append(" z=" + pc.z);
+                positionStatus.setText(positionStatusString);
+
 
             } catch (Exception e) {
 
@@ -467,8 +480,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         {
             Waypoint wp = new Waypoint();
             wp.coordinate = new LocationCoordinate2D(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
-            wp.altitude = (float)this.waypointSettings.get(i).geo.z + i*0.0f;
-            wp.speed = (float)this.waypointSettings.get(i).speed + i*0.0f;
+            wp.altitude = (float)this.waypointSettings.get(i).geo.z + i*0.2f;
+            wp.speed = (float)this.waypointSettings.get(i).speed + i*0.1f;
             try {
                 wp.heading = this.waypointSettings.get(i).heading;
             } catch (Exception e){
@@ -516,7 +529,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
             }
             case R.id.testcircle:{
                 this.waypointSettings.clear();
-                generateTestCircleCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 1, 1,19, true);
+                generateTestCircleCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 3, 1,19, true);
                 for(int i = 0; i < this.waypointSettings.size(); i ++){
                     LatLng mpoint = new LatLng(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
                     markWaypoint(mpoint);

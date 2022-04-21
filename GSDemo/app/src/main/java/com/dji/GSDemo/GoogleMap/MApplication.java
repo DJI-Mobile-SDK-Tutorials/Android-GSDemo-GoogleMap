@@ -42,24 +42,11 @@ public class MApplication extends Application {
     public void onCreate() {
 
         super.onCreate();
-
-        Task droneTask = new Task();
-        droneTask.run();
-        //fpvDemoApplication.onCreate();
+        fpvDemoApplication.onCreate();
 
     }
 }
 
-
-
-
-class Task implements Runnable {
-    @Override
-    public void run() {
-        IsoDrone drone = new IsoDrone("192.168.21.87");
-
-    }
-}
 
 /*
 class AsyncTaskRunner extends AsyncTask<String, String, String> {

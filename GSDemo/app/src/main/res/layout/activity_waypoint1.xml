@@ -1,83 +1,130 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF"
+    android:orientation="vertical"
     tools:context="com.dji.GSDemo.GoogleMap.MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/ConnectStatusTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GSDemo"
             android:gravity="center"
+            android:text="Waypoints"
             android:textColor="#000000"
-            android:textSize="21sp"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/locate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Locate"
-            android:layout_weight="1"/>
-        <Button
-            android:id="@+id/add"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            android:layout_weight="1"/>
-        <Button
-            android:id="@+id/clear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Clear"
-            android:layout_weight="1"/>
+            android:textSize="21sp" />
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
+
         <Button
-            android:id="@+id/config"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Config"
-            android:layout_weight="0.9"/>
+            android:id="@+id/locate"
+            android:layout_width="95dp"
+            android:layout_height="48dp"
+            android:text="Locate"
+            app:layout_constraintEnd_toStartOf="@+id/testcircle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
-            android:id="@+id/upload"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Upload"
-            android:layout_weight="0.9"/>
+            android:id="@+id/add"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:text="Add"
+            app:layout_constraintBottom_toBottomOf="@+id/testcircle"
+            app:layout_constraintEnd_toStartOf="@+id/clear"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/testcircle"
+            app:layout_constraintTop_toTopOf="@+id/testcircle" />
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:text="Clear"
+            app:layout_constraintBottom_toBottomOf="@+id/add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/add"
+            app:layout_constraintTop_toTopOf="@+id/add" />
+
+        <Button
+            android:id="@+id/testcircle"
+            android:layout_width="115dp"
+            android:layout_height="48dp"
+            android:text="TestCircle"
+            app:layout_constraintBottom_toBottomOf="@+id/locate"
+            app:layout_constraintEnd_toStartOf="@+id/add"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/locate"
+            app:layout_constraintTop_toTopOf="@+id/locate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/pauseresume"
+            android:layout_width="103dp"
+            android:layout_height="48dp"
+            android:text="Pause"
+            app:layout_constraintBottom_toBottomOf="@+id/start"
+            app:layout_constraintEnd_toStartOf="@+id/stop"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/start"
+            app:layout_constraintTop_toTopOf="@+id/start" />
+
+        <Button
+            android:id="@+id/arm"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="2dp"
+            android:text="Arm"
+            app:layout_constraintEnd_toStartOf="@+id/start"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="97dp"
+            android:layout_height="48dp"
             android:text="Start"
-            android:layout_weight="1"/>
+            app:layout_constraintBottom_toBottomOf="@+id/arm"
+            app:layout_constraintEnd_toStartOf="@+id/pauseresume"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/arm"
+            app:layout_constraintTop_toTopOf="@+id/arm" />
+
         <Button
             android:id="@+id/stop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
             android:text="Stop"
-            android:layout_weight="1"/>
-    </LinearLayout>
+            app:layout_constraintBottom_toBottomOf="@+id/pauseresume"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/pauseresume"
+            app:layout_constraintTop_toTopOf="@+id/pauseresume" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <fragment
         android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        class="com.google.android.gms.maps.SupportMapFragment" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

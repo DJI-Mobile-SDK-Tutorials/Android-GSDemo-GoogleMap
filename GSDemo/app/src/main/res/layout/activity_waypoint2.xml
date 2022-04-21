@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="GSDemo"
+            android:text="GSDemo1"
             android:textColor="#000000"
             android:textSize="21sp" />
     </LinearLayout>
@@ -54,14 +54,14 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/config"
+            android:id="@+id/pauseresume"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.9"
             android:text="Config" />
 
         <Button
-            android:id="@+id/upload"
+            android:id="@+id/arm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.9"

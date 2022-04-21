@@ -92,6 +92,7 @@ public class DJIDemoApplication extends Application {
 
                 }
                 Log.e("TAG", error.toString());
+                Log.i("TAG", "Info string after register.");
             }
 
             @Override

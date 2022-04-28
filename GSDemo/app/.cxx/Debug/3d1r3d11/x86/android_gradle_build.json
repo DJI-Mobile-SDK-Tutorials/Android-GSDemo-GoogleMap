@@ -1,0 +1,100 @@
+{
+  "buildFiles": [
+    "/home/konglobemeralt/Documents/gitz/util/C/iso22133/CMakeLists.txt",
+    "/home/konglobemeralt/Documents/gitz/util/C/isoObject/CMakeLists.txt",
+    "/home/konglobemeralt/Documents/gitz/util/C/sockets/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/konglobemeralt/Android/Sdk/cmake/3.18.1/bin/ninja",
+      "-C",
+      "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/3d1r3d11/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/konglobemeralt/Android/Sdk/cmake/3.18.1/bin/ninja",
+    "-C",
+    "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/3d1r3d11/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "ISO22133::@ec36ee61a2d018a05399": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "ISO22133",
+      "output": "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libISO22133.so",
+      "runtimeFiles": []
+    },
+    "ISO_object::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "ISO_object",
+      "output": "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libISO_object.so",
+      "runtimeFiles": [
+        "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libTCPUDPSocket.so",
+        "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libISO22133.so"
+      ]
+    },
+    "ISO_objectTest::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "ISO_objectTest",
+      "output": "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/ISO_objectTest",
+      "runtimeFiles": [
+        "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libISO_object.so",
+        "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libTCPUDPSocket.so",
+        "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libISO22133.so"
+      ]
+    },
+    "TCPUDPSocket::@32f39d85b84b18af514d": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "TCPUDPSocket",
+      "output": "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libTCPUDPSocket.so",
+      "runtimeFiles": []
+    },
+    "TEST_CAN::@32f39d85b84b18af514d": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "TEST_CAN",
+      "output": "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/TEST_CAN",
+      "runtimeFiles": [
+        "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libTCPUDPSocket.so"
+      ]
+    },
+    "TEST_SOCKET::@32f39d85b84b18af514d": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "TEST_SOCKET",
+      "output": "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/TEST_SOCKET",
+      "runtimeFiles": [
+        "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libTCPUDPSocket.so"
+      ]
+    },
+    "isoObject_wrap::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "isoObject_wrap",
+      "output": "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libisoObject_wrap.so",
+      "runtimeFiles": [
+        "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libISO_object.so",
+        "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libTCPUDPSocket.so",
+        "/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libISO22133.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+      "cppCompilerExecutable": "/home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp",
+    "cxx"
+  ]
+}

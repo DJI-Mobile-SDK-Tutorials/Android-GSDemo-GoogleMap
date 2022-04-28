@@ -66,8 +66,29 @@ import org.locationtech.proj4j.ProjCoordinate;
 
 public class Waypoint1Activity extends FragmentActivity implements View.OnClickListener, GoogleMap.OnMapClickListener, OnMapReadyCallback {
 
-    protected static final String TAG = "GSDemoActivity";
 
+    static {
+        try {
+            System.loadLibrary("TCPUDPSocket");
+            System.loadLibrary("isoObject_wrap");
+        }catch(Exception e)
+        {
+            Log.wtf("Error", e);
+        }
+        Log.wtf("Error", "Before init");
+
+
+
+
+        //createIsoDroneTask
+
+
+
+    }
+
+    protected static final String TAG = "GSDemoActivity";
+    private IsoDrone drone;
+    private String lastDroneState = "";
     private GoogleMap gMap;
 
     private Button locate, add, clear, testcircle;
@@ -244,6 +265,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         // When the compile and target version is higher than 22, please request the
         // following permissions at runtime to ensure the
         // SDK work well.
@@ -276,8 +298,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         addListener();
 
         //createIsoDroneTask
-        //Task droneTask = new Task();
-        //droneTask.run();
+        Task droneTask = new Task();
+        droneTask.run();
 //
     }
 
@@ -416,6 +438,50 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
     // Update the drone location based on states from MCU.
     private void updateDroneLocationData(){
+        if(lastDroneState == "") {
+            drone = new IsoDrone("192.168.75.127");
+            lastDroneState = drone.getCurrentStateName();
+        }
+
+        Log.wtf("Error", "Drone is in: " + drone.getCurrentStateName());
+
+        if (drone.getCurrentStateName() == "Init" && lastDroneState != "Init") {
+            Log.wtf("Error", "Init");
+            //    generateTestCircleCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 3, 1,19, true);
+            //    for(int i = 0; i < this.waypointSettings.size(); i ++){
+            //       LatLng mpoint = new LatLng(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
+            //       markWaypoint(mpoint);
+            //    }
+            //    deployTestCircle();
+            lastDroneState = "Init";
+        } else if (drone.getCurrentStateName() == "PreArming" && lastDroneState != "PreArming") {
+            Log.wtf("Error", "PreArming");
+            lastDroneState = "PreArming";
+
+        } else if (drone.getCurrentStateName() == "Armed" && lastDroneState != "Armed") {
+            //startWaypointMission();
+            //button = (Button)findViewById(R.id.pauseresume);
+            //button.setText("Arming");
+            Log.wtf("Error", "Armed");
+            lastDroneState = "Armed";
+        } else if (drone.getCurrentStateName() == "Disarmed" && lastDroneState != "Disarmed") {
+
+            Log.wtf("Error", "Disarmed");
+            lastDroneState = "Disarmed";
+        } else if (drone.getCurrentStateName() == "PreRunning" && lastDroneState != "PreRunning") {
+            Log.wtf("Error", "PreRunning");
+            lastDroneState = "PreRunning";
+        } else if (drone.getCurrentStateName() == "Running" && lastDroneState != "Running") {
+            //resumeWaypointMission();
+            Log.wtf("Error", "Running");
+            lastDroneState = "Running";
+        } else if (drone.getCurrentStateName() == "NormalStop" && lastDroneState != "NormalStop") {
+            setResultToToast("NormalStop");
+            lastDroneState = "NormalStop";
+        } else if (drone.getCurrentStateName() == "EmergencyStop" && lastDroneState != "EmergencyStop") {
+            Log.wtf("Error", "EmergencyStop");
+            lastDroneState = "EmergencyStop";
+        }
 
         LatLng pos = new LatLng(droneLocationLat, droneLocationLng);
         //Create MarkerOptions object
@@ -453,43 +519,6 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 positionStatus.setText(positionStatusString);
 
 
-               //     Log.wtf("Name", drone.getName());
-               //     Log.wtf("State", drone.getCurrentStateName());
-               //     Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
-//
-               //     if(drone.getCurrentStateName() == "Init"){
-               //         generateTestCircleCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 3, 1,19, true);
-               //         for(int i = 0; i < this.waypointSettings.size(); i ++){
-               //             LatLng mpoint = new LatLng(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
-               //             markWaypoint(mpoint);
-               //         }
-               //         deployTestCircle();
-               //     }
-               //     else if(drone.getCurrentStateName() == "PreArming"){
-//
-               //     }
-               //     else if(drone.getCurrentStateName() == "Armed"){
-               //         startWaypointMission();
-               //         button = (Button)findViewById(R.id.pauseresume);
-               //         button.setText("Arming");
-               //     }
-               //     else if(drone.getCurrentStateName() == "Disarmed"){
-//
-               //     }
-               //     else if(drone.getCurrentStateName() == "PreRunning"){
-//
-               //     }
-               //     else if(drone.getCurrentStateName() == "Running"){
-               //         resumeWaypointMission();
-               //     }
-               //     else if(drone.getCurrentStateName() == "NormalStop"){
-//
-               //     }
-               //     else if(drone.getCurrentStateName() == "EmergencyStop"){
-//
-               //     }
-//
-
             } catch (Exception e) {
 
             }
@@ -505,8 +534,13 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 if (checkGpsCoordination(droneLocationLat, droneLocationLng)) {
                     droneMarker = gMap.addMarker(markerOptions);
                 }
+
+
             }
         });
+
+
+
     }
 
     private void markWaypoint(LatLng point){
@@ -841,55 +875,11 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
 }
 
-//class Task implements Runnable {
-//    @Override
-//    public void run() {
-//        IsoDrone drone = new IsoDrone("192.168.21.87");
-//
-//        while(true) {
-//            try {
-//                Thread.sleep(1000);
-//                Log.wtf("Name", drone.getName());
-//                Log.wtf("State", drone.getCurrentStateName());
-//                Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
-//
-//                if(drone.getCurrentStateName() == "Init"){
-//                //    generateTestCircleCoordinates(new LatLng(getDroneLocationLat(), getDroneLocationLng()), 10, 3, 1,19, true);
-//                //    for(int i = 0; i < this.waypointSettings.size(); i ++){
-//                //        LatLng mpoint = new LatLng(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
-//                //        markWaypoint(mpoint);
-//                //    }
-//                //    deployTestCircle();
-//                }
-//                else if(drone.getCurrentStateName() == "PreArming"){
-//
-//                }
-//                else if(drone.getCurrentStateName() == "Armed"){
-//                    //startWaypointMission();
-//                    //Button button = (Button)findViewById(R.id.pauseresume);
-//                    //button.setText("Arming");
-//                }
-//                else if(drone.getCurrentStateName() == "Disarmed"){
-//
-//                }
-//                else if(drone.getCurrentStateName() == "PreRunning"){
-//
-//                }
-//                else if(drone.getCurrentStateName() == "Running"){
-//                 //   resumeWaypointMission();
-//                }
-//                else if(drone.getCurrentStateName() == "NormalStop"){
-//
-//                }
-//                else if(drone.getCurrentStateName() == "EmergencyStop"){
-//
-//                }
-//
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//    }
-//}
-//
+class Tastk2 implements Runnable {
+    @Override
+    public void run() {
+
+
+
+    }
+}

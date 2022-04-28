@@ -1,0 +1,2 @@
+ninja: Entering directory `/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/3d1r3d11/armeabi-v7a'
+ninja: no work to do.

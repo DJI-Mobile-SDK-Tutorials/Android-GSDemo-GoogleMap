@@ -60,8 +60,8 @@ public class TestObject {
     return isoObject_wrapJNI.TestObject_getName(swigCPtr, this);
   }
 
-  public SWIGTYPE_p_CartesianPosition getPosition() {
-    return new SWIGTYPE_p_CartesianPosition(isoObject_wrapJNI.TestObject_getPosition(swigCPtr, this), true);
+  public CartesianPosition getPosition() {
+    return new CartesianPosition(isoObject_wrapJNI.TestObject_getPosition(swigCPtr, this), true);
   }
 
   public SWIGTYPE_p_SpeedType getSpeed() {
@@ -94,6 +94,42 @@ public class TestObject {
 
   public long getTransmitterID() {
     return isoObject_wrapJNI.TestObject_getTransmitterID(swigCPtr, this);
+  }
+
+  public void handleAbort() {
+    isoObject_wrapJNI.TestObject_handleAbort(swigCPtr, this);
+  }
+
+  public void setPosition(CartesianPosition pos) {
+    isoObject_wrapJNI.TestObject_setPosition(swigCPtr, this, CartesianPosition.getCPtr(pos), pos);
+  }
+
+  public void setSpeed(SWIGTYPE_p_SpeedType spd) {
+    isoObject_wrapJNI.TestObject_setSpeed(swigCPtr, this, SWIGTYPE_p_SpeedType.getCPtr(spd));
+  }
+
+  public void setAcceleration(SWIGTYPE_p_AccelerationType acc) {
+    isoObject_wrapJNI.TestObject_setAcceleration(swigCPtr, this, SWIGTYPE_p_AccelerationType.getCPtr(acc));
+  }
+
+  public void setDriveDirection(SWIGTYPE_p_DriveDirectionType drd) {
+    isoObject_wrapJNI.TestObject_setDriveDirection(swigCPtr, this, SWIGTYPE_p_DriveDirectionType.getCPtr(drd));
+  }
+
+  public void setObjectState(ObjectStateID ost) {
+    isoObject_wrapJNI.TestObject_setObjectState(swigCPtr, this, ost.swigValue());
+  }
+
+  public void setName(String nm) {
+    isoObject_wrapJNI.TestObject_setName(swigCPtr, this, nm);
+  }
+
+  public void setReadyToArm(int rdy) {
+    isoObject_wrapJNI.TestObject_setReadyToArm(swigCPtr, this, rdy);
+  }
+
+  public void setErrorState(char err) {
+    isoObject_wrapJNI.TestObject_setErrorState(swigCPtr, this, err);
   }
 
 }

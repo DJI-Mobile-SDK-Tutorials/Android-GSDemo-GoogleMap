@@ -45,12 +45,13 @@ public class TrajectoryWaypointType {
     return (cPtr == 0) ? null : new timeval(cPtr, false);
   }
 
-  public void setPos(SWIGTYPE_p_CartesianPosition value) {
-    isoObject_wrapJNI.TrajectoryWaypointType_pos_set(swigCPtr, this, SWIGTYPE_p_CartesianPosition.getCPtr(value));
+  public void setPos(CartesianPosition value) {
+    isoObject_wrapJNI.TrajectoryWaypointType_pos_set(swigCPtr, this, CartesianPosition.getCPtr(value), value);
   }
 
-  public SWIGTYPE_p_CartesianPosition getPos() {
-    return new SWIGTYPE_p_CartesianPosition(isoObject_wrapJNI.TrajectoryWaypointType_pos_get(swigCPtr, this), true);
+  public CartesianPosition getPos() {
+    long cPtr = isoObject_wrapJNI.TrajectoryWaypointType_pos_get(swigCPtr, this);
+    return (cPtr == 0) ? null : new CartesianPosition(cPtr, false);
   }
 
   public void setSpd(SWIGTYPE_p_SpeedType value) {

@@ -15,7 +15,7 @@ public class SWIGTYPE_p_CartesianPosition {
     swigCPtr = cPtr;
   }
 
-  protected SWIGTYPE_p_CartesianPosition() {
+  public SWIGTYPE_p_CartesianPosition() {
     swigCPtr = 0;
   }
 

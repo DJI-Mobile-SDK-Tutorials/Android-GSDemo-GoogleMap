@@ -58,6 +58,7 @@ import dji.sdk.sdkmanager.DJISDKManager;
 import dji.sdk.useraccount.UserAccountManager;
 
 
+import org.asta.isoObject.*;
 import org.locationtech.proj4j.CRSFactory;
 import org.locationtech.proj4j.CoordinateReferenceSystem;
 import org.locationtech.proj4j.CoordinateTransform;
@@ -75,8 +76,6 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         {
             Log.wtf("Error", e);
         }
-        Log.wtf("Error", "Before init");
-
 
 
 
@@ -180,6 +179,12 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         stop.setOnClickListener(this);
 
         add.setEnabled(false);;
+
+      // Log.wtf("Error", "Before init");
+      // Task droneTask = new Task();
+      // droneTask.run();
+      // Log.wtf("Error", "After init");
+
 
     }
 
@@ -298,8 +303,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         addListener();
 
         //createIsoDroneTask
-        Task droneTask = new Task();
-        droneTask.run();
+        //Task droneTask = new Task();
+        //droneTask.run();
 //
     }
 
@@ -438,50 +443,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
     // Update the drone location based on states from MCU.
     private void updateDroneLocationData(){
-        if(lastDroneState == "") {
-            drone = new IsoDrone("192.168.75.127");
-            lastDroneState = drone.getCurrentStateName();
-        }
 
-        Log.wtf("Error", "Drone is in: " + drone.getCurrentStateName());
-
-        if (drone.getCurrentStateName() == "Init" && lastDroneState != "Init") {
-            Log.wtf("Error", "Init");
-            //    generateTestCircleCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 3, 1,19, true);
-            //    for(int i = 0; i < this.waypointSettings.size(); i ++){
-            //       LatLng mpoint = new LatLng(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
-            //       markWaypoint(mpoint);
-            //    }
-            //    deployTestCircle();
-            lastDroneState = "Init";
-        } else if (drone.getCurrentStateName() == "PreArming" && lastDroneState != "PreArming") {
-            Log.wtf("Error", "PreArming");
-            lastDroneState = "PreArming";
-
-        } else if (drone.getCurrentStateName() == "Armed" && lastDroneState != "Armed") {
-            //startWaypointMission();
-            //button = (Button)findViewById(R.id.pauseresume);
-            //button.setText("Arming");
-            Log.wtf("Error", "Armed");
-            lastDroneState = "Armed";
-        } else if (drone.getCurrentStateName() == "Disarmed" && lastDroneState != "Disarmed") {
-
-            Log.wtf("Error", "Disarmed");
-            lastDroneState = "Disarmed";
-        } else if (drone.getCurrentStateName() == "PreRunning" && lastDroneState != "PreRunning") {
-            Log.wtf("Error", "PreRunning");
-            lastDroneState = "PreRunning";
-        } else if (drone.getCurrentStateName() == "Running" && lastDroneState != "Running") {
-            //resumeWaypointMission();
-            Log.wtf("Error", "Running");
-            lastDroneState = "Running";
-        } else if (drone.getCurrentStateName() == "NormalStop" && lastDroneState != "NormalStop") {
-            setResultToToast("NormalStop");
-            lastDroneState = "NormalStop";
-        } else if (drone.getCurrentStateName() == "EmergencyStop" && lastDroneState != "EmergencyStop") {
-            Log.wtf("Error", "EmergencyStop");
-            lastDroneState = "EmergencyStop";
-        }
 
         LatLng pos = new LatLng(droneLocationLat, droneLocationLng);
         //Create MarkerOptions object
@@ -506,7 +468,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 Double xlim = (radlim*Math.cos(0));
                 Double ylim =  (radlim*Math.sin(Math.PI/2));
                 Button button = (Button)findViewById(R.id.pauseresume);
-                if(pc.x > fp.x - xlim  &&  pc.x < fp.x + xlim && pc.y > fp.y - ylim  &&  pc.y < fp.y + ylim && button.getText().equals("Arming")){
+                if(pc.x > fp.x - xlim  &&  pc.x < fp.x + xlim && pc.y > fp.y - ylim  &&  pc.y < fp.y + ylim ){
+                    //&& button.getText().equals("Arming")
                    pauseWaypointMission();
                    button.setText("Armed");
                 }
@@ -519,14 +482,87 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 positionStatus.setText(positionStatusString);
 
 
+
+
             } catch (Exception e) {
 
             }
         } else markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.aircraft));
 
+
+        if(lastDroneState == "") {
+            drone = new IsoDrone("192.168.75.127");
+            lastDroneState = drone.getCurrentStateName();
+        }
+        Log.wtf("Error", "Drone is in: " + drone.getCurrentStateName());
+        //SetMonr data
+        CartesianPosition dronePos = new CartesianPosition();
+        dronePos.setXCoord_m(1);
+        dronePos.setYCoord_m(2);
+        dronePos.setZCoord_m(3);
+        dronePos.setHeading_rad(6);
+        dronePos.setIsPositionValid(true);
+        dronePos.setIsHeadingValid(true);
+        //drone.setPosition(dronePos);
+
+        if (drone.getCurrentStateName().equals("Init") && lastDroneState != "Init") {
+            Log.wtf("Error", "Init");
+
+            lastDroneState = "Init";
+        } else if (drone.getCurrentStateName().equals("PreArming") && lastDroneState != "PreArming") {
+            Log.wtf("Error", "PreArming");
+            lastDroneState = "PreArming";
+
+        } else if (drone.getCurrentStateName().equals("Armed") && lastDroneState != "Armed") {
+            //button = (Button)findViewById(R.id.pauseresume);
+            //button.setText("Arming");
+            runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            waypointSettings.clear();
+                            generateTestCircleCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 3, 1,19, true);
+                            for(int i = 0; i < waypointSettings.size(); i ++){
+                                LatLng mpoint = new LatLng(waypointSettings.get(i).geo.y, waypointSettings.get(i).geo.x);
+                                markWaypoint(mpoint);
+                            }
+                    deployTestCircle();
+
+                }
+            });
+
+            Log.wtf("Error", "Armed");
+            lastDroneState = "Armed";
+        } else if (drone.getCurrentStateName().equals("Disarmed") && lastDroneState != "Disarmed") {
+
+            Log.wtf("Error", "Disarmed");
+            lastDroneState = "Disarmed";
+        } else if (drone.getCurrentStateName().equals("PreRunning") && lastDroneState != "PreRunning") {
+            Log.wtf("Error", "PreRunning");
+            lastDroneState = "PreRunning";
+        } else if (drone.getCurrentStateName().equals("Running") && lastDroneState != "Running") {
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    resumeWaypointMission();
+                }});
+            Log.wtf("Error", "Running");
+            lastDroneState = "Running";
+        } else if (drone.getCurrentStateName().equals("NormalStop") && lastDroneState != "NormalStop") {
+            setResultToToast("NormalStop");
+            lastDroneState = "NormalStop";
+        } else if (drone.getCurrentStateName().equals("EmergencyStop") && lastDroneState != "EmergencyStop") {
+            Log.wtf("Error", "EmergencyStop");
+            lastDroneState = "EmergencyStop";
+        }
+
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
+
+
+
+
                 if (droneMarker != null) {
                     droneMarker.remove();
                 }
@@ -534,9 +570,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 if (checkGpsCoordination(droneLocationLat, droneLocationLng)) {
                     droneMarker = gMap.addMarker(markerOptions);
                 }
-
-
-            }
+             }
         });
 
 
@@ -553,6 +587,9 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
     }
 
     private void deployTestCircle(){
+
+        Log.wtf("Error", "Deploying circle");
+
         waypointMissionBuilder = new WaypointMission.Builder();
         for (int i = 0; i < this.waypointSettings.size(); i ++)
         {
@@ -569,6 +606,9 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
             waypointList.add(wp);
             waypointMissionBuilder.waypointList(waypointList).waypointCount(waypointList.size());
         }
+
+        Log.wtf("Error", "Number of waypoints " + this.waypointSettings.size());
+
         setResultToToast("Number of waypoints " + this.waypointSettings.size());
         mFinishedAction = WaypointMissionFinishedAction.NO_ACTION;
         mSpeed = 5.0f;
@@ -809,6 +849,8 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 if (error == null) {
                     setResultToToast("Mission upload successfully!");
                     missionUploaded = true;
+                    startWaypointMission();
+
                 } else {
                     missionUploaded = false;
                     setResultToToast("Mission upload failed, error: " + error.getDescription() + " retrying...");
@@ -875,11 +917,4 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
 }
 
-class Tastk2 implements Runnable {
-    @Override
-    public void run() {
 
-
-
-    }
-}

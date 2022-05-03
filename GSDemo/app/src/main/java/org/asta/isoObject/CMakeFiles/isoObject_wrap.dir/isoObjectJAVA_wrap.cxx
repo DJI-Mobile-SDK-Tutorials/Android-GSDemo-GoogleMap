@@ -1451,6 +1451,151 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1
 }
 
 
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1handleAbort(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  (arg1)->handleAbort();
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1setPosition(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  CartesianPosition *arg2 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  arg2 = *(CartesianPosition **)&jarg2;
+  if (!arg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "CartesianPosition const & reference is null");
+    return ;
+  } 
+  (arg1)->setPosition((CartesianPosition const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1setSpeed(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  SpeedType *arg2 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  arg2 = *(SpeedType **)&jarg2;
+  if (!arg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "SpeedType const & reference is null");
+    return ;
+  } 
+  (arg1)->setSpeed((SpeedType const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1setAcceleration(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  AccelerationType *arg2 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  arg2 = *(AccelerationType **)&jarg2;
+  if (!arg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "AccelerationType const & reference is null");
+    return ;
+  } 
+  (arg1)->setAcceleration((AccelerationType const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1setDriveDirection(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  DriveDirectionType *arg2 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  arg2 = *(DriveDirectionType **)&jarg2;
+  if (!arg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "DriveDirectionType const & reference is null");
+    return ;
+  } 
+  (arg1)->setDriveDirection((DriveDirectionType const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1setObjectState(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  ISO22133::ObjectStateID *arg2 = 0 ;
+  ISO22133::ObjectStateID temp2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  temp2 = (ISO22133::ObjectStateID)jarg2; 
+  arg2 = &temp2; 
+  (arg1)->setObjectState((ISO22133::ObjectStateID const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1setName(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  std::string arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return ;
+  } 
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return ;
+  (&arg2)->assign(arg2_pstr);
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
+  (arg1)->setName(arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1setReadyToArm(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  (arg1)->setReadyToArm((int const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1setErrorState(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jchar jarg2) {
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  char *arg2 = 0 ;
+  char temp2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  temp2 = (char)jarg2; 
+  arg2 = &temp2; 
+  (arg1)->setErrorState((char const &)*arg2);
+}
+
+
 SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_BasicSocket_1STREAM_1get(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   BasicSocket::SocketType result;
@@ -3081,36 +3226,31 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWa
 }
 
 
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointType_1pos_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointType_1pos_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   TrajectoryWaypointType *arg1 = (TrajectoryWaypointType *) 0 ;
-  CartesianPosition arg2 ;
-  CartesianPosition *argp2 ;
+  CartesianPosition *arg2 = (CartesianPosition *) 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(TrajectoryWaypointType **)&jarg1; 
-  argp2 = *(CartesianPosition **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null CartesianPosition");
-    return ;
-  }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->pos = arg2;
+  arg2 = *(CartesianPosition **)&jarg2; 
+  if (arg1) (arg1)->pos = *arg2;
 }
 
 
 SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointType_1pos_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   TrajectoryWaypointType *arg1 = (TrajectoryWaypointType *) 0 ;
-  CartesianPosition result;
+  CartesianPosition *result = 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
   arg1 = *(TrajectoryWaypointType **)&jarg1; 
-  result =  ((arg1)->pos);
-  *(CartesianPosition **)&jresult = new CartesianPosition((const CartesianPosition &)result); 
+  result = (CartesianPosition *)& ((arg1)->pos);
+  *(CartesianPosition **)&jresult = result; 
   return jresult;
 }
 
@@ -6724,36 +6864,31 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_PeerObjectIn
 }
 
 
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_PeerObjectInjectionType_1position_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_PeerObjectInjectionType_1position_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   PeerObjectInjectionType *arg1 = (PeerObjectInjectionType *) 0 ;
-  CartesianPosition arg2 ;
-  CartesianPosition *argp2 ;
+  CartesianPosition *arg2 = (CartesianPosition *) 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(PeerObjectInjectionType **)&jarg1; 
-  argp2 = *(CartesianPosition **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null CartesianPosition");
-    return ;
-  }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->position = arg2;
+  arg2 = *(CartesianPosition **)&jarg2; 
+  if (arg1) (arg1)->position = *arg2;
 }
 
 
 SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_PeerObjectInjectionType_1position_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   PeerObjectInjectionType *arg1 = (PeerObjectInjectionType *) 0 ;
-  CartesianPosition result;
+  CartesianPosition *result = 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
   arg1 = *(PeerObjectInjectionType **)&jarg1; 
-  result =  ((arg1)->position);
-  *(CartesianPosition **)&jresult = new CartesianPosition((const CartesianPosition &)result); 
+  result = (CartesianPosition *)& ((arg1)->position);
+  *(CartesianPosition **)&jresult = result; 
   return jresult;
 }
 
@@ -8107,7 +8242,7 @@ SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1Gener
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeMONRMessage(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jlong jarg3, jlong jarg4, jshort jarg5, jshort jarg6, jshort jarg7, jshort jarg8, jstring jarg9, jlong jarg10, jchar jarg11) {
+SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeMONRMessage(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jlong jarg4, jshort jarg5, jshort jarg6, jshort jarg7, jshort jarg8, jstring jarg9, jlong jarg10, jchar jarg11) {
   jint jresult = 0 ;
   timeval *arg1 = (timeval *) 0 ;
   CartesianPosition arg2 ;
@@ -8128,6 +8263,7 @@ SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeMONRMes
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(timeval **)&jarg1; 
   argp2 = *(CartesianPosition **)&jarg2; 
   if (!argp2) {
@@ -8239,7 +8375,7 @@ SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeTRAJMes
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeTRAJMessagePoint(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jlong jarg3, jlong jarg4, jfloat jarg5, jstring jarg6, jlong jarg7, jchar jarg8) {
+SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeTRAJMessagePoint(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jlong jarg4, jfloat jarg5, jstring jarg6, jlong jarg7, jchar jarg8) {
   jint jresult = 0 ;
   timeval *arg1 = (timeval *) 0 ;
   CartesianPosition arg2 ;
@@ -8257,6 +8393,7 @@ SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeTRAJMes
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(timeval **)&jarg1; 
   argp2 = *(CartesianPosition **)&jarg2; 
   if (!argp2) {
@@ -9387,6 +9524,196 @@ SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1timev
   (void)jenv;
   (void)jcls;
   arg1 = *(timeval **)&jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1xCoord_1m_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jdouble jarg2) {
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  double arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->xCoord_m = arg2;
+}
+
+
+SWIGEXPORT jdouble JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1xCoord_1m_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jdouble jresult = 0 ;
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  double result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  result = (double) ((arg1)->xCoord_m);
+  jresult = (jdouble)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1yCoord_1m_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jdouble jarg2) {
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  double arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->yCoord_m = arg2;
+}
+
+
+SWIGEXPORT jdouble JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1yCoord_1m_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jdouble jresult = 0 ;
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  double result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  result = (double) ((arg1)->yCoord_m);
+  jresult = (jdouble)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1zCoord_1m_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jdouble jarg2) {
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  double arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->zCoord_m = arg2;
+}
+
+
+SWIGEXPORT jdouble JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1zCoord_1m_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jdouble jresult = 0 ;
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  double result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  result = (double) ((arg1)->zCoord_m);
+  jresult = (jdouble)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1heading_1rad_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jdouble jarg2) {
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  double arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->heading_rad = arg2;
+}
+
+
+SWIGEXPORT jdouble JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1heading_1rad_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jdouble jresult = 0 ;
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  double result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  result = (double) ((arg1)->heading_rad);
+  jresult = (jdouble)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1isPositionValid_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jboolean jarg2) {
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  bool arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  arg2 = jarg2 ? true : false; 
+  if (arg1) (arg1)->isPositionValid = arg2;
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1isPositionValid_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  result = (bool) ((arg1)->isPositionValid);
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1isHeadingValid_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jboolean jarg2) {
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  bool arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  arg2 = jarg2 ? true : false; 
+  if (arg1) (arg1)->isHeadingValid = arg2;
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_CartesianPosition_1isHeadingValid_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(CartesianPosition **)&jarg1; 
+  result = (bool) ((arg1)->isHeadingValid);
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1CartesianPosition(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  CartesianPosition *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (CartesianPosition *)new CartesianPosition();
+  *(CartesianPosition **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1CartesianPosition(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  CartesianPosition *arg1 = (CartesianPosition *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(CartesianPosition **)&jarg1; 
   delete arg1;
 }
 

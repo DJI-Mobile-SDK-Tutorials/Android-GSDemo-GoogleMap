@@ -468,10 +468,11 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 Double xlim = (radlim*Math.cos(0));
                 Double ylim =  (radlim*Math.sin(Math.PI/2));
                 Button button = (Button)findViewById(R.id.pauseresume);
-                if(pc.x > fp.x - xlim  &&  pc.x < fp.x + xlim && pc.y > fp.y - ylim  &&  pc.y < fp.y + ylim ){
+                if(pc.x > fp.x - xlim  &&  pc.x < fp.x + xlim && pc.y > fp.y - ylim  &&  pc.y < fp.y + ylim && drone.getCurrentStateName().equals("Armed") && !(button.getText().equals("Armed"))){
                     //&& button.getText().equals("Arming")
                    pauseWaypointMission();
                    button.setText("Armed");
+
                 }
 
                 final StringBuffer positionStatusString = new StringBuffer();
@@ -497,13 +498,13 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         Log.wtf("Error", "Drone is in: " + drone.getCurrentStateName());
         //SetMonr data
         CartesianPosition dronePos = new CartesianPosition();
-        dronePos.setXCoord_m(1);
-        dronePos.setYCoord_m(2);
-        dronePos.setZCoord_m(3);
-        dronePos.setHeading_rad(6);
+        dronePos.setXCoord_m(12.3);
+        dronePos.setYCoord_m(2.34);
+        dronePos.setZCoord_m(3.45);
+        dronePos.setHeading_rad(4.56);
         dronePos.setIsPositionValid(true);
         dronePos.setIsHeadingValid(true);
-        //drone.setPosition(dronePos);
+        drone.setPosition(dronePos);
 
         if (drone.getCurrentStateName().equals("Init") && lastDroneState != "Init") {
             Log.wtf("Error", "Init");

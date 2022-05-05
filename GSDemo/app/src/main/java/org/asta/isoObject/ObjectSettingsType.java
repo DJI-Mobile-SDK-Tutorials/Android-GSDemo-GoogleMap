@@ -44,12 +44,13 @@ public class ObjectSettingsType {
     return isoObject_wrapJNI.ObjectSettingsType_desiredTransmitterID_get(swigCPtr, this);
   }
 
-  public void setCoordinateSystemOrigin(SWIGTYPE_p_GeographicPositionType value) {
-    isoObject_wrapJNI.ObjectSettingsType_coordinateSystemOrigin_set(swigCPtr, this, SWIGTYPE_p_GeographicPositionType.getCPtr(value));
+  public void setCoordinateSystemOrigin(GeographicPositionType value) {
+    isoObject_wrapJNI.ObjectSettingsType_coordinateSystemOrigin_set(swigCPtr, this, GeographicPositionType.getCPtr(value), value);
   }
 
-  public SWIGTYPE_p_GeographicPositionType getCoordinateSystemOrigin() {
-    return new SWIGTYPE_p_GeographicPositionType(isoObject_wrapJNI.ObjectSettingsType_coordinateSystemOrigin_get(swigCPtr, this), true);
+  public GeographicPositionType getCoordinateSystemOrigin() {
+    long cPtr = isoObject_wrapJNI.ObjectSettingsType_coordinateSystemOrigin_get(swigCPtr, this);
+    return (cPtr == 0) ? null : new GeographicPositionType(cPtr, false);
   }
 
   public void setCurrentTime(timeval value) {

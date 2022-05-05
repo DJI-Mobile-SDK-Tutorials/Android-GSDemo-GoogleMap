@@ -15,6 +15,7 @@ public class isoObject_wrapJNI {
   public final static native boolean TrajDecoder_ExpectingTrajPoints(long jarg1, TrajDecoder jarg1_);
   public final static native long TrajDecoder_getTrajHeader(long jarg1, TrajDecoder jarg1_);
   public final static native long TrajDecoder_getTraj(long jarg1, TrajDecoder jarg1_);
+  public final static native long TrajDecoder_getTrajPointAt(long jarg1, TrajDecoder jarg1_, int jarg2);
   public final static native void delete_TrajDecoder(long jarg1);
   public final static native int ISO_OBJECT_STATE_UNKNOWN_get();
   public final static native int ISO_OBJECT_STATE_OFF_get();
@@ -97,6 +98,7 @@ public class isoObject_wrapJNI {
   public final static native long TestObject_getOrigin(long jarg1, TestObject jarg1_);
   public final static native String TestObject_getLocalIP(long jarg1, TestObject jarg1_);
   public final static native long TestObject_getTransmitterID(long jarg1, TestObject jarg1_);
+  public final static native long TestObject_getTrajectoryWaypointAt(long jarg1, TestObject jarg1_, int jarg2);
   public final static native void TestObject_handleAbort(long jarg1, TestObject jarg1_);
   public final static native void TestObject_setPosition(long jarg1, TestObject jarg1_, long jarg2, CartesianPosition jarg2_);
   public final static native void TestObject_setSpeed(long jarg1, TestObject jarg1_, long jarg2);
@@ -176,7 +178,7 @@ public class isoObject_wrapJNI {
   public final static native int ISO_22133_DEFAULT_OBJECT_TCP_PORT_get();
   public final static native void ObjectSettingsType_desiredTransmitterID_set(long jarg1, ObjectSettingsType jarg1_, long jarg2);
   public final static native long ObjectSettingsType_desiredTransmitterID_get(long jarg1, ObjectSettingsType jarg1_);
-  public final static native void ObjectSettingsType_coordinateSystemOrigin_set(long jarg1, ObjectSettingsType jarg1_, long jarg2);
+  public final static native void ObjectSettingsType_coordinateSystemOrigin_set(long jarg1, ObjectSettingsType jarg1_, long jarg2, GeographicPositionType jarg2_);
   public final static native long ObjectSettingsType_coordinateSystemOrigin_get(long jarg1, ObjectSettingsType jarg1_);
   public final static native void ObjectSettingsType_currentTime_set(long jarg1, ObjectSettingsType jarg1_, long jarg2, timeval jarg2_);
   public final static native long ObjectSettingsType_currentTime_get(long jarg1, ObjectSettingsType jarg1_);
@@ -664,6 +666,20 @@ public class isoObject_wrapJNI {
   public final static native boolean CartesianPosition_isHeadingValid_get(long jarg1, CartesianPosition jarg1_);
   public final static native long new_CartesianPosition();
   public final static native void delete_CartesianPosition(long jarg1);
+  public final static native void GeographicPositionType_latitude_deg_set(long jarg1, GeographicPositionType jarg1_, double jarg2);
+  public final static native double GeographicPositionType_latitude_deg_get(long jarg1, GeographicPositionType jarg1_);
+  public final static native void GeographicPositionType_longitude_deg_set(long jarg1, GeographicPositionType jarg1_, double jarg2);
+  public final static native double GeographicPositionType_longitude_deg_get(long jarg1, GeographicPositionType jarg1_);
+  public final static native void GeographicPositionType_altitude_m_set(long jarg1, GeographicPositionType jarg1_, double jarg2);
+  public final static native double GeographicPositionType_altitude_m_get(long jarg1, GeographicPositionType jarg1_);
+  public final static native void GeographicPositionType_isLatitudeValid_set(long jarg1, GeographicPositionType jarg1_, boolean jarg2);
+  public final static native boolean GeographicPositionType_isLatitudeValid_get(long jarg1, GeographicPositionType jarg1_);
+  public final static native void GeographicPositionType_isLongitudeValid_set(long jarg1, GeographicPositionType jarg1_, boolean jarg2);
+  public final static native boolean GeographicPositionType_isLongitudeValid_get(long jarg1, GeographicPositionType jarg1_);
+  public final static native void GeographicPositionType_isAltitudeValid_set(long jarg1, GeographicPositionType jarg1_, boolean jarg2);
+  public final static native boolean GeographicPositionType_isAltitudeValid_get(long jarg1, GeographicPositionType jarg1_);
+  public final static native long new_GeographicPositionType();
+  public final static native void delete_GeographicPositionType(long jarg1);
   public final static native long Unknown_SWIGUpcast(long jarg1);
   public final static native long Off_SWIGUpcast(long jarg1);
   public final static native long Init_SWIGUpcast(long jarg1);

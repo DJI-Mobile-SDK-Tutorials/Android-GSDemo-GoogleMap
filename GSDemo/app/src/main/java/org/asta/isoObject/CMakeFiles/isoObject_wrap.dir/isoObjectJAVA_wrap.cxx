@@ -350,6 +350,23 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajDecoder_
 }
 
 
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajDecoder_1getTrajPointAt(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  jlong jresult = 0 ;
+  TrajDecoder *arg1 = (TrajDecoder *) 0 ;
+  int arg2 ;
+  TrajectoryWaypointType result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(TrajDecoder **)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (arg1)->getTrajPointAt(arg2);
+  *(TrajectoryWaypointType **)&jresult = new TrajectoryWaypointType((const TrajectoryWaypointType &)result); 
+  return jresult;
+}
+
+
 SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1TrajDecoder(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   TrajDecoder *arg1 = (TrajDecoder *) 0 ;
   
@@ -1447,6 +1464,23 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1
   arg1 = *(ISO22133::TestObject **)&jarg1; 
   result = (uint32_t)((ISO22133::TestObject const *)arg1)->getTransmitterID();
   jresult = (jlong)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1getTrajectoryWaypointAt(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  jlong jresult = 0 ;
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  int arg2 ;
+  TrajectoryWaypointType result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (arg1)->getTrajectoryWaypointAt(arg2);
+  *(TrajectoryWaypointType **)&jresult = new TrajectoryWaypointType((const TrajectoryWaypointType &)result); 
   return jresult;
 }
 
@@ -2689,36 +2723,31 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_ObjectSettin
 }
 
 
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_ObjectSettingsType_1coordinateSystemOrigin_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_ObjectSettingsType_1coordinateSystemOrigin_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   ObjectSettingsType *arg1 = (ObjectSettingsType *) 0 ;
-  GeographicPositionType arg2 ;
-  GeographicPositionType *argp2 ;
+  GeographicPositionType *arg2 = (GeographicPositionType *) 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(ObjectSettingsType **)&jarg1; 
-  argp2 = *(GeographicPositionType **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null GeographicPositionType");
-    return ;
-  }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->coordinateSystemOrigin = arg2;
+  arg2 = *(GeographicPositionType **)&jarg2; 
+  if (arg1) (arg1)->coordinateSystemOrigin = *arg2;
 }
 
 
 SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_ObjectSettingsType_1coordinateSystemOrigin_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   ObjectSettingsType *arg1 = (ObjectSettingsType *) 0 ;
-  GeographicPositionType result;
+  GeographicPositionType *result = 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
   arg1 = *(ObjectSettingsType **)&jarg1; 
-  result =  ((arg1)->coordinateSystemOrigin);
-  *(GeographicPositionType **)&jresult = new GeographicPositionType((const GeographicPositionType &)result); 
+  result = (GeographicPositionType *)& ((arg1)->coordinateSystemOrigin);
+  *(GeographicPositionType **)&jresult = result; 
   return jresult;
 }
 
@@ -9714,6 +9743,196 @@ SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1Carte
   (void)jenv;
   (void)jcls;
   arg1 = *(CartesianPosition **)&jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1latitude_1deg_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jdouble jarg2) {
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  double arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->latitude_deg = arg2;
+}
+
+
+SWIGEXPORT jdouble JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1latitude_1deg_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jdouble jresult = 0 ;
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  double result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  result = (double) ((arg1)->latitude_deg);
+  jresult = (jdouble)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1longitude_1deg_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jdouble jarg2) {
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  double arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->longitude_deg = arg2;
+}
+
+
+SWIGEXPORT jdouble JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1longitude_1deg_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jdouble jresult = 0 ;
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  double result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  result = (double) ((arg1)->longitude_deg);
+  jresult = (jdouble)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1altitude_1m_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jdouble jarg2) {
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  double arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->altitude_m = arg2;
+}
+
+
+SWIGEXPORT jdouble JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1altitude_1m_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jdouble jresult = 0 ;
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  double result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  result = (double) ((arg1)->altitude_m);
+  jresult = (jdouble)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1isLatitudeValid_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jboolean jarg2) {
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  bool arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  arg2 = jarg2 ? true : false; 
+  if (arg1) (arg1)->isLatitudeValid = arg2;
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1isLatitudeValid_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  result = (bool) ((arg1)->isLatitudeValid);
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1isLongitudeValid_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jboolean jarg2) {
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  bool arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  arg2 = jarg2 ? true : false; 
+  if (arg1) (arg1)->isLongitudeValid = arg2;
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1isLongitudeValid_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  result = (bool) ((arg1)->isLongitudeValid);
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1isAltitudeValid_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jboolean jarg2) {
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  bool arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  arg2 = jarg2 ? true : false; 
+  if (arg1) (arg1)->isAltitudeValid = arg2;
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_GeographicPositionType_1isAltitudeValid_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(GeographicPositionType **)&jarg1; 
+  result = (bool) ((arg1)->isAltitudeValid);
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1GeographicPositionType(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  GeographicPositionType *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (GeographicPositionType *)new GeographicPositionType();
+  *(GeographicPositionType **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1GeographicPositionType(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  GeographicPositionType *arg1 = (GeographicPositionType *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(GeographicPositionType **)&jarg1; 
   delete arg1;
 }
 

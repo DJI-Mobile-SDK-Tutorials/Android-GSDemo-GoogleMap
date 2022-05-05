@@ -84,8 +84,8 @@ public class TestObject {
     return new SWIGTYPE_p_std__vectorT_TrajectoryWaypointType_t(isoObject_wrapJNI.TestObject_getTrajectory(swigCPtr, this), true);
   }
 
-  public SWIGTYPE_p_GeographicPositionType getOrigin() {
-    return new SWIGTYPE_p_GeographicPositionType(isoObject_wrapJNI.TestObject_getOrigin(swigCPtr, this), true);
+  public GeographicPositionType getOrigin() {
+    return new GeographicPositionType(isoObject_wrapJNI.TestObject_getOrigin(swigCPtr, this), true);
   }
 
   public String getLocalIP() {

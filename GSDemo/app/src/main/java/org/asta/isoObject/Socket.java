@@ -40,8 +40,6 @@ public class Socket extends BasicSocket {
     this(isoObject_wrapJNI.new_Socket(Socket.getCPtr(other), other), true);
   }
 
-
-
   public Socket sockEqualsRef(Socket other) {
     return new Socket(isoObject_wrapJNI.Socket_sockEqualsRef(swigCPtr, this, Socket.getCPtr(other), other), false);
   }

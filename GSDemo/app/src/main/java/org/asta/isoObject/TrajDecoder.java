@@ -60,4 +60,8 @@ public class TrajDecoder {
     return new SWIGTYPE_p_std__vectorT_TrajectoryWaypointType_t(isoObject_wrapJNI.TrajDecoder_getTraj(swigCPtr, this), true);
   }
 
+  public TrajectoryWaypointType getTrajPointAt(int index) {
+    return new TrajectoryWaypointType(isoObject_wrapJNI.TrajDecoder_getTrajPointAt(swigCPtr, this, index), true);
+  }
+
 }

@@ -43,8 +43,8 @@ public class MApplication extends Application {
     public void onCreate() {
 
         super.onCreate();
-       // Task droneTask = new Task();
-       // droneTask.run();
+        //Task droneTask = new Task();
+        //droneTask.run();
 
 
         fpvDemoApplication.onCreate();
@@ -76,6 +76,20 @@ class Task implements Runnable {
                 dronePos.setIsPositionValid(true);
                 dronePos.setIsHeadingValid(true);
                 drone.setPosition(dronePos);
+
+                //Log.wtf("Lat: ", String.valueOf(drone.getOrigin().getLatitude_deg()));
+                //Log.wtf("Log: ", String.valueOf(drone.getOrigin().getLongitude_deg()));
+                //Log.wtf("alt: ", String.valueOf(drone.getOrigin().getAltitude_m()));
+
+                if(drone.getCurrentStateName().equals("Armed")) {
+                    Log.wtf("TrajName: ", drone.getTrajectoryHeader().getTrajectoryName());
+                    Log.wtf("TrajFirstPointX: ", String.valueOf(drone.getTrajectoryWaypointAt(1).getPos().getXCoord_m()));
+
+                    //int trajSize = (int) drone.getTrajectoryHeader().getTrajectoryLength();
+                    //Log.wtf("TrajLastPointX: ", String.valueOf(drone.getTrajectoryWaypointAt(trajSize).getPos().getXCoord_m()));
+                }
+
+                //Log.wtf("TrajName: ", drone.getTrajectory());
 
 //
             } catch (InterruptedException e) {

@@ -111,7 +111,6 @@ public class BasicSocket {
   }
 
 
-
   public BasicSocket basicSockEqualsRef(BasicSocket other) {
     return new BasicSocket(isoObject_wrapJNI.BasicSocket_basicSockEqualsRef(swigCPtr, this, BasicSocket.getCPtr(other), other), false);
   }

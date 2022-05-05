@@ -498,12 +498,18 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         Log.wtf("Error", "Drone is in: " + drone.getCurrentStateName());
         //SetMonr data
         CartesianPosition dronePos = new CartesianPosition();
-        dronePos.setXCoord_m(12.3);
-        dronePos.setYCoord_m(2.34);
-        dronePos.setZCoord_m(3.45);
-        dronePos.setHeading_rad(4.56);
-        dronePos.setIsPositionValid(true);
-        dronePos.setIsHeadingValid(true);
+
+        //Log.wtf("Lat: ", String.valueOf(drone.getOrigin().getLatitude_deg()));
+        //Log.wtf("Log: ", String.valueOf(drone.getOrigin().getLongitude_deg()));
+        //Log.wtf("alt: ", String.valueOf(drone.getOrigin().getAltitude_m()));
+
+       //INSERT X,Y,Z values for drone:
+       // dronePos.setXCoord_m(INSERTX);
+       // dronePos.setYCoord_m(INSERTY);
+       // dronePos.setZCoord_m(INSERTZ);
+       // dronePos.setHeading_rad(INSERTHEADING);
+       // dronePos.setIsPositionValid(true);
+       // dronePos.setIsHeadingValid(true);
         drone.setPosition(dronePos);
 
         if (drone.getCurrentStateName().equals("Init") && lastDroneState != "Init") {

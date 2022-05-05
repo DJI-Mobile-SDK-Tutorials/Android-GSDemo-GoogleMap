@@ -118,6 +118,16 @@ iso22133object.hpp
 iso22133state.hpp
 /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.hpp
 
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp
+iostream
+-
+mutex
+-
+trajDecoder.hpp
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.hpp
+iso22133.h
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133.h
+
 /home/konglobemeralt/Documents/gitz/util/C/sockets/server.hpp
 socket.hpp
 /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.hpp

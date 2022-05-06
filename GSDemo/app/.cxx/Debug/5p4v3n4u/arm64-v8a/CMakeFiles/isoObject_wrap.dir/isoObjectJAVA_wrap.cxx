@@ -350,6 +350,23 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajDecoder_
 }
 
 
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajDecoder_1getTrajPointAt(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  jlong jresult = 0 ;
+  TrajDecoder *arg1 = (TrajDecoder *) 0 ;
+  int arg2 ;
+  TrajectoryWaypointType result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(TrajDecoder **)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (arg1)->getTrajPointAt(arg2);
+  *(TrajectoryWaypointType **)&jresult = new TrajectoryWaypointType((const TrajectoryWaypointType &)result); 
+  return jresult;
+}
+
+
 SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1TrajDecoder(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   TrajDecoder *arg1 = (TrajDecoder *) 0 ;
   
@@ -1447,6 +1464,23 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1
   arg1 = *(ISO22133::TestObject **)&jarg1; 
   result = (uint32_t)((ISO22133::TestObject const *)arg1)->getTransmitterID();
   jresult = (jlong)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1getTrajectoryWaypointAt(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  jlong jresult = 0 ;
+  ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
+  int arg2 ;
+  TrajectoryWaypointType result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(ISO22133::TestObject **)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (arg1)->getTrajectoryWaypointAt(arg2);
+  *(TrajectoryWaypointType **)&jresult = new TrajectoryWaypointType((const TrajectoryWaypointType &)result); 
   return jresult;
 }
 

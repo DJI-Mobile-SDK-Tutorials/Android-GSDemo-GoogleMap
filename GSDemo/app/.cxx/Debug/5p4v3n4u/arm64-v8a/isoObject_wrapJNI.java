@@ -15,6 +15,7 @@ public class isoObject_wrapJNI {
   public final static native boolean TrajDecoder_ExpectingTrajPoints(long jarg1, TrajDecoder jarg1_);
   public final static native long TrajDecoder_getTrajHeader(long jarg1, TrajDecoder jarg1_);
   public final static native long TrajDecoder_getTraj(long jarg1, TrajDecoder jarg1_);
+  public final static native long TrajDecoder_getTrajPointAt(long jarg1, TrajDecoder jarg1_, int jarg2);
   public final static native void delete_TrajDecoder(long jarg1);
   public final static native int ISO_OBJECT_STATE_UNKNOWN_get();
   public final static native int ISO_OBJECT_STATE_OFF_get();
@@ -97,6 +98,7 @@ public class isoObject_wrapJNI {
   public final static native long TestObject_getOrigin(long jarg1, TestObject jarg1_);
   public final static native String TestObject_getLocalIP(long jarg1, TestObject jarg1_);
   public final static native long TestObject_getTransmitterID(long jarg1, TestObject jarg1_);
+  public final static native long TestObject_getTrajectoryWaypointAt(long jarg1, TestObject jarg1_, int jarg2);
   public final static native void TestObject_handleAbort(long jarg1, TestObject jarg1_);
   public final static native void TestObject_setPosition(long jarg1, TestObject jarg1_, long jarg2, CartesianPosition jarg2_);
   public final static native void TestObject_setSpeed(long jarg1, TestObject jarg1_, long jarg2);

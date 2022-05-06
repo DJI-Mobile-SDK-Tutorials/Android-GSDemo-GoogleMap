@@ -497,20 +497,34 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         }
         Log.wtf("Error", "Drone is in: " + drone.getCurrentStateName());
         //SetMonr data
-        CartesianPosition dronePos = new CartesianPosition();
-
         //Log.wtf("Lat: ", String.valueOf(drone.getOrigin().getLatitude_deg()));
         //Log.wtf("Log: ", String.valueOf(drone.getOrigin().getLongitude_deg()));
         //Log.wtf("alt: ", String.valueOf(drone.getOrigin().getAltitude_m()));
 
-       //INSERT X,Y,Z values for drone:
-       // dronePos.setXCoord_m(INSERTX);
-       // dronePos.setYCoord_m(INSERTY);
-       // dronePos.setZCoord_m(INSERTZ);
-       // dronePos.setHeading_rad(INSERTHEADING);
-       // dronePos.setIsPositionValid(true);
-       // dronePos.setIsHeadingValid(true);
-        drone.setPosition(dronePos);
+        if (drone.getCurrentStateName().equals("Armed") || (drone.getCurrentStateName().equals("Running"))) {
+
+            double isoLat = drone.getOrigin().getLatitude_deg();
+            double isoLog = drone.getOrigin().getLongitude_deg();
+
+            LatLng isoOrigin = new LatLng(isoLat, isoLog);
+
+            ProjCoordinate dronePosition = new ProjCoordinate(droneLocationLat, droneLocationLng);
+            ProjCoordinate result = coordGeoToCart(isoOrigin, dronePosition);
+
+            CartesianPosition monrPos = new CartesianPosition();
+            monrPos.setXCoord_m(result.x);
+            monrPos.setYCoord_m(result.y);
+            monrPos.setZCoord_m(droneAltitude);
+            monrPos.setIsPositionValid(true);
+
+            LatLng droneStart = new LatLng(droneLocationLat, droneLocationLng);
+            ProjCoordinate pc = coordGeoToCart(droneStart, dronePosition);
+            double heading = Math.acos(pc.x / (Math.sqrt(Math.pow(pc.x, 2) + Math.pow(pc.y, 2))));
+            monrPos.setHeading_rad(heading);
+            monrPos.setIsHeadingValid(true);
+
+            drone.setPosition(monrPos);
+        }
 
         if (drone.getCurrentStateName().equals("Init") && lastDroneState != "Init") {
             Log.wtf("Error", "Init");
@@ -561,6 +575,12 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         } else if (drone.getCurrentStateName().equals("EmergencyStop") && lastDroneState != "EmergencyStop") {
             Log.wtf("Error", "EmergencyStop");
             lastDroneState = "EmergencyStop";
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    stopWaypointMission();
+                }});
+
         }
 
         runOnUiThread(new Runnable() {

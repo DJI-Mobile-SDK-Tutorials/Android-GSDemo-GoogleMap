@@ -96,6 +96,10 @@ public class TestObject {
     return isoObject_wrapJNI.TestObject_getTransmitterID(swigCPtr, this);
   }
 
+  public TrajectoryWaypointType getTrajectoryWaypointAt(int index) {
+    return new TrajectoryWaypointType(isoObject_wrapJNI.TestObject_getTrajectoryWaypointAt(swigCPtr, this, index), true);
+  }
+
   public void handleAbort() {
     isoObject_wrapJNI.TestObject_handleAbort(swigCPtr, this);
   }

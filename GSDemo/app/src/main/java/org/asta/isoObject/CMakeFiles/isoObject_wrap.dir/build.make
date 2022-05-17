@@ -63,15 +63,15 @@ include CMakeFiles/isoObject_wrap.dir/flags.make
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: CMakeFiles/isoObject_wrap.dir/flags.make
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx
 
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.i"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx > CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx > CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.i
 
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.s"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx -o CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx -o CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.s
 
 # Object files for target isoObject_wrap
 isoObject_wrap_OBJECTS = \
@@ -85,6 +85,8 @@ libisoObject_wrap.so: CMakeFiles/isoObject_wrap.dir/build.make
 libisoObject_wrap.so: libISO_object.so
 libisoObject_wrap.so: sockets/libTCPUDPSocket.so
 libisoObject_wrap.so: iso22133/libISO22133.so
+libisoObject_wrap.so: /usr/lib/jvm/java-11-openjdk-amd64/lib/libjawt.so
+libisoObject_wrap.so: /usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so
 libisoObject_wrap.so: CMakeFiles/isoObject_wrap.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libisoObject_wrap.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/isoObject_wrap.dir/link.txt --verbose=$(VERBOSE)

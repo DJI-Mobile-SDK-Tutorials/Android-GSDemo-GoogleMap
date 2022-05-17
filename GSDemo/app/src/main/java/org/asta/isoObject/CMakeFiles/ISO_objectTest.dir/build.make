@@ -63,15 +63,15 @@ include CMakeFiles/ISO_objectTest.dir/flags.make
 CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.o: CMakeFiles/ISO_objectTest.dir/flags.make
 CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.o: ../testIsoObject.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.o"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/testIsoObject.cpp
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/testIsoObject.cpp
 
 CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.i"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/testIsoObject.cpp > CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/testIsoObject.cpp > CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.i
 
 CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.s"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/testIsoObject.cpp -o CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/testIsoObject.cpp -o CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.s
 
 # Object files for target ISO_objectTest
 ISO_objectTest_OBJECTS = \

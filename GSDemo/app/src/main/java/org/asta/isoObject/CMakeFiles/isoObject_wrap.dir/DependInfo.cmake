@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx" "/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o"
   )
-set(CMAKE_CXX_COMPILER_ID "Clang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
@@ -19,6 +19,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../sigslot/include/sigslot"
   "../../../iso22133"
   "../../../sockets"
+  "/usr/lib/jvm/java-11-openjdk-amd64/include"
+  "/usr/lib/jvm/java-11-openjdk-amd64/include/linux"
   "/home/konglobemeralt/Documents/gitz/util/C/isoObject../iso22133"
   "/home/konglobemeralt/Documents/gitz/util/C/sockets"
   "/home/konglobemeralt/Documents/gitz/util/C/iso22133"

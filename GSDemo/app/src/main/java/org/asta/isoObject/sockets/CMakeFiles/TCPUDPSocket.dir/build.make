@@ -63,80 +63,80 @@ include sockets/CMakeFiles/TCPUDPSocket.dir/flags.make
 sockets/CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.o: sockets/CMakeFiles/TCPUDPSocket.dir/flags.make
 sockets/CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/canhandler.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object sockets/CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/canhandler.cpp
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/canhandler.cpp
 
 sockets/CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/canhandler.cpp > CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.i
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/canhandler.cpp > CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.i
 
 sockets/CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/canhandler.cpp -o CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.s
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/canhandler.cpp -o CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.s
 
 sockets/CMakeFiles/TCPUDPSocket.dir/socket.cpp.o: sockets/CMakeFiles/TCPUDPSocket.dir/flags.make
 sockets/CMakeFiles/TCPUDPSocket.dir/socket.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object sockets/CMakeFiles/TCPUDPSocket.dir/socket.cpp.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/socket.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.cpp
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/socket.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.cpp
 
 sockets/CMakeFiles/TCPUDPSocket.dir/socket.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCPUDPSocket.dir/socket.cpp.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.cpp > CMakeFiles/TCPUDPSocket.dir/socket.cpp.i
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.cpp > CMakeFiles/TCPUDPSocket.dir/socket.cpp.i
 
 sockets/CMakeFiles/TCPUDPSocket.dir/socket.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCPUDPSocket.dir/socket.cpp.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.cpp -o CMakeFiles/TCPUDPSocket.dir/socket.cpp.s
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.cpp -o CMakeFiles/TCPUDPSocket.dir/socket.cpp.s
 
 sockets/CMakeFiles/TCPUDPSocket.dir/client.cpp.o: sockets/CMakeFiles/TCPUDPSocket.dir/flags.make
 sockets/CMakeFiles/TCPUDPSocket.dir/client.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/client.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object sockets/CMakeFiles/TCPUDPSocket.dir/client.cpp.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/client.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/client.cpp
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/client.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/client.cpp
 
 sockets/CMakeFiles/TCPUDPSocket.dir/client.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCPUDPSocket.dir/client.cpp.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/client.cpp > CMakeFiles/TCPUDPSocket.dir/client.cpp.i
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/client.cpp > CMakeFiles/TCPUDPSocket.dir/client.cpp.i
 
 sockets/CMakeFiles/TCPUDPSocket.dir/client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCPUDPSocket.dir/client.cpp.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/client.cpp -o CMakeFiles/TCPUDPSocket.dir/client.cpp.s
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/client.cpp -o CMakeFiles/TCPUDPSocket.dir/client.cpp.s
 
 sockets/CMakeFiles/TCPUDPSocket.dir/server.cpp.o: sockets/CMakeFiles/TCPUDPSocket.dir/flags.make
 sockets/CMakeFiles/TCPUDPSocket.dir/server.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/server.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object sockets/CMakeFiles/TCPUDPSocket.dir/server.cpp.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/server.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/server.cpp
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/server.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/server.cpp
 
 sockets/CMakeFiles/TCPUDPSocket.dir/server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCPUDPSocket.dir/server.cpp.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/server.cpp > CMakeFiles/TCPUDPSocket.dir/server.cpp.i
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/server.cpp > CMakeFiles/TCPUDPSocket.dir/server.cpp.i
 
 sockets/CMakeFiles/TCPUDPSocket.dir/server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCPUDPSocket.dir/server.cpp.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/server.cpp -o CMakeFiles/TCPUDPSocket.dir/server.cpp.s
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/server.cpp -o CMakeFiles/TCPUDPSocket.dir/server.cpp.s
 
 sockets/CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.o: sockets/CMakeFiles/TCPUDPSocket.dir/flags.make
 sockets/CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/tcphandler.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object sockets/CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/tcphandler.cpp
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/tcphandler.cpp
 
 sockets/CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/tcphandler.cpp > CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.i
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/tcphandler.cpp > CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.i
 
 sockets/CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/tcphandler.cpp -o CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.s
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/tcphandler.cpp -o CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.s
 
 sockets/CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.o: sockets/CMakeFiles/TCPUDPSocket.dir/flags.make
 sockets/CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/udphandler.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object sockets/CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/udphandler.cpp
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/udphandler.cpp
 
 sockets/CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/udphandler.cpp > CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.i
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/udphandler.cpp > CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.i
 
 sockets/CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/udphandler.cpp -o CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.s
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/udphandler.cpp -o CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.s
 
 # Object files for target TCPUDPSocket
 TCPUDPSocket_OBJECTS = \

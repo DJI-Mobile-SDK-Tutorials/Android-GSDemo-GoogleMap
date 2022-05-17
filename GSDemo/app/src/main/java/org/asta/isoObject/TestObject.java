@@ -64,8 +64,8 @@ public class TestObject {
     return new CartesianPosition(isoObject_wrapJNI.TestObject_getPosition(swigCPtr, this), true);
   }
 
-  public SWIGTYPE_p_SpeedType getSpeed() {
-    return new SWIGTYPE_p_SpeedType(isoObject_wrapJNI.TestObject_getSpeed(swigCPtr, this), true);
+  public SpeedType getSpeed() {
+    return new SpeedType(isoObject_wrapJNI.TestObject_getSpeed(swigCPtr, this), true);
   }
 
   public SWIGTYPE_p_AccelerationType getAcceleration() {
@@ -80,8 +80,8 @@ public class TestObject {
     return new TrajectoryHeaderType(isoObject_wrapJNI.TestObject_getTrajectoryHeader(swigCPtr, this), true);
   }
 
-  public SWIGTYPE_p_std__vectorT_TrajectoryWaypointType_t getTrajectory() {
-    return new SWIGTYPE_p_std__vectorT_TrajectoryWaypointType_t(isoObject_wrapJNI.TestObject_getTrajectory(swigCPtr, this), true);
+  public TrajectoryWaypointVector getTrajectory() {
+    return new TrajectoryWaypointVector(isoObject_wrapJNI.TestObject_getTrajectory(swigCPtr, this), true);
   }
 
   public GeographicPositionType getOrigin() {
@@ -108,8 +108,8 @@ public class TestObject {
     isoObject_wrapJNI.TestObject_setPosition(swigCPtr, this, CartesianPosition.getCPtr(pos), pos);
   }
 
-  public void setSpeed(SWIGTYPE_p_SpeedType spd) {
-    isoObject_wrapJNI.TestObject_setSpeed(swigCPtr, this, SWIGTYPE_p_SpeedType.getCPtr(spd));
+  public void setSpeed(SpeedType spd) {
+    isoObject_wrapJNI.TestObject_setSpeed(swigCPtr, this, SpeedType.getCPtr(spd), spd);
   }
 
   public void setAcceleration(SWIGTYPE_p_AccelerationType acc) {

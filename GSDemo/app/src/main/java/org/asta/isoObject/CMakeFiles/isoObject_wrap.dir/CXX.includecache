@@ -166,3 +166,13 @@ cstdio
 iostream
 -
 
+/usr/lib/jvm/java-11-openjdk-amd64/include/jni.h
+stdio.h
+-
+stdarg.h
+-
+jni_md.h
+/usr/lib/jvm/java-11-openjdk-amd64/include/jni_md.h
+
+/usr/lib/jvm/java-11-openjdk-amd64/include/linux/jni_md.h
+

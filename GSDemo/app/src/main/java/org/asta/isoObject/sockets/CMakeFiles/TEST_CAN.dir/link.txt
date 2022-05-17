@@ -1,1 +1,1 @@
-/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  -funwind-tables -no-canonical-prefixes -fexceptions -frtti -stdlib=libc++ -g  -fPIE -pie -Wl,--gc-sections CMakeFiles/TEST_CAN.dir/test_can.cpp.o  -o TEST_CAN  libTCPUDPSocket.so  -static-libstdc++ -latomic -lm 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/TEST_CAN.dir/test_can.cpp.o  -o TEST_CAN  -Wl,-rpath,/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets libTCPUDPSocket.so 

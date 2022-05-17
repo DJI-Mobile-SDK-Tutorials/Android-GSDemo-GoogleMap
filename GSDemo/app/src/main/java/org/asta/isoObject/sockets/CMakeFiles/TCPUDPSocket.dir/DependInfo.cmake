@@ -11,7 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/konglobemeralt/Documents/gitz/util/C/sockets/tcphandler.cpp" "/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets/CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.o"
   "/home/konglobemeralt/Documents/gitz/util/C/sockets/udphandler.cpp" "/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets/CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "Clang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX

@@ -1,1 +1,1 @@
-/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 -fPIC -funwind-tables -no-canonical-prefixes -fexceptions -g  -shared -Wl,-soname,libISO22133.so -o libISO22133.so CMakeFiles/ISO22133.dir/positioning.c.o CMakeFiles/ISO22133.dir/iso22133.c.o  -lm  -latomic -lm 
+/usr/bin/cc -fPIC -g  -shared -Wl,-soname,libISO22133.so -o libISO22133.so CMakeFiles/ISO22133.dir/positioning.c.o CMakeFiles/ISO22133.dir/iso22133.c.o  -lm 

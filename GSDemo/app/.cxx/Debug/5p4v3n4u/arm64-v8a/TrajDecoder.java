@@ -56,8 +56,8 @@ public class TrajDecoder {
     return new TrajectoryHeaderType(isoObject_wrapJNI.TrajDecoder_getTrajHeader(swigCPtr, this), true);
   }
 
-  public SWIGTYPE_p_std__vectorT_TrajectoryWaypointType_t getTraj() {
-    return new SWIGTYPE_p_std__vectorT_TrajectoryWaypointType_t(isoObject_wrapJNI.TrajDecoder_getTraj(swigCPtr, this), true);
+  public TrajectoryWaypointVector getTraj() {
+    return new TrajectoryWaypointVector(isoObject_wrapJNI.TrajDecoder_getTraj(swigCPtr, this), true);
   }
 
   public TrajectoryWaypointType getTrajPointAt(int index) {

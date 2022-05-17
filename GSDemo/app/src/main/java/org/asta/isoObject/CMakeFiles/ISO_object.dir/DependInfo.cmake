@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp" "/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o"
   "/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp" "/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "Clang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX

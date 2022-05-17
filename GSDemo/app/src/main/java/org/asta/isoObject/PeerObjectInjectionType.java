@@ -70,12 +70,13 @@ public class PeerObjectInjectionType {
     return (cPtr == 0) ? null : new CartesianPosition(cPtr, false);
   }
 
-  public void setSpeed(SWIGTYPE_p_SpeedType value) {
-    isoObject_wrapJNI.PeerObjectInjectionType_speed_set(swigCPtr, this, SWIGTYPE_p_SpeedType.getCPtr(value));
+  public void setSpeed(SpeedType value) {
+    isoObject_wrapJNI.PeerObjectInjectionType_speed_set(swigCPtr, this, SpeedType.getCPtr(value), value);
   }
 
-  public SWIGTYPE_p_SpeedType getSpeed() {
-    return new SWIGTYPE_p_SpeedType(isoObject_wrapJNI.PeerObjectInjectionType_speed_get(swigCPtr, this), true);
+  public SpeedType getSpeed() {
+    long cPtr = isoObject_wrapJNI.PeerObjectInjectionType_speed_get(swigCPtr, this);
+    return (cPtr == 0) ? null : new SpeedType(cPtr, false);
   }
 
   public void setPitch_rad(double value) {

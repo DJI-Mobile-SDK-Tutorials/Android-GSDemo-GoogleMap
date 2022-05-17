@@ -9,6 +9,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.secneo.sdk.Helper;
 
 import org.asta.isoObject.CartesianPosition;
+import org.asta.isoObject.TrajectoryWaypointVector;
 import org.locationtech.proj4j.ProjCoordinate;
 
 public class MApplication extends Application {
@@ -45,10 +46,10 @@ public class MApplication extends Application {
     public void onCreate() {
 
         super.onCreate();
-        //Task droneTask = new Task();
-        //droneTask.run();
+       // Task droneTask = new Task();
+       // droneTask.run();
 
-
+//192.168.166.127
         fpvDemoApplication.onCreate();
 
     }
@@ -59,7 +60,7 @@ public class MApplication extends Application {
 class Task implements Runnable {
     @Override
     public void run() {
-        IsoDrone drone = new IsoDrone("192.168.75.127");
+        IsoDrone drone = new IsoDrone("192.168.166.127");
         double test = 0.01;
         String lastDroneState = "";
 
@@ -85,6 +86,19 @@ class Task implements Runnable {
                     dronePos.setIsPositionValid(true);
                     dronePos.setIsHeadingValid(true);
                     drone.setPosition(dronePos);
+
+
+   //                Log.wtf("TrajName: ", drone.getTrajectoryHeader().getTrajectoryName());
+
+   //                TrajectoryWaypointVector traj =  drone.getTrajectory();
+
+   //                for(int i = 0; i < traj.size(); i++){
+   //                    Log.wtf("point " + String.valueOf(i) + " X: ", String.valueOf(traj.get(i).getPos().getXCoord_m()));
+   //                    Log.wtf("point " + String.valueOf(i) + " Y: ", String.valueOf(traj.get(i).getPos().getYCoord_m()));
+
+
+   //                }
+
                 }
 
                 if (drone.getCurrentStateName().equals("Init") && lastDroneState != "Init") {
@@ -117,8 +131,6 @@ class Task implements Runnable {
                     Log.wtf("Error", "EmergencyStop");
                     lastDroneState = "EmergencyStop";
                 }
-
-                //Log.wtf("TrajName: ", drone.getTrajectory());
 
 //
             } catch (InterruptedException e) {

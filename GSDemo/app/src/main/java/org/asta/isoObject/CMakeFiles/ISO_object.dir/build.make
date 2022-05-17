@@ -63,41 +63,41 @@ include CMakeFiles/ISO_object.dir/flags.make
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: CMakeFiles/ISO_object.dir/flags.make
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: ../src/iso22133object.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp
 
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISO_object.dir/src/iso22133object.cpp.i"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp > CMakeFiles/ISO_object.dir/src/iso22133object.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp > CMakeFiles/ISO_object.dir/src/iso22133object.cpp.i
 
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISO_object.dir/src/iso22133object.cpp.s"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp -o CMakeFiles/ISO_object.dir/src/iso22133object.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp -o CMakeFiles/ISO_object.dir/src/iso22133object.cpp.s
 
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: CMakeFiles/ISO_object.dir/flags.make
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: ../src/iso22133state.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp
 
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISO_object.dir/src/iso22133state.cpp.i"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp > CMakeFiles/ISO_object.dir/src/iso22133state.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp > CMakeFiles/ISO_object.dir/src/iso22133state.cpp.i
 
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISO_object.dir/src/iso22133state.cpp.s"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp -o CMakeFiles/ISO_object.dir/src/iso22133state.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp -o CMakeFiles/ISO_object.dir/src/iso22133state.cpp.s
 
 CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: CMakeFiles/ISO_object.dir/flags.make
 CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: ../src/trajDecoder.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp
 
 CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.i"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp > CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp > CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.i
 
 CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.s"
-	/home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp -o CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp -o CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.s
 
 # Object files for target ISO_object
 ISO_object_OBJECTS = \

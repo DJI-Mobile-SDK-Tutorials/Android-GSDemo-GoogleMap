@@ -9,6 +9,21 @@
 package org.asta.isoObject;
 
 public class isoObject_wrapJNI {
+  public final static native long new_TrajectoryWaypointVector__SWIG_0();
+  public final static native long new_TrajectoryWaypointVector__SWIG_1(long jarg1, TrajectoryWaypointVector jarg1_);
+  public final static native long TrajectoryWaypointVector_capacity(long jarg1, TrajectoryWaypointVector jarg1_);
+  public final static native void TrajectoryWaypointVector_reserve(long jarg1, TrajectoryWaypointVector jarg1_, long jarg2);
+  public final static native boolean TrajectoryWaypointVector_isEmpty(long jarg1, TrajectoryWaypointVector jarg1_);
+  public final static native void TrajectoryWaypointVector_clear(long jarg1, TrajectoryWaypointVector jarg1_);
+  public final static native long new_TrajectoryWaypointVector__SWIG_2(int jarg1, long jarg2, TrajectoryWaypointType jarg2_);
+  public final static native int TrajectoryWaypointVector_doSize(long jarg1, TrajectoryWaypointVector jarg1_);
+  public final static native void TrajectoryWaypointVector_doAdd__SWIG_0(long jarg1, TrajectoryWaypointVector jarg1_, long jarg2, TrajectoryWaypointType jarg2_);
+  public final static native void TrajectoryWaypointVector_doAdd__SWIG_1(long jarg1, TrajectoryWaypointVector jarg1_, int jarg2, long jarg3, TrajectoryWaypointType jarg3_);
+  public final static native long TrajectoryWaypointVector_doRemove(long jarg1, TrajectoryWaypointVector jarg1_, int jarg2);
+  public final static native long TrajectoryWaypointVector_doGet(long jarg1, TrajectoryWaypointVector jarg1_, int jarg2);
+  public final static native long TrajectoryWaypointVector_doSet(long jarg1, TrajectoryWaypointVector jarg1_, int jarg2, long jarg3, TrajectoryWaypointType jarg3_);
+  public final static native void TrajectoryWaypointVector_doRemoveRange(long jarg1, TrajectoryWaypointVector jarg1_, int jarg2, int jarg3);
+  public final static native void delete_TrajectoryWaypointVector(long jarg1);
   public final static native long new_TrajDecoder__SWIG_0(boolean jarg1);
   public final static native long new_TrajDecoder__SWIG_1();
   public final static native int TrajDecoder_DecodeTRAJ(long jarg1, TrajDecoder jarg1_, long jarg2);
@@ -101,7 +116,7 @@ public class isoObject_wrapJNI {
   public final static native long TestObject_getTrajectoryWaypointAt(long jarg1, TestObject jarg1_, int jarg2);
   public final static native void TestObject_handleAbort(long jarg1, TestObject jarg1_);
   public final static native void TestObject_setPosition(long jarg1, TestObject jarg1_, long jarg2, CartesianPosition jarg2_);
-  public final static native void TestObject_setSpeed(long jarg1, TestObject jarg1_, long jarg2);
+  public final static native void TestObject_setSpeed(long jarg1, TestObject jarg1_, long jarg2, SpeedType jarg2_);
   public final static native void TestObject_setAcceleration(long jarg1, TestObject jarg1_, long jarg2);
   public final static native void TestObject_setDriveDirection(long jarg1, TestObject jarg1_, long jarg2);
   public final static native void TestObject_setObjectState(long jarg1, TestObject jarg1_, int jarg2);
@@ -218,7 +233,7 @@ public class isoObject_wrapJNI {
   public final static native long TrajectoryWaypointType_relativeTime_get(long jarg1, TrajectoryWaypointType jarg1_);
   public final static native void TrajectoryWaypointType_pos_set(long jarg1, TrajectoryWaypointType jarg1_, long jarg2, CartesianPosition jarg2_);
   public final static native long TrajectoryWaypointType_pos_get(long jarg1, TrajectoryWaypointType jarg1_);
-  public final static native void TrajectoryWaypointType_spd_set(long jarg1, TrajectoryWaypointType jarg1_, long jarg2);
+  public final static native void TrajectoryWaypointType_spd_set(long jarg1, TrajectoryWaypointType jarg1_, long jarg2, SpeedType jarg2_);
   public final static native long TrajectoryWaypointType_spd_get(long jarg1, TrajectoryWaypointType jarg1_);
   public final static native void TrajectoryWaypointType_acc_set(long jarg1, TrajectoryWaypointType jarg1_, long jarg2);
   public final static native long TrajectoryWaypointType_acc_get(long jarg1, TrajectoryWaypointType jarg1_);
@@ -505,7 +520,7 @@ public class isoObject_wrapJNI {
   public final static native long PeerObjectInjectionType_state_get(long jarg1, PeerObjectInjectionType jarg1_);
   public final static native void PeerObjectInjectionType_position_set(long jarg1, PeerObjectInjectionType jarg1_, long jarg2, CartesianPosition jarg2_);
   public final static native long PeerObjectInjectionType_position_get(long jarg1, PeerObjectInjectionType jarg1_);
-  public final static native void PeerObjectInjectionType_speed_set(long jarg1, PeerObjectInjectionType jarg1_, long jarg2);
+  public final static native void PeerObjectInjectionType_speed_set(long jarg1, PeerObjectInjectionType jarg1_, long jarg2, SpeedType jarg2_);
   public final static native long PeerObjectInjectionType_speed_get(long jarg1, PeerObjectInjectionType jarg1_);
   public final static native void PeerObjectInjectionType_pitch_rad_set(long jarg1, PeerObjectInjectionType jarg1_, double jarg2);
   public final static native double PeerObjectInjectionType_pitch_rad_get(long jarg1, PeerObjectInjectionType jarg1_);
@@ -603,10 +618,10 @@ public class isoObject_wrapJNI {
   public final static native int GeneralResponseMessageType_status_get(long jarg1, GeneralResponseMessageType jarg1_);
   public final static native long new_GeneralResponseMessageType();
   public final static native void delete_GeneralResponseMessageType(long jarg1);
-  public final static native int encodeMONRMessage(long jarg1, timeval jarg1_, long jarg2, CartesianPosition jarg2_, long jarg3, long jarg4, short jarg5, short jarg6, short jarg7, short jarg8, String jarg9, long jarg10, char jarg11);
+  public final static native int encodeMONRMessage(long jarg1, timeval jarg1_, long jarg2, CartesianPosition jarg2_, long jarg3, SpeedType jarg3_, long jarg4, short jarg5, short jarg6, short jarg7, short jarg8, String jarg9, long jarg10, char jarg11);
   public final static native int decodeMONRMessage(String jarg1, long jarg2, long jarg3, timeval jarg3_, long jarg4, long jarg5, char jarg6);
   public final static native int encodeTRAJMessageHeader(int jarg1, int jarg2, String jarg3, long jarg4, long jarg5, String jarg6, long jarg7, char jarg8);
-  public final static native int encodeTRAJMessagePoint(long jarg1, timeval jarg1_, long jarg2, CartesianPosition jarg2_, long jarg3, long jarg4, float jarg5, String jarg6, long jarg7, char jarg8);
+  public final static native int encodeTRAJMessagePoint(long jarg1, timeval jarg1_, long jarg2, CartesianPosition jarg2_, long jarg3, SpeedType jarg3_, long jarg4, float jarg5, String jarg6, long jarg7, char jarg8);
   public final static native int decodeTRAJMessagePoint(long jarg1, TrajectoryWaypointType jarg1_, String jarg2, char jarg3);
   public final static native int encodeTRAJMessageFooter(String jarg1, long jarg2, char jarg3);
   public final static native int decodeTRAJMessageHeader(long jarg1, TrajectoryHeaderType jarg1_, String jarg2, long jarg3, char jarg4);
@@ -680,6 +695,16 @@ public class isoObject_wrapJNI {
   public final static native boolean GeographicPositionType_isAltitudeValid_get(long jarg1, GeographicPositionType jarg1_);
   public final static native long new_GeographicPositionType();
   public final static native void delete_GeographicPositionType(long jarg1);
+  public final static native void SpeedType_longitudinal_m_s_set(long jarg1, SpeedType jarg1_, double jarg2);
+  public final static native double SpeedType_longitudinal_m_s_get(long jarg1, SpeedType jarg1_);
+  public final static native void SpeedType_lateral_m_s_set(long jarg1, SpeedType jarg1_, double jarg2);
+  public final static native double SpeedType_lateral_m_s_get(long jarg1, SpeedType jarg1_);
+  public final static native void SpeedType_isLongitudinalValid_set(long jarg1, SpeedType jarg1_, boolean jarg2);
+  public final static native boolean SpeedType_isLongitudinalValid_get(long jarg1, SpeedType jarg1_);
+  public final static native void SpeedType_isLateralValid_set(long jarg1, SpeedType jarg1_, boolean jarg2);
+  public final static native boolean SpeedType_isLateralValid_get(long jarg1, SpeedType jarg1_);
+  public final static native long new_SpeedType();
+  public final static native void delete_SpeedType(long jarg1);
   public final static native long Unknown_SWIGUpcast(long jarg1);
   public final static native long Off_SWIGUpcast(long jarg1);
   public final static native long Init_SWIGUpcast(long jarg1);

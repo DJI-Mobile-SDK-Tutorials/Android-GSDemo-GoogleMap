@@ -54,12 +54,13 @@ public class TrajectoryWaypointType {
     return (cPtr == 0) ? null : new CartesianPosition(cPtr, false);
   }
 
-  public void setSpd(SWIGTYPE_p_SpeedType value) {
-    isoObject_wrapJNI.TrajectoryWaypointType_spd_set(swigCPtr, this, SWIGTYPE_p_SpeedType.getCPtr(value));
+  public void setSpd(SpeedType value) {
+    isoObject_wrapJNI.TrajectoryWaypointType_spd_set(swigCPtr, this, SpeedType.getCPtr(value), value);
   }
 
-  public SWIGTYPE_p_SpeedType getSpd() {
-    return new SWIGTYPE_p_SpeedType(isoObject_wrapJNI.TrajectoryWaypointType_spd_get(swigCPtr, this), true);
+  public SpeedType getSpd() {
+    long cPtr = isoObject_wrapJNI.TrajectoryWaypointType_spd_get(swigCPtr, this);
+    return (cPtr == 0) ? null : new SpeedType(cPtr, false);
   }
 
   public void setAcc(SWIGTYPE_p_AccelerationType value) {

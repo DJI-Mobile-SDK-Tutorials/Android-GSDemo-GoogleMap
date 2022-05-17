@@ -63,28 +63,28 @@ include iso22133/CMakeFiles/ISO22133.dir/flags.make
 iso22133/CMakeFiles/ISO22133.dir/positioning.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
 iso22133/CMakeFiles/ISO22133.dir/positioning.c.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object iso22133/CMakeFiles/ISO22133.dir/positioning.c.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/positioning.c.o   -c /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/positioning.c.o   -c /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c
 
 iso22133/CMakeFiles/ISO22133.dir/positioning.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/positioning.c.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c > CMakeFiles/ISO22133.dir/positioning.c.i
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c > CMakeFiles/ISO22133.dir/positioning.c.i
 
 iso22133/CMakeFiles/ISO22133.dir/positioning.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/positioning.c.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c -o CMakeFiles/ISO22133.dir/positioning.c.s
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c -o CMakeFiles/ISO22133.dir/positioning.c.s
 
 iso22133/CMakeFiles/ISO22133.dir/iso22133.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
 iso22133/CMakeFiles/ISO22133.dir/iso22133.c.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object iso22133/CMakeFiles/ISO22133.dir/iso22133.c.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/iso22133.c.o   -c /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/iso22133.c.o   -c /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c
 
 iso22133/CMakeFiles/ISO22133.dir/iso22133.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/iso22133.c.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c > CMakeFiles/ISO22133.dir/iso22133.c.i
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c > CMakeFiles/ISO22133.dir/iso22133.c.i
 
 iso22133/CMakeFiles/ISO22133.dir/iso22133.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/iso22133.c.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c -o CMakeFiles/ISO22133.dir/iso22133.c.s
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c -o CMakeFiles/ISO22133.dir/iso22133.c.s
 
 # Object files for target ISO22133
 ISO22133_OBJECTS = \

@@ -109,11 +109,7 @@ public class BasicSocket {
   public BasicSocket(BasicSocket other) {
     this(isoObject_wrapJNI.new_BasicSocket__SWIG_5(BasicSocket.getCPtr(other), other), true);
   }
-
-
-  public BasicSocket basicSockEqualsRef(BasicSocket other) {
-    return new BasicSocket(isoObject_wrapJNI.BasicSocket_basicSockEqualsRef(swigCPtr, this, BasicSocket.getCPtr(other), other), false);
-  }
+  
 
   public BasicSocket basicSockEqualsRefRef(BasicSocket other) {
     return new BasicSocket(isoObject_wrapJNI.BasicSocket_basicSockEqualsRefRef(swigCPtr, this, BasicSocket.getCPtr(other), other), false);

@@ -11,4 +11,6 @@ CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.c
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/server.hpp
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.hpp
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/socketexceptions.hpp
+CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /usr/lib/jvm/java-11-openjdk-amd64/include/jni.h
+CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /usr/lib/jvm/java-11-openjdk-amd64/include/linux/jni_md.h
 

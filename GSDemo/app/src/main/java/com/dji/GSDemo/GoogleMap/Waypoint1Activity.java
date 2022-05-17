@@ -188,6 +188,27 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
     }
 
+    private void generateWaypointsFromTraj(LatLng origin, TrajectoryWaypointVector trajectory){
+
+        for(int i = 0; i < trajectory.size(); i ++){
+
+            WaypointSetting wps = new WaypointSetting(coordCartToGeo(origin, new ProjCoordinate(trajectory.get(i).getPos().getXCoord_m(), trajectory.get(i).getPos().getYCoord_m(), trajectory.get(i).getPos().getZCoord_m())), new ProjCoordinate());
+            this.waypointSettings.add(wps);
+            this.waypointSettings.get(i).heading = convertToDroneYawRangeDeg((180/Math.PI)*trajectory.get(i).getPos().getHeading_rad());
+            this.waypointSettings.get(i).geo.z = 10; //trajectory.get(i).getPos().getZCoord_m();
+            this.waypointSettings.get(i).speed = (float)trajectory.get(i).getSpd().getLongitudinal_m_s(); //Possible lossy conversion?
+
+        }
+
+        WaypointSetting wps = new WaypointSetting(coordCartToGeo(origin, new ProjCoordinate(0, 0)), new ProjCoordinate());
+        wps.heading = 0;
+        wps.speed = 5;
+        wps.geo.z = 10;
+        this.waypointSettings.add(wps);
+    }
+
+
+
     private void generateTestCircleCoordinates(LatLng origin, double radius, double altitude, float speed, int nofPoints, boolean headingTowardsCenter){
 
         double angularStep = 2*Math.PI/nofPoints;
@@ -492,7 +513,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
 
         if(lastDroneState == "") {
-            drone = new IsoDrone("192.168.75.127");
+            drone = new IsoDrone("192.168.166.127");
             lastDroneState = drone.getCurrentStateName();
         }
         Log.wtf("Error", "Drone is in: " + drone.getCurrentStateName());
@@ -537,6 +558,39 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         } else if (drone.getCurrentStateName().equals("Armed") && lastDroneState != "Armed") {
             //button = (Button)findViewById(R.id.pauseresume);
             //button.setText("Arming");
+
+
+            //trajectory
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    Log.wtf("TrajName: ", drone.getTrajectoryHeader().getTrajectoryName());
+
+                    TrajectoryWaypointVector traj =  drone.getTrajectory();
+
+                    waypointSettings.clear();
+                    //generateTestCircleCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 3, 1,19, true);
+                    generateWaypointsFromTraj(new LatLng(droneLocationLat, droneLocationLng), traj);
+
+                    for(int i = 0; i < waypointSettings.size(); i ++){
+                        LatLng mpoint = new LatLng(waypointSettings.get(i).geo.y, waypointSettings.get(i).geo.x);
+                        markWaypoint(mpoint);
+                    }
+                    //deployTestCircle();
+                    deployTraj();
+
+
+                }
+            });
+
+
+
+
+
+
+            /*
+            //Test circle
             runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -550,7 +604,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
                 }
             });
-
+            */
             Log.wtf("Error", "Armed");
             lastDroneState = "Armed";
         } else if (drone.getCurrentStateName().equals("Disarmed") && lastDroneState != "Disarmed") {
@@ -624,6 +678,40 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
             wp.coordinate = new LocationCoordinate2D(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
             wp.altitude = (float)this.waypointSettings.get(i).geo.z + i*0.2f;
             wp.speed = (float)this.waypointSettings.get(i).speed + i*0.1f;
+            try {
+                wp.heading = this.waypointSettings.get(i).heading;
+            } catch (Exception e){
+                setResultToToast("e = "+ e.getCause() + ", " + e.getMessage());
+            }
+            //setResultToToast("wp.heading = "+ waypointSettings.get(i).geo.y + ", " + waypointSettings.get(i).geo.x + ", " + waypointSettings.get(i).geo.z);
+            waypointList.add(wp);
+            waypointMissionBuilder.waypointList(waypointList).waypointCount(waypointList.size());
+        }
+
+        Log.wtf("Error", "Number of waypoints " + this.waypointSettings.size());
+
+        setResultToToast("Number of waypoints " + this.waypointSettings.size());
+        mFinishedAction = WaypointMissionFinishedAction.NO_ACTION;
+        mSpeed = 5.0f;
+        mHeadingMode = WaypointMissionHeadingMode.USING_WAYPOINT_HEADING;
+        altitude = (float)this.waypointSettings.get(0).geo.z;
+        configWayPointMission();
+        startLatLong = new LatLng(droneLocationLat, droneLocationLng);
+        uploadWayPointMission();
+    }
+
+
+    private void deployTraj(){
+
+        Log.wtf("Error", "Deploying traj");
+
+        waypointMissionBuilder = new WaypointMission.Builder();
+        for (int i = 0; i < this.waypointSettings.size(); i ++)
+        {
+            Waypoint wp = new Waypoint();
+            wp.coordinate = new LocationCoordinate2D(this.waypointSettings.get(i).geo.y, this.waypointSettings.get(i).geo.x);
+            wp.altitude = (float)this.waypointSettings.get(i).geo.z;
+            wp.speed = (float)this.waypointSettings.get(i).speed;
             try {
                 wp.heading = this.waypointSettings.get(i).heading;
             } catch (Exception e){

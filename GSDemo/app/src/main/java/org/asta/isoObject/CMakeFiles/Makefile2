@@ -151,10 +151,10 @@ CMakeFiles/isoObject_wrap_swig_compilation.dir/clean:
 # Target rules for target CMakeFiles/isoObject_wrap.dir
 
 # All Build rule for target.
-CMakeFiles/isoObject_wrap.dir/all: CMakeFiles/isoObject_wrap_swig_compilation.dir/all
-CMakeFiles/isoObject_wrap.dir/all: CMakeFiles/ISO_object.dir/all
 CMakeFiles/isoObject_wrap.dir/all: iso22133/CMakeFiles/ISO22133.dir/all
 CMakeFiles/isoObject_wrap.dir/all: sockets/CMakeFiles/TCPUDPSocket.dir/all
+CMakeFiles/isoObject_wrap.dir/all: CMakeFiles/isoObject_wrap_swig_compilation.dir/all
+CMakeFiles/isoObject_wrap.dir/all: CMakeFiles/ISO_object.dir/all
 	$(MAKE) -f CMakeFiles/isoObject_wrap.dir/build.make CMakeFiles/isoObject_wrap.dir/depend
 	$(MAKE) -f CMakeFiles/isoObject_wrap.dir/build.make CMakeFiles/isoObject_wrap.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=21,22 "Built target isoObject_wrap"
@@ -181,9 +181,9 @@ CMakeFiles/isoObject_wrap.dir/clean:
 # Target rules for target CMakeFiles/ISO_objectTest.dir
 
 # All Build rule for target.
-CMakeFiles/ISO_objectTest.dir/all: CMakeFiles/ISO_object.dir/all
 CMakeFiles/ISO_objectTest.dir/all: iso22133/CMakeFiles/ISO22133.dir/all
 CMakeFiles/ISO_objectTest.dir/all: sockets/CMakeFiles/TCPUDPSocket.dir/all
+CMakeFiles/ISO_objectTest.dir/all: CMakeFiles/ISO_object.dir/all
 	$(MAKE) -f CMakeFiles/ISO_objectTest.dir/build.make CMakeFiles/ISO_objectTest.dir/depend
 	$(MAKE) -f CMakeFiles/ISO_objectTest.dir/build.make CMakeFiles/ISO_objectTest.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=8,9 "Built target ISO_objectTest"

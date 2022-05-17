@@ -254,9 +254,360 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #include "iso22133.h"
 
 
+/* Check for overflow converting to Java int (always signed 32-bit) from (unsigned variable-bit) size_t */
+SWIGINTERN jint SWIG_JavaIntFromSize_t(size_t size) {
+  static const jint JINT_MAX = 0x7FFFFFFF;
+  return (size > (size_t)JINT_MAX) ? -1 : (jint)size;
+}
+
+
+SWIGINTERN jint SWIG_VectorSize(size_t size) {
+  jint sz = SWIG_JavaIntFromSize_t(size);
+  if (sz == -1)
+    throw std::out_of_range("vector size is too large to fit into a Java int");
+  return sz;
+}
+
+SWIGINTERN std::vector< TrajectoryWaypointType > *new_std_vector_Sl_TrajectoryWaypointType_Sg___SWIG_2(jint count,TrajectoryWaypointType const &value){
+        if (count < 0)
+          throw std::out_of_range("vector count must be positive");
+        return new std::vector< TrajectoryWaypointType >(static_cast<std::vector< TrajectoryWaypointType >::size_type>(count), value);
+      }
+SWIGINTERN jint std_vector_Sl_TrajectoryWaypointType_Sg__doSize(std::vector< TrajectoryWaypointType > const *self){
+        return SWIG_VectorSize(self->size());
+      }
+SWIGINTERN void std_vector_Sl_TrajectoryWaypointType_Sg__doAdd__SWIG_0(std::vector< TrajectoryWaypointType > *self,std::vector< TrajectoryWaypointType >::value_type const &x){
+        self->push_back(x);
+      }
+SWIGINTERN void std_vector_Sl_TrajectoryWaypointType_Sg__doAdd__SWIG_1(std::vector< TrajectoryWaypointType > *self,jint index,std::vector< TrajectoryWaypointType >::value_type const &x){
+        jint size = static_cast<jint>(self->size());
+        if (0 <= index && index <= size) {
+          self->insert(self->begin() + index, x);
+        } else {
+          throw std::out_of_range("vector index out of range");
+        }
+      }
+SWIGINTERN std::vector< TrajectoryWaypointType >::value_type std_vector_Sl_TrajectoryWaypointType_Sg__doRemove(std::vector< TrajectoryWaypointType > *self,jint index){
+        jint size = static_cast<jint>(self->size());
+        if (0 <= index && index < size) {
+          TrajectoryWaypointType const old_value = (*self)[index];
+          self->erase(self->begin() + index);
+          return old_value;
+        } else {
+          throw std::out_of_range("vector index out of range");
+        }
+      }
+SWIGINTERN std::vector< TrajectoryWaypointType >::value_type const &std_vector_Sl_TrajectoryWaypointType_Sg__doGet(std::vector< TrajectoryWaypointType > *self,jint index){
+        jint size = static_cast<jint>(self->size());
+        if (index >= 0 && index < size)
+          return (*self)[index];
+        else
+          throw std::out_of_range("vector index out of range");
+      }
+SWIGINTERN std::vector< TrajectoryWaypointType >::value_type std_vector_Sl_TrajectoryWaypointType_Sg__doSet(std::vector< TrajectoryWaypointType > *self,jint index,std::vector< TrajectoryWaypointType >::value_type const &val){
+        jint size = static_cast<jint>(self->size());
+        if (index >= 0 && index < size) {
+          TrajectoryWaypointType const old_value = (*self)[index];
+          (*self)[index] = val;
+          return old_value;
+        }
+        else
+          throw std::out_of_range("vector index out of range");
+      }
+SWIGINTERN void std_vector_Sl_TrajectoryWaypointType_Sg__doRemoveRange(std::vector< TrajectoryWaypointType > *self,jint fromIndex,jint toIndex){
+        jint size = static_cast<jint>(self->size());
+        if (0 <= fromIndex && fromIndex <= toIndex && toIndex <= size) {
+          self->erase(self->begin() + fromIndex, self->begin() + toIndex);
+        } else {
+          throw std::out_of_range("vector index out of range");
+        }
+      }
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1TrajectoryWaypointVector_1_1SWIG_10(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  std::vector< TrajectoryWaypointType > *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (std::vector< TrajectoryWaypointType > *)new std::vector< TrajectoryWaypointType >();
+  *(std::vector< TrajectoryWaypointType > **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1TrajectoryWaypointVector_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  std::vector< TrajectoryWaypointType > *arg1 = 0 ;
+  std::vector< TrajectoryWaypointType > *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1;
+  if (!arg1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::vector< TrajectoryWaypointType > const & reference is null");
+    return 0;
+  } 
+  result = (std::vector< TrajectoryWaypointType > *)new std::vector< TrajectoryWaypointType >((std::vector< TrajectoryWaypointType > const &)*arg1);
+  *(std::vector< TrajectoryWaypointType > **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1capacity(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  std::vector< TrajectoryWaypointType >::size_type result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  result = ((std::vector< TrajectoryWaypointType > const *)arg1)->capacity();
+  jresult = (jlong)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1reserve(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  std::vector< TrajectoryWaypointType >::size_type arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  arg2 = (std::vector< TrajectoryWaypointType >::size_type)jarg2; 
+  try {
+    (arg1)->reserve(arg2);
+  } catch(std::length_error &_e) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaIndexOutOfBoundsException, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1isEmpty(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  result = (bool)((std::vector< TrajectoryWaypointType > const *)arg1)->empty();
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1clear(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1TrajectoryWaypointVector_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jobject jarg2_) {
+  jlong jresult = 0 ;
+  jint arg1 ;
+  TrajectoryWaypointType *arg2 = 0 ;
+  std::vector< TrajectoryWaypointType > *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg2_;
+  arg1 = jarg1; 
+  arg2 = *(TrajectoryWaypointType **)&jarg2;
+  if (!arg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "TrajectoryWaypointType const & reference is null");
+    return 0;
+  } 
+  try {
+    result = (std::vector< TrajectoryWaypointType > *)new_std_vector_Sl_TrajectoryWaypointType_Sg___SWIG_2(arg1,(TrajectoryWaypointType const &)*arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaIndexOutOfBoundsException, (&_e)->what());
+    return 0;
+  }
+  *(std::vector< TrajectoryWaypointType > **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1doSize(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jint jresult = 0 ;
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  jint result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  try {
+    result = std_vector_Sl_TrajectoryWaypointType_Sg__doSize((std::vector< TrajectoryWaypointType > const *)arg1);
+  } catch(std::out_of_range &_e) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaIndexOutOfBoundsException, (&_e)->what());
+    return 0;
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1doAdd_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  std::vector< TrajectoryWaypointType >::value_type *arg2 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  arg2 = *(std::vector< TrajectoryWaypointType >::value_type **)&jarg2;
+  if (!arg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::vector< TrajectoryWaypointType >::value_type const & reference is null");
+    return ;
+  } 
+  std_vector_Sl_TrajectoryWaypointType_Sg__doAdd__SWIG_0(arg1,(TrajectoryWaypointType const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1doAdd_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jlong jarg3, jobject jarg3_) {
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  jint arg2 ;
+  std::vector< TrajectoryWaypointType >::value_type *arg3 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg3_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  arg2 = jarg2; 
+  arg3 = *(std::vector< TrajectoryWaypointType >::value_type **)&jarg3;
+  if (!arg3) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::vector< TrajectoryWaypointType >::value_type const & reference is null");
+    return ;
+  } 
+  try {
+    std_vector_Sl_TrajectoryWaypointType_Sg__doAdd__SWIG_1(arg1,arg2,(TrajectoryWaypointType const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaIndexOutOfBoundsException, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1doRemove(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  jlong jresult = 0 ;
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  jint arg2 ;
+  std::vector< TrajectoryWaypointType >::value_type result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  arg2 = jarg2; 
+  try {
+    result = std_vector_Sl_TrajectoryWaypointType_Sg__doRemove(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaIndexOutOfBoundsException, (&_e)->what());
+    return 0;
+  }
+  *(std::vector< TrajectoryWaypointType >::value_type **)&jresult = new std::vector< TrajectoryWaypointType >::value_type((const std::vector< TrajectoryWaypointType >::value_type &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1doGet(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  jlong jresult = 0 ;
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  jint arg2 ;
+  std::vector< TrajectoryWaypointType >::value_type *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  arg2 = jarg2; 
+  try {
+    result = (std::vector< TrajectoryWaypointType >::value_type *) &std_vector_Sl_TrajectoryWaypointType_Sg__doGet(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaIndexOutOfBoundsException, (&_e)->what());
+    return 0;
+  }
+  *(std::vector< TrajectoryWaypointType >::value_type **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1doSet(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jlong jarg3, jobject jarg3_) {
+  jlong jresult = 0 ;
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  jint arg2 ;
+  std::vector< TrajectoryWaypointType >::value_type *arg3 = 0 ;
+  std::vector< TrajectoryWaypointType >::value_type result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg3_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  arg2 = jarg2; 
+  arg3 = *(std::vector< TrajectoryWaypointType >::value_type **)&jarg3;
+  if (!arg3) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::vector< TrajectoryWaypointType >::value_type const & reference is null");
+    return 0;
+  } 
+  try {
+    result = std_vector_Sl_TrajectoryWaypointType_Sg__doSet(arg1,arg2,(TrajectoryWaypointType const &)*arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaIndexOutOfBoundsException, (&_e)->what());
+    return 0;
+  }
+  *(std::vector< TrajectoryWaypointType >::value_type **)&jresult = new std::vector< TrajectoryWaypointType >::value_type((const std::vector< TrajectoryWaypointType >::value_type &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointVector_1doRemoveRange(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jint jarg3) {
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  jint arg2 ;
+  jint arg3 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  arg2 = jarg2; 
+  arg3 = jarg3; 
+  try {
+    std_vector_Sl_TrajectoryWaypointType_Sg__doRemoveRange(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaIndexOutOfBoundsException, (&_e)->what());
+    return ;
+  }
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1TrajectoryWaypointVector(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  std::vector< TrajectoryWaypointType > *arg1 = (std::vector< TrajectoryWaypointType > *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(std::vector< TrajectoryWaypointType > **)&jarg1; 
+  delete arg1;
+}
+
 
 SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1TrajDecoder_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jboolean jarg1) {
   jlong jresult = 0 ;
@@ -338,7 +689,7 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajDecoder_
 SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajDecoder_1getTraj(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   TrajDecoder *arg1 = (TrajDecoder *) 0 ;
-  SwigValueWrapper< std::vector< TrajectoryWaypointType > > result;
+  std::vector< TrajectoryWaypointType > result;
   
   (void)jenv;
   (void)jcls;
@@ -1411,7 +1762,7 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1
 SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1getTrajectory(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
-  SwigValueWrapper< std::vector< TrajectoryWaypointType > > result;
+  std::vector< TrajectoryWaypointType > result;
   
   (void)jenv;
   (void)jcls;
@@ -1514,13 +1865,14 @@ SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1s
 }
 
 
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1setSpeed(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TestObject_1setSpeed(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   ISO22133::TestObject *arg1 = (ISO22133::TestObject *) 0 ;
   SpeedType *arg2 = 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(ISO22133::TestObject **)&jarg1; 
   arg2 = *(SpeedType **)&jarg2;
   if (!arg2) {
@@ -3284,36 +3636,31 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWa
 }
 
 
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointType_1spd_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointType_1spd_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   TrajectoryWaypointType *arg1 = (TrajectoryWaypointType *) 0 ;
-  SpeedType arg2 ;
-  SpeedType *argp2 ;
+  SpeedType *arg2 = (SpeedType *) 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(TrajectoryWaypointType **)&jarg1; 
-  argp2 = *(SpeedType **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null SpeedType");
-    return ;
-  }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->spd = arg2;
+  arg2 = *(SpeedType **)&jarg2; 
+  if (arg1) (arg1)->spd = *arg2;
 }
 
 
 SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_TrajectoryWaypointType_1spd_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   TrajectoryWaypointType *arg1 = (TrajectoryWaypointType *) 0 ;
-  SpeedType result;
+  SpeedType *result = 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
   arg1 = *(TrajectoryWaypointType **)&jarg1; 
-  result =  ((arg1)->spd);
-  *(SpeedType **)&jresult = new SpeedType((const SpeedType &)result); 
+  result = (SpeedType *)& ((arg1)->spd);
+  *(SpeedType **)&jresult = result; 
   return jresult;
 }
 
@@ -6922,36 +7269,31 @@ SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_PeerObjectIn
 }
 
 
-SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_PeerObjectInjectionType_1speed_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_PeerObjectInjectionType_1speed_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   PeerObjectInjectionType *arg1 = (PeerObjectInjectionType *) 0 ;
-  SpeedType arg2 ;
-  SpeedType *argp2 ;
+  SpeedType *arg2 = (SpeedType *) 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(PeerObjectInjectionType **)&jarg1; 
-  argp2 = *(SpeedType **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null SpeedType");
-    return ;
-  }
-  arg2 = *argp2; 
-  if (arg1) (arg1)->speed = arg2;
+  arg2 = *(SpeedType **)&jarg2; 
+  if (arg1) (arg1)->speed = *arg2;
 }
 
 
 SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_PeerObjectInjectionType_1speed_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   PeerObjectInjectionType *arg1 = (PeerObjectInjectionType *) 0 ;
-  SpeedType result;
+  SpeedType *result = 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
   arg1 = *(PeerObjectInjectionType **)&jarg1; 
-  result =  ((arg1)->speed);
-  *(SpeedType **)&jresult = new SpeedType((const SpeedType &)result); 
+  result = (SpeedType *)& ((arg1)->speed);
+  *(SpeedType **)&jresult = result; 
   return jresult;
 }
 
@@ -8271,7 +8613,7 @@ SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1Gener
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeMONRMessage(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jlong jarg4, jshort jarg5, jshort jarg6, jshort jarg7, jshort jarg8, jstring jarg9, jlong jarg10, jchar jarg11) {
+SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeMONRMessage(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jshort jarg5, jshort jarg6, jshort jarg7, jshort jarg8, jstring jarg9, jlong jarg10, jchar jarg11) {
   jint jresult = 0 ;
   timeval *arg1 = (timeval *) 0 ;
   CartesianPosition arg2 ;
@@ -8293,6 +8635,7 @@ SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeMONRMes
   (void)jcls;
   (void)jarg1_;
   (void)jarg2_;
+  (void)jarg3_;
   arg1 = *(timeval **)&jarg1; 
   argp2 = *(CartesianPosition **)&jarg2; 
   if (!argp2) {
@@ -8404,7 +8747,7 @@ SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeTRAJMes
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeTRAJMessagePoint(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jlong jarg4, jfloat jarg5, jstring jarg6, jlong jarg7, jchar jarg8) {
+SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeTRAJMessagePoint(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jfloat jarg5, jstring jarg6, jlong jarg7, jchar jarg8) {
   jint jresult = 0 ;
   timeval *arg1 = (timeval *) 0 ;
   CartesianPosition arg2 ;
@@ -8423,6 +8766,7 @@ SWIGEXPORT jint JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_encodeTRAJMes
   (void)jcls;
   (void)jarg1_;
   (void)jarg2_;
+  (void)jarg3_;
   arg1 = *(timeval **)&jarg1; 
   argp2 = *(CartesianPosition **)&jarg2; 
   if (!argp2) {
@@ -9933,6 +10277,140 @@ SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1Geogr
   (void)jenv;
   (void)jcls;
   arg1 = *(GeographicPositionType **)&jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_SpeedType_1longitudinal_1m_1s_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jdouble jarg2) {
+  SpeedType *arg1 = (SpeedType *) 0 ;
+  double arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(SpeedType **)&jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->longitudinal_m_s = arg2;
+}
+
+
+SWIGEXPORT jdouble JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_SpeedType_1longitudinal_1m_1s_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jdouble jresult = 0 ;
+  SpeedType *arg1 = (SpeedType *) 0 ;
+  double result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(SpeedType **)&jarg1; 
+  result = (double) ((arg1)->longitudinal_m_s);
+  jresult = (jdouble)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_SpeedType_1lateral_1m_1s_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jdouble jarg2) {
+  SpeedType *arg1 = (SpeedType *) 0 ;
+  double arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(SpeedType **)&jarg1; 
+  arg2 = (double)jarg2; 
+  if (arg1) (arg1)->lateral_m_s = arg2;
+}
+
+
+SWIGEXPORT jdouble JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_SpeedType_1lateral_1m_1s_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jdouble jresult = 0 ;
+  SpeedType *arg1 = (SpeedType *) 0 ;
+  double result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(SpeedType **)&jarg1; 
+  result = (double) ((arg1)->lateral_m_s);
+  jresult = (jdouble)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_SpeedType_1isLongitudinalValid_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jboolean jarg2) {
+  SpeedType *arg1 = (SpeedType *) 0 ;
+  bool arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(SpeedType **)&jarg1; 
+  arg2 = jarg2 ? true : false; 
+  if (arg1) (arg1)->isLongitudinalValid = arg2;
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_SpeedType_1isLongitudinalValid_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  SpeedType *arg1 = (SpeedType *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(SpeedType **)&jarg1; 
+  result = (bool) ((arg1)->isLongitudinalValid);
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_SpeedType_1isLateralValid_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jboolean jarg2) {
+  SpeedType *arg1 = (SpeedType *) 0 ;
+  bool arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(SpeedType **)&jarg1; 
+  arg2 = jarg2 ? true : false; 
+  if (arg1) (arg1)->isLateralValid = arg2;
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_SpeedType_1isLateralValid_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  SpeedType *arg1 = (SpeedType *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(SpeedType **)&jarg1; 
+  result = (bool) ((arg1)->isLateralValid);
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_new_1SpeedType(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  SpeedType *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (SpeedType *)new SpeedType();
+  *(SpeedType **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_asta_isoObject_isoObject_1wrapJNI_delete_1SpeedType(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  SpeedType *arg1 = (SpeedType *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(SpeedType **)&jarg1; 
   delete arg1;
 }
 

@@ -12,3 +12,5 @@ CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.c
  /home/konglobemeralt/Documents/gitz/util/C/sockets/server.hpp
  /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.hpp
  /home/konglobemeralt/Documents/gitz/util/C/sockets/socketexceptions.hpp
+ /usr/lib/jvm/java-11-openjdk-amd64/include/jni.h
+ /usr/lib/jvm/java-11-openjdk-amd64/include/linux/jni_md.h

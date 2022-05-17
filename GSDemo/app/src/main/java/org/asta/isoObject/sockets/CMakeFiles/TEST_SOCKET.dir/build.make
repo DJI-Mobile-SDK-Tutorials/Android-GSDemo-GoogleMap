@@ -63,15 +63,15 @@ include sockets/CMakeFiles/TEST_SOCKET.dir/flags.make
 sockets/CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.o: sockets/CMakeFiles/TEST_SOCKET.dir/flags.make
 sockets/CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/test_socket.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object sockets/CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/test_socket.cpp
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/sockets/test_socket.cpp
 
 sockets/CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/test_socket.cpp > CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.i
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/sockets/test_socket.cpp > CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.i
 
 sockets/CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /home/konglobemeralt/Android/Sdk/ndk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/test_socket.cpp -o CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.s
+	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/sockets/test_socket.cpp -o CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.s
 
 # Object files for target TEST_SOCKET
 TEST_SOCKET_OBJECTS = \

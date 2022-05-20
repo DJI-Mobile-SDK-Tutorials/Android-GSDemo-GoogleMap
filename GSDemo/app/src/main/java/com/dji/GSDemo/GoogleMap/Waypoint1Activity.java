@@ -566,12 +566,25 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                 public void run() {
 
                     Log.wtf("TrajName: ", drone.getTrajectoryHeader().getTrajectoryName());
-
                     TrajectoryWaypointVector traj =  drone.getTrajectory();
-
                     waypointSettings.clear();
+
+                    //Reduce points in traj if to large (99 max amount of waypoints)
+                    if(traj.size() > 99){
+                        double epsilon = 0.001;
+                        do{
+                            drone.reducePoints(epsilon);
+                            epsilon += 0.001;
+                        }while (drone.getReducedTraj().size() > 99 && epsilon < 0.06);
+                        Log.wtf("newTraj", String.valueOf(drone.getReducedTraj().size()));
+                        waypointSettings.clear();
+                        generateWaypointsFromTraj(new LatLng(droneLocationLat, droneLocationLng), drone.getReducedTraj().size()); //Use reduced
+                    }else{
+                        waypointSettings.clear();
+                        generateWaypointsFromTraj(new LatLng(droneLocationLat, droneLocationLng), traj); // use set traj
+                    }
+
                     //generateTestCircleCoordinates(new LatLng(droneLocationLat, droneLocationLng), 10, 3, 1,19, true);
-                    generateWaypointsFromTraj(new LatLng(droneLocationLat, droneLocationLng), traj);
 
                     for(int i = 0; i < waypointSettings.size(); i ++){
                         LatLng mpoint = new LatLng(waypointSettings.get(i).geo.y, waypointSettings.get(i).geo.x);
@@ -579,8 +592,6 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                     }
                     //deployTestCircle();
                     deployTraj();
-
-
                 }
             });
 

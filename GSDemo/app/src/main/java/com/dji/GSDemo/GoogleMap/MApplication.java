@@ -46,11 +46,11 @@ public class MApplication extends Application {
     public void onCreate() {
 
         super.onCreate();
-        Task droneTask = new Task();
-        droneTask.run();
+        //Task droneTask = new Task();
+        //droneTask.run();
 
 //192.168.166.127
-        //fpvDemoApplication.onCreate();
+        fpvDemoApplication.onCreate();
 
     }
 }

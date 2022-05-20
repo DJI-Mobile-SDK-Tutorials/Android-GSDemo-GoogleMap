@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.o  -o TEST_SOCKET  -Wl,-rpath,/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets libTCPUDPSocket.so -lpthread 

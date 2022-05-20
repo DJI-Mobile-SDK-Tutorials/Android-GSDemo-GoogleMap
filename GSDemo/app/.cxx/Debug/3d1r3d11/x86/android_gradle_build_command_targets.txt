@@ -1,0 +1,13 @@
+Executable : /home/konglobemeralt/Android/Sdk/cmake/3.18.1/bin/ninja
+arguments : 
+-C
+/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/3d1r3d11/x86
+ISO22133
+ISO_object
+ISO_objectTest
+TCPUDPSocket
+TEST_CAN
+TEST_SOCKET
+isoObject_wrap
+jvmArgs : 
+

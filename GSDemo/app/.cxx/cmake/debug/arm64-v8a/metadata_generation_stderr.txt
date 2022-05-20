@@ -1,0 +1,112 @@
+CURRENT BIN DIR: 
+/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a
+Current list: 
+/home/konglobemeralt/Documents/gitz/util/C/isoObject
+FindPath dir: 
+/home/konglobemeralt/Documents/gitz/util/C/isoObject/../iso22133
+ISO::
+ISO22133
+CMake Debug Log at /home/konglobemeralt/Android/Sdk/cmake/3.18.1/share/cmake-3.18/Modules/FindSWIG.cmake:53 (find_program):
+  find_program called with the following settings:
+
+    VAR: SWIG_EXECUTABLE
+    NAMES: "swig4.0"
+           "swig3.0"
+           "swig2.0"
+           "swig"
+    Documentation: Path to a program.
+    Framework
+      Only Search Frameworks: 0
+      Search Frameworks Last: 0
+      Search Frameworks First: 0
+    AppBundle
+      Only Search AppBundle: 0
+      Search AppBundle Last: 0
+      Search AppBundle First: 0
+    CMAKE_FIND_USE_CMAKE_PATH: 1
+    CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: 1
+    CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: 1
+    CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: 1
+
+  find_program considered the following locations:
+
+    /home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/swig4.0
+    /home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/sbin/swig4.0
+    /home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/swig4.0
+    /home/konglobemeralt/.local/bin/swig4.0
+    /usr/local/sbin/swig4.0
+    /usr/local/bin/swig4.0
+    /usr/sbin/swig4.0
+
+  The item was found at
+
+    /usr/bin/swig4.0
+
+Call Stack (most recent call first):
+  CMakeLists.txt:104 (find_package)
+
+
+CMake Debug Log at /home/konglobemeralt/Android/Sdk/cmake/3.18.1/share/cmake-3.18/Modules/FindSWIG.cmake:69 (find_path):
+  find_path called with the following settings:
+
+    VAR: SWIG_DIR
+    NAMES: "swig.swg"
+    Documentation: Path to a file.
+    Framework
+      Only Search Frameworks: 0
+      Search Frameworks Last: 0
+      Search Frameworks First: 0
+    AppBundle
+      Only Search AppBundle: 0
+      Search AppBundle Last: 0
+      Search AppBundle First: 0
+    CMAKE_FIND_USE_CMAKE_PATH: 1
+    CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: 1
+    CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: 1
+    CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: 1
+
+  find_path considered the following locations:
+
+    /home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/include/aarch64-linux-android/swig.swg
+    /home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/include/swig.swg
+    /home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/swig.swg
+    /home/konglobemeralt/.local/bin/swig.swg
+    /usr/local/sbin/swig.swg
+    /usr/local/bin/swig.swg
+    /usr/sbin/swig.swg
+    /usr/bin/swig.swg
+    /sbin/swig.swg
+    /bin/swig.swg
+    /usr/games/swig.swg
+    /usr/local/games/swig.swg
+    /snap/bin/swig.swg
+    /usr/local/include/aarch64-linux-android/swig.swg
+    /usr/local/include/swig.swg
+    /usr/local/swig.swg
+    /usr/include/aarch64-linux-android/swig.swg
+    /usr/include/swig.swg
+    /usr/swig.swg
+    /include/aarch64-linux-android/swig.swg
+    /include/swig.swg
+    /home/konglobemeralt/Android/Sdk/cmake/3.18.1/include/aarch64-linux-android/swig.swg
+    /home/konglobemeralt/Android/Sdk/cmake/3.18.1/include/swig.swg
+    /home/konglobemeralt/Android/Sdk/cmake/3.18.1/swig.swg
+    /usr/X11R6/include/aarch64-linux-android/swig.swg
+    /usr/X11R6/include/swig.swg
+    /usr/X11R6/swig.swg
+    /usr/pkg/include/aarch64-linux-android/swig.swg
+    /usr/pkg/include/swig.swg
+    /usr/pkg/swig.swg
+    /opt/include/aarch64-linux-android/swig.swg
+    /opt/include/swig.swg
+    /opt/swig.swg
+    /usr/include/X11/swig.swg
+
+  The item was found at
+
+    /usr/share/swig4.0/swig.swg
+
+Call Stack (most recent call first):
+  CMakeLists.txt:104 (find_package)
+
+

@@ -1,0 +1,26 @@
+# ninja log v5
+1	88	1651161178	iso22133/CMakeFiles/ISO22133.dir/positioning.c.o	5a7f2226591abf1
+1	444	1651161179	iso22133/CMakeFiles/ISO22133.dir/iso22133.c.o	400956a0cd3a429
+446	486	1651161179	/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libISO22133.so	d5b79781a56e6b39
+1	816	1651161179	sockets/CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.o	adf5ada9323060f9
+1	1026	1651161179	CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o	936e831939b6b0d9
+88	1178	1651161179	sockets/CMakeFiles/TCPUDPSocket.dir/server.cpp.o	bc8399a6ca933de6
+4	1215	1651161179	sockets/CMakeFiles/TCPUDPSocket.dir/client.cpp.o	f3704a076c50b5d9
+1	1450	1651161180	sockets/CMakeFiles/TEST_SOCKET.dir/test_socket.cpp.o	b89306147d955804
+486	1499	1651161180	sockets/CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.o	86810c034beb82b2
+0	1610	1651161180	CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.o	cb90a0e8c08876d
+816	1684	1651161180	sockets/CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.o	600b2015da095f98
+1026	1740	1651161180	sockets/CMakeFiles/TEST_CAN.dir/test_can.cpp.o	b80323bc475baf81
+1	1769	1651161180	sockets/CMakeFiles/TCPUDPSocket.dir/socket.cpp.o	9288ab2dac3d1e92
+1769	1797	1651161180	/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libTCPUDPSocket.so	d0c550e30275c669
+1797	1809	1651161180	/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/TEST_CAN	8feb363649c0b628
+1797	1813	1651161180	/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/TEST_SOCKET	58116384ed54c429
+1	1866	1651161180	CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o	fce010e20ac0c65d
+0	2602	1651161181	CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o	f41494e6d744ca22
+2602	2652	1651161181	/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libISO_object.so	5c3ef536f623548c
+2652	2671	1651161181	/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/ISO_objectTest	ff9245ecff6044d
+2652	3032	1651161181	CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx	dc35a9470d3a1ec0
+2652	3032	1651161181	isoObject_wrap.java	dc35a9470d3a1ec0
+2652	3032	1651161181	isoObject_wrapJNI.java	dc35a9470d3a1ec0
+3032	4110	1651161182	CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o	1c7807f2ed006803
+4110	4134	1651161182	/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/3d1r3d11/obj/x86/libisoObject_wrap.so	86852ec725a6e1f4

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -g  -shared -Wl,-soname,libISO22133.so -o libISO22133.so CMakeFiles/ISO22133.dir/positioning.c.o CMakeFiles/ISO22133.dir/iso22133.c.o  -lm 

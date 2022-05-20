@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libTCPUDPSocket.so -o libTCPUDPSocket.so CMakeFiles/TCPUDPSocket.dir/canhandler.cpp.o CMakeFiles/TCPUDPSocket.dir/socket.cpp.o CMakeFiles/TCPUDPSocket.dir/client.cpp.o CMakeFiles/TCPUDPSocket.dir/server.cpp.o CMakeFiles/TCPUDPSocket.dir/tcphandler.cpp.o CMakeFiles/TCPUDPSocket.dir/udphandler.cpp.o 

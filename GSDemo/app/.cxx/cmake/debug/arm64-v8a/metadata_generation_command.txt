@@ -1,0 +1,22 @@
+Executable : /home/konglobemeralt/Android/Sdk/cmake/3.18.1/bin/cmake
+arguments : 
+-H/home/konglobemeralt/Documents/gitz/util/C/isoObject
+-DCMAKE_FIND_ROOT_PATH=/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/prefab/arm64-v8a/prefab
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_TOOLCHAIN_FILE=/home/konglobemeralt/Android/Sdk/ndk/21.4.7075529/build/cmake/android.toolchain.cmake
+-DANDROID_ABI=arm64-v8a
+-DANDROID_NDK=/home/konglobemeralt/Android/Sdk/ndk/21.4.7075529
+-DANDROID_PLATFORM=android-19
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DCMAKE_ANDROID_NDK=/home/konglobemeralt/Android/Sdk/ndk/21.4.7075529
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/arm64-v8a
+-DCMAKE_MAKE_PROGRAM=/home/konglobemeralt/Android/Sdk/cmake/3.18.1/bin/ninja
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=19
+-DANDROID_STL=c++_static
+-B/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/cmake/debug/arm64-v8a
+-GNinja
+jvmArgs : 
+

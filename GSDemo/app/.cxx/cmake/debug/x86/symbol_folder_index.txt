@@ -1,0 +1,1 @@
+/home/konglobemeralt/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cmake/debug/obj/x86

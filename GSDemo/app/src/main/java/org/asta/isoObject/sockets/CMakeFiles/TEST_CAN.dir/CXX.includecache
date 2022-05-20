@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/konglobemeralt/Documents/gitz/util/C/sockets/canhandler.hpp
+string
+-
+linux/can.h
+-
+
+/home/konglobemeralt/Documents/gitz/util/C/sockets/test_can.cpp
+canhandler.hpp
+/home/konglobemeralt/Documents/gitz/util/C/sockets/canhandler.hpp
+cassert
+-
+iostream
+-
+

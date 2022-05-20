@@ -21,7 +21,6 @@ import androidx.fragment.app.FragmentActivity;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -142,8 +141,8 @@ public class Waypoint2Activity extends FragmentActivity implements View.OnClickL
         locate = findViewById(R.id.locate);
         add = findViewById(R.id.add);
         clear = findViewById(R.id.clear);
-        config = findViewById(R.id.config);
-        upload = findViewById(R.id.upload);
+        config = findViewById(R.id.pauseresume);
+        upload = findViewById(R.id.arm);
         start = findViewById(R.id.start);
         stop = findViewById(R.id.stop);
         logTv = findViewById(R.id.tv_log);
@@ -525,11 +524,11 @@ public class Waypoint2Activity extends FragmentActivity implements View.OnClickL
                 updateDroneLocation();
                 break;
             }
-            case R.id.config: {
+            case R.id.pauseresume: {
                 showSettingDialog();
                 break;
             }
-            case R.id.upload: {
+            case R.id.arm: {
                 uploadWayPointMission();
                 break;
             }

@@ -46,11 +46,11 @@ public class MApplication extends Application {
     public void onCreate() {
 
         super.onCreate();
-       // Task droneTask = new Task();
-       // droneTask.run();
+        Task droneTask = new Task();
+        droneTask.run();
 
 //192.168.166.127
-        fpvDemoApplication.onCreate();
+        //fpvDemoApplication.onCreate();
 
     }
 }
@@ -110,8 +110,17 @@ class Task implements Runnable {
                     lastDroneState = "PreArming";
 
                 } else if (drone.getCurrentStateName().equals("Armed") && lastDroneState != "Armed") {
+                    TrajectoryWaypointVector traj =  drone.getTrajectory();
+                    Log.wtf("traj Size", String.valueOf(traj.size()));
+                    double epsilon = 0.001;
 
-                    Log.wtf("Error", "Armed");
+                    do{
+                        drone.reducePoints(epsilon);
+                        epsilon += 0.001;
+                    }while (drone.getReducedTraj().size() > 99 && epsilon < 0.06);
+                    Log.wtf("newTraj", String.valueOf(drone.getReducedTraj().size()));
+
+
                     lastDroneState = "Armed";
                 } else if (drone.getCurrentStateName().equals("Disarmed") && lastDroneState != "Disarmed") {
 

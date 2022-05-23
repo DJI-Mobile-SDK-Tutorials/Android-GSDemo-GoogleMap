@@ -575,10 +575,10 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                         do{
                             drone.reducePoints(epsilon);
                             epsilon += 0.001;
-                        }while (drone.getReducedTraj().size() > 99 && epsilon < 0.06);
+                        }while (drone.getReducedTraj().size() > 95 && epsilon < 0.06);
                         Log.wtf("newTraj", String.valueOf(drone.getReducedTraj().size()));
                         waypointSettings.clear();
-                        generateWaypointsFromTraj(new LatLng(droneLocationLat, droneLocationLng), drone.getReducedTraj().size()); //Use reduced
+                        generateWaypointsFromTraj(new LatLng(droneLocationLat, droneLocationLng), drone.getReducedTraj()); //Use reduced
                     }else{
                         waypointSettings.clear();
                         generateWaypointsFromTraj(new LatLng(droneLocationLat, droneLocationLng), traj); // use set traj

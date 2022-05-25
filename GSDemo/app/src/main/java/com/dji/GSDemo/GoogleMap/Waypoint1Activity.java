@@ -513,7 +513,7 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
 
         if(lastDroneState == "") {
-            drone = new IsoDrone("192.168.166.127");
+            drone = new IsoDrone("192.168.152.127");
             lastDroneState = drone.getCurrentStateName();
         }
         Log.wtf("Error", "Drone is in: " + drone.getCurrentStateName());
@@ -570,12 +570,12 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
                     waypointSettings.clear();
 
                     //Reduce points in traj if to large (99 max amount of waypoints)
-                    if(traj.size() > 99){
+                        if(traj.size() > 99){
                         double epsilon = 0.001;
                         do{
                             drone.reducePoints(epsilon);
                             epsilon += 0.001;
-                        }while (drone.getReducedTraj().size() > 95 && epsilon < 0.06);
+                        }while (drone.getReducedTraj().size() > 99 && epsilon < 0.08);
                         Log.wtf("newTraj", String.valueOf(drone.getReducedTraj().size()));
                         waypointSettings.clear();
                         generateWaypointsFromTraj(new LatLng(droneLocationLat, droneLocationLng), drone.getReducedTraj()); //Use reduced

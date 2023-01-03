@@ -1,0 +1,105 @@
+{
+  "buildFiles": [
+    "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/_deps/googletest-src/CMakeLists.txt",
+    "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/_deps/googletest-src/googlemock/CMakeLists.txt",
+    "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/_deps/googletest-src/googletest/CMakeLists.txt",
+    "/home/jesper/Documents/gitz/util/C/iso22133/CMakeLists.txt",
+    "/home/jesper/Documents/gitz/util/C/isoObject/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/usr/bin/ninja",
+      "-C",
+      "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/usr/bin/ninja",
+    "-C",
+    "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "ISO22133::@ec36ee61a2d018a05399": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "ISO22133",
+      "output": "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/ga4r6w19/obj/arm64-v8a/libISO22133.so",
+      "runtimeFiles": []
+    },
+    "ISO_object::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "ISO_object",
+      "output": "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/ga4r6w19/obj/arm64-v8a/libISO_object.so",
+      "runtimeFiles": [
+        "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/ga4r6w19/obj/arm64-v8a/libISO22133.so",
+        "/home/jesper/Documents/gitz/boost_for_android/build/install/libs/arm64-v8a/libboost_system.so",
+        "/home/jesper/Documents/gitz/boost_for_android/build/install/libs/arm64-v8a/libboost_chrono.so"
+      ]
+    },
+    "ISO_objectTest::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "ISO_objectTest",
+      "output": "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/ga4r6w19/obj/arm64-v8a/ISO_objectTest",
+      "runtimeFiles": [
+        "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/ga4r6w19/obj/arm64-v8a/libISO_object.so",
+        "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/ga4r6w19/obj/arm64-v8a/libISO22133.so",
+        "/home/jesper/Documents/gitz/boost_for_android/build/install/libs/arm64-v8a/libboost_system.so",
+        "/home/jesper/Documents/gitz/boost_for_android/build/install/libs/arm64-v8a/libboost_chrono.so"
+      ]
+    },
+    "gmock::@0f7bb11d64f3678238c7": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "gmock",
+      "output": "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/lib/libgmock.a"
+    },
+    "gmock_main::@0f7bb11d64f3678238c7": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "gmock_main",
+      "output": "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/lib/libgmock_main.a"
+    },
+    "gtest::@1ea2dfc0605fe3ab2a3f": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "gtest",
+      "output": "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/lib/libgtest.a"
+    },
+    "gtest_main::@1ea2dfc0605fe3ab2a3f": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "gtest_main",
+      "output": "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/lib/libgtest_main.a"
+    },
+    "isoObject_wrap::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "isoObject_wrap",
+      "output": "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/ga4r6w19/obj/arm64-v8a/libisoObject_wrap.so",
+      "runtimeFiles": [
+        "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/ga4r6w19/obj/arm64-v8a/libISO_object.so",
+        "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/ga4r6w19/obj/arm64-v8a/libISO22133.so",
+        "/home/jesper/Documents/gitz/boost_for_android/build/install/libs/arm64-v8a/libboost_system.so",
+        "/home/jesper/Documents/gitz/boost_for_android/build/install/libs/arm64-v8a/libboost_chrono.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/home/jesper/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/home/jesper/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp",
+    "cc",
+    "cxx"
+  ]
+}

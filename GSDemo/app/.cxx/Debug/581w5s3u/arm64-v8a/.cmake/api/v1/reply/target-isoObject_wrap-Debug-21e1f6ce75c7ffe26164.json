@@ -1,0 +1,278 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/581w5s3u/obj/arm64-v8a/libisoObject_wrap.so"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"swig_add_library",
+			"target_link_libraries",
+			"include_directories",
+			"target_include_directories",
+			"set_property",
+			"SWIG_ADD_SOURCE_TO_MODULE"
+		],
+		"files" : 
+		[
+			"/usr/share/cmake-3.25/Modules/UseSWIG.cmake",
+			"CMakeLists.txt",
+			"/home/jesper/Documents/gitz/util/C/iso22133/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 185,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 906,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 199,
+				"parent" : 0
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 38,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 100,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 55,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 191,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 889,
+				"parent" : 1
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 718,
+				"parent" : 9
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -g  -fno-limit-debug-info -fPIC"
+				},
+				{
+					"fragment" : "-std=gnu++17"
+				},
+				{
+					"backtrace" : 10,
+					"fragment" : ""
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "isoObject_wrap_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 7,
+					"path" : "/home/jesper/Documents/gitz/boost_for_android/build/install/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/jesper/Documents/gitz/util/C/isoObject/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/jesper/Documents/gitz/util/C/isoObject/sigslot/include/sigslot"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/jesper/Documents/gitz/util/C/iso22133"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/jesper/Documents/gitz/util/C/isoObject/boost_system"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/jesper/Documents/gitz/util/C/isoObject/boost_chrono"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/jesper/Documents/gitz/util/C/iso22133/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			],
+			"sysroot" : 
+			{
+				"path" : "/home/jesper/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+			}
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "ISO_object::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "ISO22133::@ec36ee61a2d018a05399"
+		}
+	],
+	"id" : "isoObject_wrap::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Qunused-arguments -Wl,--no-undefined",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/581w5s3u/obj/arm64-v8a/libISO_object.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/build/intermediates/cxx/Debug/581w5s3u/obj/arm64-v8a/libISO22133.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-latomic",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lm",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/home/jesper/Documents/gitz/boost_for_android/build/install/libs/arm64-v8a/libboost_system.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/home/jesper/Documents/gitz/boost_for_android/build/install/libs/arm64-v8a/libboost_chrono.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-static-libstdc++ -latomic -lm",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX",
+		"sysroot" : 
+		{
+			"path" : "/home/jesper/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+		}
+	},
+	"name" : "isoObject_wrap",
+	"nameOnDisk" : "libisoObject_wrap.so",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/581w5s3u/arm64-v8a/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/581w5s3u/arm64-v8a/isoObject_wrap.java",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/581w5s3u/arm64-v8a/isoObject_wrapJNI.java",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"path" : "isoObject.i",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

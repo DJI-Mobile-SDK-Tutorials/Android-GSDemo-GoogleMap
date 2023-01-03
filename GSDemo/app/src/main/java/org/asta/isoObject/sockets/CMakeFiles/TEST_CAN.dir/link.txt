@@ -1,1 +1,0 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/TEST_CAN.dir/test_can.cpp.o  -o TEST_CAN  -Wl,-rpath,/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/sockets libTCPUDPSocket.so 

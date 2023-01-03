@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+def my_boost_dir = "/home/jesper/Documents/gitz/boost_for_android/build/install"
+def my_boost_dir_libs = my_boost_dir + "/libs"
+def my_boost_dir_inc  = my_boost_dir + "/include"
+
 repositories {
     mavenLocal()
 }
@@ -21,7 +25,9 @@ android {
         multiDexEnabled true
         externalNativeBuild {
             cmake {
-                arguments "-DANDROID_STL=c++_static"
+                arguments "-DANDROID_STL=c++_shared", "-DBoost_DEBUG=ON", "-DBOOST_SYSTEM_NO_DEPRECATED=TRUE"
+                arguments '-DMY_BOOST_LIBS_DIR=' + my_boost_dir_libs
+                arguments '-DMY_BOOST_INC_DIR='  + my_boost_dir_inc
                 cppFlags ''
             }
         } //Mention in the doc
@@ -70,7 +76,7 @@ android {
             path file('../../../util/C/sockets/CMakeLists.txt')
             path file('../../../util/C/iso22133/CMakeLists.txt')
             path file('../../../util/C/isoObject/CMakeLists.txt')
-            version '3.18.1'
+            version '3.25.1'
         }
     }
 }

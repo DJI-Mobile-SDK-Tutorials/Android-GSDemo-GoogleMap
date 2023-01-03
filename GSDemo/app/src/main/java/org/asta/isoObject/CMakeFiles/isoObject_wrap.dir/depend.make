@@ -3,14 +3,14 @@
 
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: ../inc/iso22133object.hpp
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: ../inc/iso22133state.hpp
+CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: ../inc/tcpServer.hpp
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: ../inc/trajDecoder.hpp
+CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: ../inc/udpServer.hpp
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: ../sigslot/include/sigslot/signal.hpp
-CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.h
-CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.h
+CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /home/jesper/Documents/gitz/util/C/iso22133/iso22133.h
+CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /home/jesper/Documents/gitz/util/C/iso22133/positioning.h
 CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx
-CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/server.hpp
-CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.hpp
-CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/socketexceptions.hpp
-CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /usr/lib/jvm/java-11-openjdk-amd64/include/jni.h
-CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /usr/lib/jvm/java-11-openjdk-amd64/include/linux/jni_md.h
+CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.h
+CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /usr/lib/jvm/default-java/include/jni.h
+CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o: /usr/lib/jvm/default-java/include/linux/jni_md.h
 

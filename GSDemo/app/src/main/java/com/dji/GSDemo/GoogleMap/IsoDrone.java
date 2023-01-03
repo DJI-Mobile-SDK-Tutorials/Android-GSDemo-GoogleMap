@@ -5,11 +5,11 @@ import android.util.Log;
 import org.asta.isoObject.*;
 
 public class IsoDrone extends TestObject{
-    IsoDrone(int ip) {
-        super(ip);
-        System.out.println("Drone init...int");
-
-    }
+   //IsoDrone(int ip) {
+   //     super(ip);
+    //    System.out.println("Drone init...int");
+//
+   // }
 
     IsoDrone(String ip) {
         super(ip);

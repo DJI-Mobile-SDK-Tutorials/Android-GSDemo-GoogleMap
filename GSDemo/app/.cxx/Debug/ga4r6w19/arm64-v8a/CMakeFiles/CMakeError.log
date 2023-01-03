@@ -1,0 +1,66 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/CMakeFiles/CMakeScratch/TryCompile-XKsGXZ
+
+Run Build Command(s):/usr/bin/ninja cmTC_2c0a4 && [1/2] Building C object CMakeFiles/cmTC_2c0a4.dir/src.c.o
+/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/CMakeFiles/CMakeScratch/TryCompile-XKsGXZ/src.c:13:3: warning: implicit declaration of function 'pthread_cancel' is invalid in C99 [-Wimplicit-function-declaration]
+  pthread_cancel(thread);
+  ^
+1 warning generated.
+[2/2] Linking C executable cmTC_2c0a4
+FAILED: cmTC_2c0a4 
+: && /home/jesper/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 --sysroot=/home/jesper/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions  -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections CMakeFiles/cmTC_2c0a4.dir/src.c.o -o cmTC_2c0a4  -latomic -lm && :
+ld: error: undefined symbol: pthread_cancel
+>>> referenced by src.c:13
+>>>               CMakeFiles/cmTC_2c0a4.dir/src.c.o:(main)
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/CMakeFiles/CMakeScratch/TryCompile-viUzWX
+
+Run Build Command(s):/usr/bin/ninja cmTC_d079d && [1/2] Building C object CMakeFiles/cmTC_d079d.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_d079d
+FAILED: cmTC_d079d 
+: && /home/jesper/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 --sysroot=/home/jesper/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -DCHECK_FUNCTION_EXISTS=pthread_create -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections CMakeFiles/cmTC_d079d.dir/CheckFunctionExists.c.o -o cmTC_d079d  -lpthreads   -latomic -lm && :
+ld: error: unable to find library -lpthreads
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: /home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/arm64-v8a/CMakeFiles/CMakeScratch/TryCompile-opRUNZ
+
+Run Build Command(s):/usr/bin/ninja cmTC_0cf2c && [1/2] Building C object CMakeFiles/cmTC_0cf2c.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_0cf2c
+FAILED: cmTC_0cf2c 
+: && /home/jesper/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 --sysroot=/home/jesper/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -DCHECK_FUNCTION_EXISTS=pthread_create -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections CMakeFiles/cmTC_0cf2c.dir/CheckFunctionExists.c.o -o cmTC_0cf2c  -lpthread   -latomic -lm && :
+ld: error: unable to find library -lpthread
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+

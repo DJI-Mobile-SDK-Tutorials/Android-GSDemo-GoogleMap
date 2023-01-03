@@ -1,0 +1,79 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/41624o4l/arm64-v8a/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/jesper/Android/Sdk/cmake/3.18.1/bin/ninja cmTC_2622f && [1/2] Building C object CMakeFiles/cmTC_2622f.dir/src.c.o
+src.c:13:3: warning: implicit declaration of function 'pthread_cancel' is invalid in C99 [-Wimplicit-function-declaration]
+  pthread_cancel(thread);
+  ^
+1 warning generated.
+[2/2] Linking C executable cmTC_2622f
+FAILED: cmTC_2622f 
+: && /home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -DCMAKE_HAVE_LIBC_PTHREAD -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,--gc-sections CMakeFiles/cmTC_2622f.dir/src.c.o -o cmTC_2622f  -latomic -lm && :
+CMakeFiles/cmTC_2622f.dir/src.c.o: In function `main':
+/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/41624o4l/arm64-v8a/CMakeFiles/CMakeTmp/src.c:(.text.main+0x20): undefined reference to `pthread_cancel'
+/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/41624o4l/arm64-v8a/CMakeFiles/CMakeTmp/src.c:(.text.main+0x24): undefined reference to `pthread_cancel'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/41624o4l/arm64-v8a/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/jesper/Android/Sdk/cmake/3.18.1/bin/ninja cmTC_02c54 && [1/2] Building C object CMakeFiles/cmTC_02c54.dir/CheckFunctionExists.c.o
+/home/jesper/Android/Sdk/cmake/3.18.1/share/cmake-3.18/Modules/CheckFunctionExists.c:7:3: warning: declaration of built-in function 'pthread_create' requires inclusion of the header <pthread.h> [-Wbuiltin-requires-header]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:3:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS pthread_create
+                              ^
+1 warning generated.
+[2/2] Linking C executable cmTC_02c54
+FAILED: cmTC_02c54 
+: && /home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,--gc-sections CMakeFiles/cmTC_02c54.dir/CheckFunctionExists.c.o -o cmTC_02c54  -lpthreads  -latomic -lm && :
+/home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld: cannot find -lpthreads
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: /home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/41624o4l/arm64-v8a/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/jesper/Android/Sdk/cmake/3.18.1/bin/ninja cmTC_d2093 && [1/2] Building C object CMakeFiles/cmTC_d2093.dir/CheckFunctionExists.c.o
+/home/jesper/Android/Sdk/cmake/3.18.1/share/cmake-3.18/Modules/CheckFunctionExists.c:7:3: warning: declaration of built-in function 'pthread_create' requires inclusion of the header <pthread.h> [-Wbuiltin-requires-header]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:3:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS pthread_create
+                              ^
+1 warning generated.
+[2/2] Linking C executable cmTC_d2093
+FAILED: cmTC_d2093 
+: && /home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,--gc-sections CMakeFiles/cmTC_d2093.dir/CheckFunctionExists.c.o -o cmTC_d2093  -lpthread  -latomic -lm && :
+/home/jesper/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld: cannot find -lpthread
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+

@@ -1,0 +1,21 @@
+# ninja log v5
+0	17	1672670770341716719	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	cc8f480d15befa41
+0	17	1672670770341716719	/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/armeabi-v7a/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	cc8f480d15befa41
+17	11130	1672670781453838921	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	e2b46ec82061ea17
+17	11130	1672670781453838921	/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/armeabi-v7a/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	e2b46ec82061ea17
+11131	11833	0	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	14d797237deb9176
+11131	11833	0	/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/armeabi-v7a/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	14d797237deb9176
+11833	11844	1672670782169846795	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	aa0e5a692ad6948f
+11833	11844	1672670782169846795	/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/armeabi-v7a/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	aa0e5a692ad6948f
+11844	11854	1672670782177846883	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	e4b6a4a6c01954e2
+11844	11854	1672670782177846883	/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/armeabi-v7a/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	e4b6a4a6c01954e2
+11854	11864	1672670782189847015	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	e2591233c7ac0cc6
+11854	11864	1672670782189847015	/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/armeabi-v7a/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	e2591233c7ac0cc6
+11864	11874	1672670782197847102	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	9b32ceb05b212f6
+11864	11874	1672670782197847102	/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/armeabi-v7a/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	9b32ceb05b212f6
+11874	11884	1672670782209847235	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	ee7c990b4cf48f15
+11874	11884	1672670782209847235	/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/armeabi-v7a/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	ee7c990b4cf48f15
+11884	11899	1672670782221847367	CMakeFiles/googletest-populate-complete	19d1395929c85b25
+11884	11899	1672670782221847367	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	19d1395929c85b25
+11884	11899	1672670782221847367	/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/armeabi-v7a/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete	19d1395929c85b25
+11884	11899	1672670782221847367	/home/jesper/Documents/gitz/Android-GSDemo-GoogleMap/GSDemo/app/.cxx/Debug/ga4r6w19/armeabi-v7a/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	19d1395929c85b25

@@ -1,0 +1,11 @@
+# ninja log v5
+1	19	1672664706	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	37d7722572962efa
+19	12244	1672664718	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	9d3450a8b0d2ac34
+12244	12918	0	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	50ed2caf75812a1a
+12918	12923	1672664719	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	27d23e49f60f2786
+12923	12930	1672664719	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	2a3190d5e05ecd77
+12930	12935	1672664719	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	a0e3765fe7b83322
+12935	12940	1672664719	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	6019473b10c57a36
+12940	12945	1672664719	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	242d216f0116b63
+12945	12954	1672664719	CMakeFiles/googletest-populate-complete	98b9b9734428889
+12945	12954	1672664719	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	98b9b9734428889

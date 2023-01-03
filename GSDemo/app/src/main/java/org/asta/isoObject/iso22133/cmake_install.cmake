@@ -1,4 +1,4 @@
-# Install script for directory: /home/konglobemeralt/Documents/gitz/util/C/iso22133
+# Install script for directory: /home/jesper/Documents/gitz/util/C/iso22133
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -48,7 +48,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libISO22133.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133/libISO22133.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jesper/Documents/gitz/util/C/isoObject/build/iso22133/libISO22133.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libISO22133.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libISO22133.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -62,8 +62,14 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "/home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.h"
-    "/home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.h"
+    "/home/jesper/Documents/gitz/util/C/iso22133/iso22133.h"
+    "/home/jesper/Documents/gitz/util/C/iso22133/positioning.h"
     )
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/jesper/Documents/gitz/util/C/isoObject/build/_deps/googletest-build/cmake_install.cmake")
+
 endif()
 

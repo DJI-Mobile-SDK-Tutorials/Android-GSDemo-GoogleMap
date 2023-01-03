@@ -25,12 +25,12 @@ iso22133state.hpp
 ../inc/iso22133state.hpp
 trajDecoder.hpp
 ../inc/trajDecoder.hpp
-server.hpp
-../inc/server.hpp
-socket.hpp
-../inc/socket.hpp
 signal.hpp
 ../inc/signal.hpp
+tcpServer.hpp
+../inc/tcpServer.hpp
+udpServer.hpp
+../inc/udpServer.hpp
 
 ../inc/iso22133state.hpp
 set
@@ -44,6 +44,14 @@ functional
 iso22133.h
 ../inc/iso22133.h
 
+../inc/tcpServer.hpp
+boost/asio.hpp
+-
+boost/system/system_error.hpp
+-
+vector
+-
+
 ../inc/trajDecoder.hpp
 string
 -
@@ -55,6 +63,16 @@ atomic
 -
 iso22133.h
 ../inc/iso22133.h
+
+../inc/udpServer.hpp
+boost/asio.hpp
+-
+boost/system/system_error.hpp
+-
+iostream
+-
+vector
+-
 
 ../sigslot/include/sigslot/signal.hpp
 atomic
@@ -74,7 +92,7 @@ vector
 typeinfo
 -
 
-/home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.h
+/home/jesper/Documents/gitz/util/C/iso22133/iso22133.h
 inttypes.h
 -
 stddef.h
@@ -84,9 +102,9 @@ stdio.h
 math.h
 -
 positioning.h
-/home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.h
+/home/jesper/Documents/gitz/util/C/iso22133/positioning.h
 
-/home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.h
+/home/jesper/Documents/gitz/util/C/iso22133/positioning.h
 inttypes.h
 -
 time.h
@@ -98,69 +116,33 @@ stddef.h
 sys/time.h
 -
 
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp
+/home/jesper/Documents/gitz/util/C/isoObject/src/iso22133object.cpp
 chrono
 -
 thread
 -
 iso22133object.hpp
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.hpp
+/home/jesper/Documents/gitz/util/C/isoObject/src/iso22133object.hpp
 iso22133state.hpp
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.hpp
+/home/jesper/Documents/gitz/util/C/isoObject/src/iso22133state.hpp
 iso22133.h
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133.h
+/home/jesper/Documents/gitz/util/C/isoObject/src/iso22133.h
 
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp
+/home/jesper/Documents/gitz/util/C/isoObject/src/iso22133state.cpp
 algorithm
 -
 iso22133object.hpp
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.hpp
+/home/jesper/Documents/gitz/util/C/isoObject/src/iso22133object.hpp
 iso22133state.hpp
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.hpp
+/home/jesper/Documents/gitz/util/C/isoObject/src/iso22133state.hpp
 
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp
+/home/jesper/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp
 iostream
 -
 mutex
 -
 trajDecoder.hpp
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.hpp
+/home/jesper/Documents/gitz/util/C/isoObject/src/trajDecoder.hpp
 iso22133.h
-/home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133.h
-
-/home/konglobemeralt/Documents/gitz/util/C/sockets/server.hpp
-socket.hpp
-/home/konglobemeralt/Documents/gitz/util/C/sockets/socket.hpp
-
-/home/konglobemeralt/Documents/gitz/util/C/sockets/socket.hpp
-socketexceptions.hpp
-/home/konglobemeralt/Documents/gitz/util/C/sockets/socketexceptions.hpp
-cstdint
--
-chrono
--
-map
--
-vector
--
-sys/socket.h
--
-fcntl.h
--
-netinet/in.h
--
-unistd.h
--
-
-/home/konglobemeralt/Documents/gitz/util/C/sockets/socketexceptions.hpp
-stdexcept
--
-cstring
--
-arpa/inet.h
--
-cstdio
--
-iostream
--
+/home/jesper/Documents/gitz/util/C/isoObject/src/iso22133.h
 

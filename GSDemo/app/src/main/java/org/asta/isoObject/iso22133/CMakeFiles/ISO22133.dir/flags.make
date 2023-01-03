@@ -6,5 +6,5 @@ C_FLAGS = -g -fPIC   -std=gnu11
 
 C_DEFINES = -DISO22133_EXPORTS
 
-C_INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/iso22133 
+C_INCLUDES = -I/home/jesper/Documents/gitz/util/C/iso22133 -I/home/jesper/Documents/gitz/util/C/iso22133/include 
 

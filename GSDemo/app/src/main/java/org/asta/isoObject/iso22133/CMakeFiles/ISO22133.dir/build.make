@@ -18,9 +18,6 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -46,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/konglobemeralt/Documents/gitz/util/C/isoObject
+CMAKE_SOURCE_DIR = /home/jesper/Documents/gitz/util/C/isoObject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/konglobemeralt/Documents/gitz/util/C/isoObject/build
+CMAKE_BINARY_DIR = /home/jesper/Documents/gitz/util/C/isoObject/build
 
 # Include any dependencies generated for this target.
 include iso22133/CMakeFiles/ISO22133.dir/depend.make
@@ -61,45 +58,165 @@ include iso22133/CMakeFiles/ISO22133.dir/progress.make
 include iso22133/CMakeFiles/ISO22133.dir/flags.make
 
 iso22133/CMakeFiles/ISO22133.dir/positioning.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
-iso22133/CMakeFiles/ISO22133.dir/positioning.c.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object iso22133/CMakeFiles/ISO22133.dir/positioning.c.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/positioning.c.o   -c /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c
+iso22133/CMakeFiles/ISO22133.dir/positioning.c.o: /home/jesper/Documents/gitz/util/C/iso22133/positioning.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object iso22133/CMakeFiles/ISO22133.dir/positioning.c.o"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/positioning.c.o   -c /home/jesper/Documents/gitz/util/C/iso22133/positioning.c
 
 iso22133/CMakeFiles/ISO22133.dir/positioning.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/positioning.c.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c > CMakeFiles/ISO22133.dir/positioning.c.i
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jesper/Documents/gitz/util/C/iso22133/positioning.c > CMakeFiles/ISO22133.dir/positioning.c.i
 
 iso22133/CMakeFiles/ISO22133.dir/positioning.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/positioning.c.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.c -o CMakeFiles/ISO22133.dir/positioning.c.s
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jesper/Documents/gitz/util/C/iso22133/positioning.c -o CMakeFiles/ISO22133.dir/positioning.c.s
 
 iso22133/CMakeFiles/ISO22133.dir/iso22133.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
-iso22133/CMakeFiles/ISO22133.dir/iso22133.c.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object iso22133/CMakeFiles/ISO22133.dir/iso22133.c.o"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/iso22133.c.o   -c /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c
+iso22133/CMakeFiles/ISO22133.dir/iso22133.c.o: /home/jesper/Documents/gitz/util/C/iso22133/iso22133.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object iso22133/CMakeFiles/ISO22133.dir/iso22133.c.o"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/iso22133.c.o   -c /home/jesper/Documents/gitz/util/C/iso22133/iso22133.c
 
 iso22133/CMakeFiles/ISO22133.dir/iso22133.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/iso22133.c.i"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c > CMakeFiles/ISO22133.dir/iso22133.c.i
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jesper/Documents/gitz/util/C/iso22133/iso22133.c > CMakeFiles/ISO22133.dir/iso22133.c.i
 
 iso22133/CMakeFiles/ISO22133.dir/iso22133.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/iso22133.c.s"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.c -o CMakeFiles/ISO22133.dir/iso22133.c.s
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jesper/Documents/gitz/util/C/iso22133/iso22133.c -o CMakeFiles/ISO22133.dir/iso22133.c.s
+
+iso22133/CMakeFiles/ISO22133.dir/src/footer.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
+iso22133/CMakeFiles/ISO22133.dir/src/footer.c.o: /home/jesper/Documents/gitz/util/C/iso22133/src/footer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object iso22133/CMakeFiles/ISO22133.dir/src/footer.c.o"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/src/footer.c.o   -c /home/jesper/Documents/gitz/util/C/iso22133/src/footer.c
+
+iso22133/CMakeFiles/ISO22133.dir/src/footer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/src/footer.c.i"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jesper/Documents/gitz/util/C/iso22133/src/footer.c > CMakeFiles/ISO22133.dir/src/footer.c.i
+
+iso22133/CMakeFiles/ISO22133.dir/src/footer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/src/footer.c.s"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jesper/Documents/gitz/util/C/iso22133/src/footer.c -o CMakeFiles/ISO22133.dir/src/footer.c.s
+
+iso22133/CMakeFiles/ISO22133.dir/src/header.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
+iso22133/CMakeFiles/ISO22133.dir/src/header.c.o: /home/jesper/Documents/gitz/util/C/iso22133/src/header.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object iso22133/CMakeFiles/ISO22133.dir/src/header.c.o"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/src/header.c.o   -c /home/jesper/Documents/gitz/util/C/iso22133/src/header.c
+
+iso22133/CMakeFiles/ISO22133.dir/src/header.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/src/header.c.i"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jesper/Documents/gitz/util/C/iso22133/src/header.c > CMakeFiles/ISO22133.dir/src/header.c.i
+
+iso22133/CMakeFiles/ISO22133.dir/src/header.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/src/header.c.s"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jesper/Documents/gitz/util/C/iso22133/src/header.c -o CMakeFiles/ISO22133.dir/src/header.c.s
+
+iso22133/CMakeFiles/ISO22133.dir/src/iohelpers.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
+iso22133/CMakeFiles/ISO22133.dir/src/iohelpers.c.o: /home/jesper/Documents/gitz/util/C/iso22133/src/iohelpers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object iso22133/CMakeFiles/ISO22133.dir/src/iohelpers.c.o"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/src/iohelpers.c.o   -c /home/jesper/Documents/gitz/util/C/iso22133/src/iohelpers.c
+
+iso22133/CMakeFiles/ISO22133.dir/src/iohelpers.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/src/iohelpers.c.i"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jesper/Documents/gitz/util/C/iso22133/src/iohelpers.c > CMakeFiles/ISO22133.dir/src/iohelpers.c.i
+
+iso22133/CMakeFiles/ISO22133.dir/src/iohelpers.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/src/iohelpers.c.s"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jesper/Documents/gitz/util/C/iso22133/src/iohelpers.c -o CMakeFiles/ISO22133.dir/src/iohelpers.c.s
+
+iso22133/CMakeFiles/ISO22133.dir/src/monr.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
+iso22133/CMakeFiles/ISO22133.dir/src/monr.c.o: /home/jesper/Documents/gitz/util/C/iso22133/src/monr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object iso22133/CMakeFiles/ISO22133.dir/src/monr.c.o"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/src/monr.c.o   -c /home/jesper/Documents/gitz/util/C/iso22133/src/monr.c
+
+iso22133/CMakeFiles/ISO22133.dir/src/monr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/src/monr.c.i"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jesper/Documents/gitz/util/C/iso22133/src/monr.c > CMakeFiles/ISO22133.dir/src/monr.c.i
+
+iso22133/CMakeFiles/ISO22133.dir/src/monr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/src/monr.c.s"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jesper/Documents/gitz/util/C/iso22133/src/monr.c -o CMakeFiles/ISO22133.dir/src/monr.c.s
+
+iso22133/CMakeFiles/ISO22133.dir/src/osem.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
+iso22133/CMakeFiles/ISO22133.dir/src/osem.c.o: /home/jesper/Documents/gitz/util/C/iso22133/src/osem.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object iso22133/CMakeFiles/ISO22133.dir/src/osem.c.o"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/src/osem.c.o   -c /home/jesper/Documents/gitz/util/C/iso22133/src/osem.c
+
+iso22133/CMakeFiles/ISO22133.dir/src/osem.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/src/osem.c.i"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jesper/Documents/gitz/util/C/iso22133/src/osem.c > CMakeFiles/ISO22133.dir/src/osem.c.i
+
+iso22133/CMakeFiles/ISO22133.dir/src/osem.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/src/osem.c.s"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jesper/Documents/gitz/util/C/iso22133/src/osem.c -o CMakeFiles/ISO22133.dir/src/osem.c.s
+
+iso22133/CMakeFiles/ISO22133.dir/src/ostm.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
+iso22133/CMakeFiles/ISO22133.dir/src/ostm.c.o: /home/jesper/Documents/gitz/util/C/iso22133/src/ostm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object iso22133/CMakeFiles/ISO22133.dir/src/ostm.c.o"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/src/ostm.c.o   -c /home/jesper/Documents/gitz/util/C/iso22133/src/ostm.c
+
+iso22133/CMakeFiles/ISO22133.dir/src/ostm.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/src/ostm.c.i"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jesper/Documents/gitz/util/C/iso22133/src/ostm.c > CMakeFiles/ISO22133.dir/src/ostm.c.i
+
+iso22133/CMakeFiles/ISO22133.dir/src/ostm.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/src/ostm.c.s"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jesper/Documents/gitz/util/C/iso22133/src/ostm.c -o CMakeFiles/ISO22133.dir/src/ostm.c.s
+
+iso22133/CMakeFiles/ISO22133.dir/src/timeconversions.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
+iso22133/CMakeFiles/ISO22133.dir/src/timeconversions.c.o: /home/jesper/Documents/gitz/util/C/iso22133/src/timeconversions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object iso22133/CMakeFiles/ISO22133.dir/src/timeconversions.c.o"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/src/timeconversions.c.o   -c /home/jesper/Documents/gitz/util/C/iso22133/src/timeconversions.c
+
+iso22133/CMakeFiles/ISO22133.dir/src/timeconversions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/src/timeconversions.c.i"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jesper/Documents/gitz/util/C/iso22133/src/timeconversions.c > CMakeFiles/ISO22133.dir/src/timeconversions.c.i
+
+iso22133/CMakeFiles/ISO22133.dir/src/timeconversions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/src/timeconversions.c.s"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jesper/Documents/gitz/util/C/iso22133/src/timeconversions.c -o CMakeFiles/ISO22133.dir/src/timeconversions.c.s
+
+iso22133/CMakeFiles/ISO22133.dir/src/traj.c.o: iso22133/CMakeFiles/ISO22133.dir/flags.make
+iso22133/CMakeFiles/ISO22133.dir/src/traj.c.o: /home/jesper/Documents/gitz/util/C/iso22133/src/traj.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object iso22133/CMakeFiles/ISO22133.dir/src/traj.c.o"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ISO22133.dir/src/traj.c.o   -c /home/jesper/Documents/gitz/util/C/iso22133/src/traj.c
+
+iso22133/CMakeFiles/ISO22133.dir/src/traj.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ISO22133.dir/src/traj.c.i"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jesper/Documents/gitz/util/C/iso22133/src/traj.c > CMakeFiles/ISO22133.dir/src/traj.c.i
+
+iso22133/CMakeFiles/ISO22133.dir/src/traj.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ISO22133.dir/src/traj.c.s"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jesper/Documents/gitz/util/C/iso22133/src/traj.c -o CMakeFiles/ISO22133.dir/src/traj.c.s
 
 # Object files for target ISO22133
 ISO22133_OBJECTS = \
 "CMakeFiles/ISO22133.dir/positioning.c.o" \
-"CMakeFiles/ISO22133.dir/iso22133.c.o"
+"CMakeFiles/ISO22133.dir/iso22133.c.o" \
+"CMakeFiles/ISO22133.dir/src/footer.c.o" \
+"CMakeFiles/ISO22133.dir/src/header.c.o" \
+"CMakeFiles/ISO22133.dir/src/iohelpers.c.o" \
+"CMakeFiles/ISO22133.dir/src/monr.c.o" \
+"CMakeFiles/ISO22133.dir/src/osem.c.o" \
+"CMakeFiles/ISO22133.dir/src/ostm.c.o" \
+"CMakeFiles/ISO22133.dir/src/timeconversions.c.o" \
+"CMakeFiles/ISO22133.dir/src/traj.c.o"
 
 # External object files for target ISO22133
 ISO22133_EXTERNAL_OBJECTS =
 
 iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/positioning.c.o
 iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/iso22133.c.o
+iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/src/footer.c.o
+iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/src/header.c.o
+iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/src/iohelpers.c.o
+iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/src/monr.c.o
+iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/src/osem.c.o
+iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/src/ostm.c.o
+iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/src/timeconversions.c.o
+iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/src/traj.c.o
 iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/build.make
 iso22133/libISO22133.so: iso22133/CMakeFiles/ISO22133.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library libISO22133.so"
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ISO22133.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C shared library libISO22133.so"
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ISO22133.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 iso22133/CMakeFiles/ISO22133.dir/build: iso22133/libISO22133.so
@@ -107,10 +224,10 @@ iso22133/CMakeFiles/ISO22133.dir/build: iso22133/libISO22133.so
 .PHONY : iso22133/CMakeFiles/ISO22133.dir/build
 
 iso22133/CMakeFiles/ISO22133.dir/clean:
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 && $(CMAKE_COMMAND) -P CMakeFiles/ISO22133.dir/cmake_clean.cmake
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 && $(CMAKE_COMMAND) -P CMakeFiles/ISO22133.dir/cmake_clean.cmake
 .PHONY : iso22133/CMakeFiles/ISO22133.dir/clean
 
 iso22133/CMakeFiles/ISO22133.dir/depend:
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/konglobemeralt/Documents/gitz/util/C/isoObject /home/konglobemeralt/Documents/gitz/util/C/iso22133 /home/konglobemeralt/Documents/gitz/util/C/isoObject/build /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133 /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/iso22133/CMakeFiles/ISO22133.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jesper/Documents/gitz/util/C/isoObject /home/jesper/Documents/gitz/util/C/iso22133 /home/jesper/Documents/gitz/util/C/isoObject/build /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 /home/jesper/Documents/gitz/util/C/isoObject/build/iso22133/CMakeFiles/ISO22133.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : iso22133/CMakeFiles/ISO22133.dir/depend
 

@@ -3,28 +3,26 @@
 
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: ../inc/iso22133object.hpp
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: ../inc/iso22133state.hpp
+CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: ../inc/tcpServer.hpp
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: ../inc/trajDecoder.hpp
+CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: ../inc/udpServer.hpp
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: ../sigslot/include/sigslot/signal.hpp
-CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.h
-CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.h
+CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: /home/jesper/Documents/gitz/util/C/iso22133/iso22133.h
+CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: /home/jesper/Documents/gitz/util/C/iso22133/positioning.h
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: ../src/iso22133object.cpp
-CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/server.hpp
-CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.hpp
-CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/socketexceptions.hpp
 
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: ../inc/iso22133object.hpp
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: ../inc/iso22133state.hpp
+CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: ../inc/tcpServer.hpp
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: ../inc/trajDecoder.hpp
+CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: ../inc/udpServer.hpp
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: ../sigslot/include/sigslot/signal.hpp
-CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.h
-CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.h
+CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: /home/jesper/Documents/gitz/util/C/iso22133/iso22133.h
+CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: /home/jesper/Documents/gitz/util/C/iso22133/positioning.h
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: ../src/iso22133state.cpp
-CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/server.hpp
-CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/socket.hpp
-CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/sockets/socketexceptions.hpp
 
 CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: ../inc/trajDecoder.hpp
-CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/iso22133.h
-CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: /home/konglobemeralt/Documents/gitz/util/C/iso22133/positioning.h
+CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: /home/jesper/Documents/gitz/util/C/iso22133/iso22133.h
+CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: /home/jesper/Documents/gitz/util/C/iso22133/positioning.h
 CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: ../src/trajDecoder.cpp
 

@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
-def my_boost_dir = "/home/jesper/Documents/gitz/boost_for_android/build/install"
-def my_boost_dir_libs = my_boost_dir + "/libs"
-def my_boost_dir_inc  = my_boost_dir + "/include"
+def my_boost_dir = "/home/victor/git/Boost-for-Android/build/out/arm64-v8a/"
+def my_boost_dir_libs = my_boost_dir + "/lib"
+def my_boost_dir_inc  = my_boost_dir + "/include/boost-1_78/"
 
 repositories {
     mavenLocal()
@@ -19,7 +19,7 @@ android {
         ndk {
             // On x86 devices that run Android API 23 or above, if the application is targeted with API 23 or
             // above, FFmpeg lib might lead to runtime crashes or warnings.
-            abiFilters 'armeabi-v7a', 'arm64-v8a'
+            abiFilters 'arm64-v8a'
             stl "c++_static"
         }
         multiDexEnabled true
@@ -28,6 +28,9 @@ android {
                 arguments "-DANDROID_STL=c++_shared", "-DBoost_DEBUG=ON", "-DBOOST_SYSTEM_NO_DEPRECATED=TRUE"
                 arguments '-DMY_BOOST_LIBS_DIR=' + my_boost_dir_libs
                 arguments '-DMY_BOOST_INC_DIR='  + my_boost_dir_inc
+                arguments '-DWITH_SWIG=ON'
+                arguments '-DSWIG_WITH_JAVA=ON'
+                arguments '-DCMAKE_BUILD_TYPE=Release'
                 cppFlags ''
             }
         } //Mention in the doc
@@ -39,17 +42,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            shrinkResources true
-            minifyEnabled true
+            shrinkResources false // somehow destroys swig-naming, keep at false
+            minifyEnabled false // somehow destroys swig-naming, keep at false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
-    }
-
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['src/main/jniLibs']
-        }
     }
 
     dexOptions {
@@ -76,7 +73,7 @@ android {
             path file('../../../util/C/sockets/CMakeLists.txt')
             path file('../../../util/C/iso22133/CMakeLists.txt')
             path file('../../../util/C/isoObject/CMakeLists.txt')
-            version '3.25.1'
+            version '3.22.1' // NOTE: should be whatever cmake is present on the host
         }
     }
 }

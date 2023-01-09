@@ -1,8 +1,8 @@
-# Android-GSDemo-GoogleMap
+# AstaZero ATOS drone demo app
 
 ## Introduction
 
-This GSDemo-GoogleMap is designed for you to learn how to implement the DJIWaypoint Mission features and get familiar with the usages of DJIMissionManager. Also you will know how to test the Waypoint Mission API with DJI PC Simulator. This demo is build based on the [Google Map](https://developers.google.com/maps).
+This is the AstaZero ATOS drone demo app.
 
 ## Requirements
 
@@ -10,28 +10,65 @@ This GSDemo-GoogleMap is designed for you to learn how to implement the DJIWaypo
  - Android System 4.1+
  - DJI Android SDK 4.16.1
 
-## Tutorial
+## Building for android
+These build instructions have been tested and are confirmed working on ubuntu 20.04.
+### Dependencies
+Install swig: 
+```
+sudo apt install swig
+```
+Download Android Studio by visiting https://developer.android.com/studio/install and downloading the zip file. 
+Unzip the file and execute `./studio.sh` located in /android-studio/bin to start the IDE.
 
-For this demo's tutorial: **Creating a MapView and Waypoint Application**, please refer to <https://developer.dji.com/mobile-sdk/documentation/android-tutorials/GSDemo-Google-Map.html>.
+Inside the IDE, go to Tools -> SDK Manager -> SDK Tools -> Show package details -> NDK 25 and check it, this downloads NDK 25 to the location ~/Android/Sdk/ndk/##.#.######.
 
-## Feedback
+### Build steps
 
-We’d love to hear your feedback on this demo and tutorial.
+Start by building boost for Android:
+#### Cross compiling boost
+```
+git clone git@github.com:moritz-wundke/Boost-for-Android.git
+cd Boost-for-Android
+```
+Modify the file `build-android.sh` to only build for arm64-v8a, only with the system component of the boost library and as a dynamically linked library. This is done by finding and modifying the variables accordingly:
+```
+LIBRARIES=--with-system
+ARCHLIST=arm64-v8a
+```
+And at the ./b2 command, modify `link=static` to:
+```
+link=shared
+```
 
-Please use [DJI Support] (https://djisdksupport.zendesk.com/hc/requests/new)  when you meet any problems of using this demo. At a minimum please let us know:
+Execute the script to build Boost::System for Android (arm64-v8a):
+```
+./build-android.sh "/path/to/ndk-25/"
+```
 
-* Which DJI Product you are using?
-* Which Android Device and Android system version you are using?
-* Which Android Studio version you are using?
-* A short description of your problem includes debugging logs or screenshots.
-* Any bugs or typos you come across.
+The resulting files end up in: 
+```
+Boost-for-Android/build/out/arm64-v8a/include
+Boost-for-Android/build/out/arm64-v8a/lib
+```
 
-## License
+We now build the app, linking it to boost and util libraries and deploy it using AndroidStudio
+#### Build and deploy with AndroidStudio
+Clone the repository:
+``` 
+git clone git@github.com:RI-SE/Android-GSDemo-GoogleMap.git
+```
 
-Android-GSDemo-GoogleMap is available under the MIT license. Please see the LICENSE file for more infos.
+Clone the util repo containing ISO22133 object implementation:
+```
+git clone git@github.com:RI-SE/util.git
+```
 
-## Join Us
+Change directory to the util repo and initialize and update git submodules:
+```
+cd util && git submodule init && git submodule update --recursive
+```
 
-DJI is looking for all kinds of Software Engineers to continue building the Future of Possible. Available positions in Shenzhen, China and around the world. If you are interested, please send your resume to <software-sz@dji.com>. For more details, and list of all our global offices, please check <https://we.dji.com/jobs_en.html>.
+Open the project Android-GSDemo-GoogleMap in AndroidStudio.
+In the build.gradle file, modify my_boost_dir such that it matches the `lib` and `include` locations of the boost dirs built following the steps of the previous subsection
 
-DJI 招软件工程师啦，based在深圳，如果你想和我们一起把DJI产品做得更好，请发送简历到 <software-sz@dji.com>.  详情请浏览 <https://we.dji.com/zh-CN/recruitment>.
+The app can now be built and deployed to an Android phone. 

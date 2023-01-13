@@ -23,9 +23,6 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -51,25 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/konglobemeralt/Documents/gitz/util/C/isoObject
+CMAKE_SOURCE_DIR = /home/jesper/Documents/gitz/util/C/isoObject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/konglobemeralt/Documents/gitz/util/C/isoObject/build
+CMAKE_BINARY_DIR = /home/jesper/Documents/gitz/util/C/isoObject/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -127,11 +112,23 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles /home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -186,17 +183,17 @@ isoObject_wrap/fast:
 .PHONY : isoObject_wrap/fast
 
 #=============================================================================
-# Target rules for targets named ISO_objectTest
+# Target rules for targets named ISO_objectDemo
 
 # Build rule for target.
-ISO_objectTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ISO_objectTest
-.PHONY : ISO_objectTest
+ISO_objectDemo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ISO_objectDemo
+.PHONY : ISO_objectDemo
 
 # fast build rule for target.
-ISO_objectTest/fast:
-	$(MAKE) -f CMakeFiles/ISO_objectTest.dir/build.make CMakeFiles/ISO_objectTest.dir/build
-.PHONY : ISO_objectTest/fast
+ISO_objectDemo/fast:
+	$(MAKE) -f CMakeFiles/ISO_objectDemo.dir/build.make CMakeFiles/ISO_objectDemo.dir/build
+.PHONY : ISO_objectDemo/fast
 
 #=============================================================================
 # Target rules for targets named ISO_object
@@ -212,6 +209,19 @@ ISO_object/fast:
 .PHONY : ISO_object/fast
 
 #=============================================================================
+# Target rules for targets named ISO22133_test
+
+# Build rule for target.
+ISO22133_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ISO22133_test
+.PHONY : ISO22133_test
+
+# fast build rule for target.
+ISO22133_test/fast:
+	$(MAKE) -f iso22133/CMakeFiles/ISO22133_test.dir/build.make iso22133/CMakeFiles/ISO22133_test.dir/build
+.PHONY : ISO22133_test/fast
+
+#=============================================================================
 # Target rules for targets named ISO22133
 
 # Build rule for target.
@@ -225,43 +235,56 @@ ISO22133/fast:
 .PHONY : ISO22133/fast
 
 #=============================================================================
-# Target rules for targets named TCPUDPSocket
+# Target rules for targets named gmock_main
 
 # Build rule for target.
-TCPUDPSocket: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TCPUDPSocket
-.PHONY : TCPUDPSocket
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
 
 # fast build rule for target.
-TCPUDPSocket/fast:
-	$(MAKE) -f sockets/CMakeFiles/TCPUDPSocket.dir/build.make sockets/CMakeFiles/TCPUDPSocket.dir/build
-.PHONY : TCPUDPSocket/fast
+gmock_main/fast:
+	$(MAKE) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
 
 #=============================================================================
-# Target rules for targets named TEST_SOCKET
+# Target rules for targets named gmock
 
 # Build rule for target.
-TEST_SOCKET: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TEST_SOCKET
-.PHONY : TEST_SOCKET
+gmock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
 
 # fast build rule for target.
-TEST_SOCKET/fast:
-	$(MAKE) -f sockets/CMakeFiles/TEST_SOCKET.dir/build.make sockets/CMakeFiles/TEST_SOCKET.dir/build
-.PHONY : TEST_SOCKET/fast
+gmock/fast:
+	$(MAKE) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
 
 #=============================================================================
-# Target rules for targets named TEST_CAN
+# Target rules for targets named gtest_main
 
 # Build rule for target.
-TEST_CAN: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TEST_CAN
-.PHONY : TEST_CAN
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
 
 # fast build rule for target.
-TEST_CAN/fast:
-	$(MAKE) -f sockets/CMakeFiles/TEST_CAN.dir/build.make sockets/CMakeFiles/TEST_CAN.dir/build
-.PHONY : TEST_CAN/fast
+gtest_main/fast:
+	$(MAKE) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
 
 CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.o: CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o
 
@@ -289,6 +312,33 @@ CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.s: CMakeFiles/isoObject_wrap.di
 CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.s:
 	$(MAKE) -f CMakeFiles/isoObject_wrap.dir/build.make CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.s
 .PHONY : CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.s
+
+demoIsoObject.o: demoIsoObject.cpp.o
+
+.PHONY : demoIsoObject.o
+
+# target to build an object file
+demoIsoObject.cpp.o:
+	$(MAKE) -f CMakeFiles/ISO_objectDemo.dir/build.make CMakeFiles/ISO_objectDemo.dir/demoIsoObject.cpp.o
+.PHONY : demoIsoObject.cpp.o
+
+demoIsoObject.i: demoIsoObject.cpp.i
+
+.PHONY : demoIsoObject.i
+
+# target to preprocess a source file
+demoIsoObject.cpp.i:
+	$(MAKE) -f CMakeFiles/ISO_objectDemo.dir/build.make CMakeFiles/ISO_objectDemo.dir/demoIsoObject.cpp.i
+.PHONY : demoIsoObject.cpp.i
+
+demoIsoObject.s: demoIsoObject.cpp.s
+
+.PHONY : demoIsoObject.s
+
+# target to generate assembly for a file
+demoIsoObject.cpp.s:
+	$(MAKE) -f CMakeFiles/ISO_objectDemo.dir/build.make CMakeFiles/ISO_objectDemo.dir/demoIsoObject.cpp.s
+.PHONY : demoIsoObject.cpp.s
 
 src/iso22133object.o: src/iso22133object.cpp.o
 
@@ -371,40 +421,12 @@ src/trajDecoder.cpp.s:
 	$(MAKE) -f CMakeFiles/ISO_object.dir/build.make CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.s
 .PHONY : src/trajDecoder.cpp.s
 
-testIsoObject.o: testIsoObject.cpp.o
-
-.PHONY : testIsoObject.o
-
-# target to build an object file
-testIsoObject.cpp.o:
-	$(MAKE) -f CMakeFiles/ISO_objectTest.dir/build.make CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.o
-.PHONY : testIsoObject.cpp.o
-
-testIsoObject.i: testIsoObject.cpp.i
-
-.PHONY : testIsoObject.i
-
-# target to preprocess a source file
-testIsoObject.cpp.i:
-	$(MAKE) -f CMakeFiles/ISO_objectTest.dir/build.make CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.i
-.PHONY : testIsoObject.cpp.i
-
-testIsoObject.s: testIsoObject.cpp.s
-
-.PHONY : testIsoObject.s
-
-# target to generate assembly for a file
-testIsoObject.cpp.s:
-	$(MAKE) -f CMakeFiles/ISO_objectTest.dir/build.make CMakeFiles/ISO_objectTest.dir/testIsoObject.cpp.s
-.PHONY : testIsoObject.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
@@ -412,15 +434,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... isoObject_wrap_swig_compilation"
 	@echo "... isoObject_wrap"
-	@echo "... ISO_objectTest"
+	@echo "... install/strip"
+	@echo "... ISO_objectDemo"
 	@echo "... ISO_object"
+	@echo "... ISO22133_test"
 	@echo "... ISO22133"
-	@echo "... TCPUDPSocket"
-	@echo "... TEST_SOCKET"
-	@echo "... TEST_CAN"
+	@echo "... gmock_main"
+	@echo "... gmock"
+	@echo "... gtest_main"
+	@echo "... gtest"
 	@echo "... CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.o"
 	@echo "... CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.i"
 	@echo "... CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.s"
+	@echo "... demoIsoObject.o"
+	@echo "... demoIsoObject.i"
+	@echo "... demoIsoObject.s"
 	@echo "... src/iso22133object.o"
 	@echo "... src/iso22133object.i"
 	@echo "... src/iso22133object.s"
@@ -430,9 +458,6 @@ help:
 	@echo "... src/trajDecoder.o"
 	@echo "... src/trajDecoder.i"
 	@echo "... src/trajDecoder.s"
-	@echo "... testIsoObject.o"
-	@echo "... testIsoObject.i"
-	@echo "... testIsoObject.s"
 .PHONY : help
 
 

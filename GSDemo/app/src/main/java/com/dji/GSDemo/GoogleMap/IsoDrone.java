@@ -6,15 +6,8 @@ import org.asta.isoObject.*;
 import org.locationtech.proj4j.ProjCoordinate;
 
 public class IsoDrone extends TestObject{
-    TrajectoryWaypointVector reducedTraj;
 
-    IsoDrone(int ip) {
-        super(ip);
-        System.out.println("Drone init...int");
-
-    }
-
-    IsoDrone(String ip) {
+   IsoDrone(String ip) {
         super(ip);
         System.out.println("Drone init...ip");
 

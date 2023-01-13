@@ -6,7 +6,7 @@ CXX_FLAGS = -g -fPIC   -std=gnu++17
 
 CXX_DEFINES = -DisoObject_wrap_EXPORTS
 
-CXX_INCLUDES = -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/inc -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/../../iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/isoObject/../../sockets -I/usr/lib/jvm/java-11-openjdk-amd64/include -I/usr/lib/jvm/java-11-openjdk-amd64/include/linux -I/home/konglobemeralt/Documents/gitz/util/C/isoObject../iso22133 -I/home/konglobemeralt/Documents/gitz/util/C/sockets -I/home/konglobemeralt/Documents/gitz/util/C/iso22133 
+CXX_INCLUDES = -I/home/jesper/Documents/gitz/util/C/isoObject/inc -I/home/jesper/Documents/gitz/util/C/isoObject/sigslot/include/sigslot -I/home/jesper/Documents/gitz/util/C/iso22133 -I/usr/lib/jvm/default-java/include -I/usr/lib/jvm/default-java/include/linux -I/home/jesper/Documents/gitz/util/C/iso22133/include 
 
 # Custom options: CMakeFiles/isoObject_wrap.dir/CMakeFiles/isoObject_wrap.dir/isoObjectJAVA_wrap.cxx.o_OPTIONS = 
 

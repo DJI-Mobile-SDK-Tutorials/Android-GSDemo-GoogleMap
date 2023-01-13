@@ -18,9 +18,6 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -46,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/konglobemeralt/Documents/gitz/util/C/isoObject
+CMAKE_SOURCE_DIR = /home/jesper/Documents/gitz/util/C/isoObject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/konglobemeralt/Documents/gitz/util/C/isoObject/build
+CMAKE_BINARY_DIR = /home/jesper/Documents/gitz/util/C/isoObject/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ISO_object.dir/depend.make
@@ -62,42 +59,42 @@ include CMakeFiles/ISO_object.dir/flags.make
 
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: CMakeFiles/ISO_object.dir/flags.make
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o: ../src/iso22133object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o -c /home/jesper/Documents/gitz/util/C/isoObject/src/iso22133object.cpp
 
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISO_object.dir/src/iso22133object.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp > CMakeFiles/ISO_object.dir/src/iso22133object.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jesper/Documents/gitz/util/C/isoObject/src/iso22133object.cpp > CMakeFiles/ISO_object.dir/src/iso22133object.cpp.i
 
 CMakeFiles/ISO_object.dir/src/iso22133object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISO_object.dir/src/iso22133object.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133object.cpp -o CMakeFiles/ISO_object.dir/src/iso22133object.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jesper/Documents/gitz/util/C/isoObject/src/iso22133object.cpp -o CMakeFiles/ISO_object.dir/src/iso22133object.cpp.s
 
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: CMakeFiles/ISO_object.dir/flags.make
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o: ../src/iso22133state.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o -c /home/jesper/Documents/gitz/util/C/isoObject/src/iso22133state.cpp
 
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISO_object.dir/src/iso22133state.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp > CMakeFiles/ISO_object.dir/src/iso22133state.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jesper/Documents/gitz/util/C/isoObject/src/iso22133state.cpp > CMakeFiles/ISO_object.dir/src/iso22133state.cpp.i
 
 CMakeFiles/ISO_object.dir/src/iso22133state.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISO_object.dir/src/iso22133state.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/iso22133state.cpp -o CMakeFiles/ISO_object.dir/src/iso22133state.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jesper/Documents/gitz/util/C/isoObject/src/iso22133state.cpp -o CMakeFiles/ISO_object.dir/src/iso22133state.cpp.s
 
 CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: CMakeFiles/ISO_object.dir/flags.make
 CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o: ../src/trajDecoder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o -c /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o -c /home/jesper/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp
 
 CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp > CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jesper/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp > CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.i
 
 CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konglobemeralt/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp -o CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jesper/Documents/gitz/util/C/isoObject/src/trajDecoder.cpp -o CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.s
 
 # Object files for target ISO_object
 ISO_object_OBJECTS = \
@@ -112,10 +109,9 @@ libISO_object.so: CMakeFiles/ISO_object.dir/src/iso22133object.cpp.o
 libISO_object.so: CMakeFiles/ISO_object.dir/src/iso22133state.cpp.o
 libISO_object.so: CMakeFiles/ISO_object.dir/src/trajDecoder.cpp.o
 libISO_object.so: CMakeFiles/ISO_object.dir/build.make
-libISO_object.so: sockets/libTCPUDPSocket.so
 libISO_object.so: iso22133/libISO22133.so
 libISO_object.so: CMakeFiles/ISO_object.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libISO_object.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libISO_object.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ISO_object.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -128,6 +124,6 @@ CMakeFiles/ISO_object.dir/clean:
 .PHONY : CMakeFiles/ISO_object.dir/clean
 
 CMakeFiles/ISO_object.dir/depend:
-	cd /home/konglobemeralt/Documents/gitz/util/C/isoObject/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/konglobemeralt/Documents/gitz/util/C/isoObject /home/konglobemeralt/Documents/gitz/util/C/isoObject /home/konglobemeralt/Documents/gitz/util/C/isoObject/build /home/konglobemeralt/Documents/gitz/util/C/isoObject/build /home/konglobemeralt/Documents/gitz/util/C/isoObject/build/CMakeFiles/ISO_object.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jesper/Documents/gitz/util/C/isoObject/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jesper/Documents/gitz/util/C/isoObject /home/jesper/Documents/gitz/util/C/isoObject /home/jesper/Documents/gitz/util/C/isoObject/build /home/jesper/Documents/gitz/util/C/isoObject/build /home/jesper/Documents/gitz/util/C/isoObject/build/CMakeFiles/ISO_object.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ISO_object.dir/depend
 

@@ -15,7 +15,7 @@ import org.locationtech.proj4j.ProjCoordinate;
 public class MApplication extends Application {
     static {
         try {
-            System.loadLibrary("TCPUDPSocket");
+            //System.loadLibrary("TCPUDPSocket");
             System.loadLibrary("isoObject_wrap");
         }catch(Exception e)
         {

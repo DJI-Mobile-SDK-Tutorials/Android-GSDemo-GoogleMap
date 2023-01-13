@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/ISO_objectDemo.dir/demoIsoObject.cpp.o  -o ISO_objectDemo  -Wl,-rpath,/home/jesper/Documents/gitz/util/C/isoObject/build:/home/jesper/Documents/gitz/util/C/isoObject/build/iso22133 libISO_object.so iso22133/libISO22133.so -lm -latomic -lpthread 

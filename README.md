@@ -72,3 +72,12 @@ Open the project Android-GSDemo-GoogleMap in AndroidStudio.
 In the build.gradle file, modify my_boost_dir such that it matches the `lib` and `include` locations of the boost dirs built following the steps of the previous subsection
 
 The app can now be built and deployed to an Android phone. 
+
+
+## Common problems
+### HeabTimeout
+ATOS and the ISOobject have set HEAB timeouts, depending on the network connection this might cause either to timeout and cause abort. Raising this value in both can be used as a workaround if this is the the reason for aborting. 
+
+### Invalid MONR
+The iso MONR message has separate boolean values specifying if the position is valid or not. These need to be set for the MONR message to be correctly encoded.
+

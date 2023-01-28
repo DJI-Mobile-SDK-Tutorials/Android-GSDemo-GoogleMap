@@ -70,19 +70,11 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
 
     static {
         try {
-            System.loadLibrary("TCPUDPSocket");
             System.loadLibrary("isoObject_wrap");
         }catch(Exception e)
         {
             Log.wtf("Error", e);
         }
-
-
-
-        //createIsoDroneTask
-
-
-
     }
 
     protected static final String TAG = "GSDemoActivity";
@@ -179,13 +171,6 @@ public class Waypoint1Activity extends FragmentActivity implements View.OnClickL
         stop.setOnClickListener(this);
 
         add.setEnabled(false);;
-
-      // Log.wtf("Error", "Before init");
-      // Task droneTask = new Task();
-      // droneTask.run();
-      // Log.wtf("Error", "After init");
-
-
     }
 
     private void generateWaypointsFromTraj(LatLng origin, TrajectoryWaypointVector trajectory){

@@ -39,32 +39,6 @@ public class MainActivity extends AppCompatActivity {
                mButton.setEnabled(true);
                BaseProduct product = DJIDemoApplication.getProductInstance();
                FlightController flightController = ((Aircraft) product).getFlightController();
-             //  final StringBuffer stringBuffer = new StringBuffer();
-             //  stringBuffer.append("Drone Latitude: " + flightController.getState().getAircraftLocation().getLatitude()).append("\n");
-             //  stringBuffer.append("Drone Longitude: " + flightController.getState().getAircraftLocation().getLongitude()).append("\n");
-
-             //  CRSFactory crsFactory = new CRSFactory();
-             //  CoordinateReferenceSystem WGS84 = crsFactory.createFromParameters("WGS84","+proj=longlat +datum=WGS84 +no_defs");
-             //  CoordinateReferenceSystem UTM = crsFactory.createFromParameters("UTM", "+proj=tmerc +lat_0=57.66263300 +lon_0=12.10565700 +k=0.9996 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs");
-
-             //  CoordinateTransformFactory ctFactory = new CoordinateTransformFactory();
-             //  CoordinateTransform wgsToUtm = ctFactory.createTransform(WGS84, UTM);
-             //  ProjCoordinate result = new ProjCoordinate();
-             //  wgsToUtm.transform(new ProjCoordinate(flightController.getState().getAircraftLocation().getLongitude(), flightController.getState().getAircraftLocation().getLatitude()), result);
-             //  stringBuffer.append("Transformed X: " + result.x).append("\n");
-             //  stringBuffer.append("Transformed Y: " + result.y).append("\n");
-             //  stringBuffer.append("Transformed Z: " + flightController.getState().getAircraftLocation().getAltitude()).append("\n");
-
-             //  CoordinateTransform utmToWgs = ctFactory.createTransform(UTM, WGS84);
-             //  result = new ProjCoordinate();
-             //  utmToWgs.transform(new ProjCoordinate(5, 5), result);
-             //  stringBuffer.append("Transformed latitude: " + result.y).append("\n");
-             //  stringBuffer.append("Transformed longitude: " + result.x).append("\n");
-
-             //  mText = (TextView)findViewById(R.id.textViewPosition1);
-             //  mText.setText(stringBuffer);
-
-
                 break;
         }
     };

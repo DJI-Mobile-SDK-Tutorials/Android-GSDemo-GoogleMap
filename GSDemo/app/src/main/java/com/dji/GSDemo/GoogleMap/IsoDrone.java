@@ -7,6 +7,8 @@ import org.locationtech.proj4j.ProjCoordinate;
 
 public class IsoDrone extends TestObject{
 
+    public TrajectoryWaypointVector reducedTraj;
+
    IsoDrone(String ip) {
         super(ip);
         System.out.println("Drone init...ip");

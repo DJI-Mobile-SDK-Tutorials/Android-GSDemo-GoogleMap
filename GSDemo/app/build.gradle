@@ -74,7 +74,6 @@ android {
             path file('../../../util/C/sockets/CMakeLists.txt')
             path file('../../../util/C/iso22133/CMakeLists.txt')
             path file('../../../util/C/isoObject/CMakeLists.txt')
-            version '3.22.1' // NOTE: should be whatever cmake is present on the host
         }
     }
 }

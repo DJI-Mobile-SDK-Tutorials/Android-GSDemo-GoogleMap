@@ -20,7 +20,7 @@ sudo apt install swig
 Download Android Studio by visiting https://developer.android.com/studio/install and downloading the zip file. 
 Unzip the file and execute `./studio.sh` located in /android-studio/bin to start the IDE.
 
-Inside the IDE, go to Tools -> SDK Manager -> SDK Tools -> Show package details -> NDK 25 and check it, this downloads NDK 25 to the location ~/Android/Sdk/ndk/##.#.######.
+Inside the IDE, go to Tools -> SDK Manager -> SDK Tools -> Show package details -> NDK 25.1.8937393 and check it, this downloads NDK 25.1.8937393 to the location ~/Android/Sdk/ndk/##.#.######.
 
 ### Build steps
 

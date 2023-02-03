@@ -36,8 +36,9 @@ public class CartesianPosition {
     }
   }
 
-  public void setXCoord_m(double value) {
+  public SpeedType setXCoord_m(double value) {
     isoObject_wrapJNI.CartesianPosition_xCoord_m_set(swigCPtr, this, value);
+    return null;
   }
 
   public double getXCoord_m() {

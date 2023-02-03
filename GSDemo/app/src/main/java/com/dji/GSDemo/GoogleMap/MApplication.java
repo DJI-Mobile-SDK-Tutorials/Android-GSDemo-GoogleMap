@@ -9,6 +9,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.secneo.sdk.Helper;
 
 import org.asta.isoObject.CartesianPosition;
+import org.asta.isoObject.SpeedType;
 import org.asta.isoObject.TrajectoryWaypointVector;
 import org.locationtech.proj4j.ProjCoordinate;
 
@@ -78,6 +79,13 @@ class Task implements Runnable {
                 if (drone.getCurrentStateName().equals("Armed") || (drone.getCurrentStateName().equals("Running"))) {
 
                     CartesianPosition dronePos = new CartesianPosition();
+                    SpeedType droneSpeed = new SpeedType();
+
+                    droneSpeed.setIsLateralValid(true);
+                    droneSpeed.setIsLongitudinalValid(true);
+                    droneSpeed.setLateral_m_s(2);
+                    droneSpeed.setLongitudinal_m_s(2);
+
                     dronePos.setXCoord_m(test);
                     dronePos.setYCoord_m(20);
                     dronePos.setZCoord_m(30);
@@ -86,6 +94,7 @@ class Task implements Runnable {
                     dronePos.setIsPositionValid(true);
                     dronePos.setIsHeadingValid(true);
                     drone.setPosition(dronePos);
+                    drone.setSpeed(droneSpeed);
 
 
    //                Log.wtf("TrajName: ", drone.getTrajectoryHeader().getTrajectoryName());

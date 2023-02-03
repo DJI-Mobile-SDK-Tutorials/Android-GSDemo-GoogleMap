@@ -16,7 +16,6 @@ import org.locationtech.proj4j.ProjCoordinate;
 public class MApplication extends Application {
     static {
         try {
-            //System.loadLibrary("TCPUDPSocket");
             System.loadLibrary("isoObject_wrap");
         }catch(Exception e)
         {
@@ -47,17 +46,19 @@ public class MApplication extends Application {
     public void onCreate() {
 
         super.onCreate();
+        // Uncomment following lines to test communication from ISOObject <-> ATOS, see Task class below
+        
         //Task droneTask = new Task();
         //droneTask.run();
-
-//192.168.166.127
+        
+        // Uncomment following line to start connection to DJI drone and ISOObject <-> ATOS.
         fpvDemoApplication.onCreate();
 
     }
 }
 
 
-
+/* Testing class to debug communication from ISOObject <-> ATOS */
 class Task implements Runnable {
     @Override
     public void run() {
@@ -96,17 +97,15 @@ class Task implements Runnable {
                     drone.setPosition(dronePos);
                     drone.setSpeed(droneSpeed);
 
+                    // Debug prints
+                    // Log.wtf("TrajName: ", drone.getTrajectoryHeader().getTrajectoryName());
 
-   //                Log.wtf("TrajName: ", drone.getTrajectoryHeader().getTrajectoryName());
+                    // TrajectoryWaypointVector traj =  drone.getTrajectory();
 
-   //                TrajectoryWaypointVector traj =  drone.getTrajectory();
-
-   //                for(int i = 0; i < traj.size(); i++){
-   //                    Log.wtf("point " + String.valueOf(i) + " X: ", String.valueOf(traj.get(i).getPos().getXCoord_m()));
-   //                    Log.wtf("point " + String.valueOf(i) + " Y: ", String.valueOf(traj.get(i).getPos().getYCoord_m()));
-
-
-   //                }
+                    // for(int i = 0; i < traj.size(); i++){
+                    //      Log.wtf("point " + String.valueOf(i) + " X: ", String.valueOf(traj.get(i).getPos().getXCoord_m()));
+                    //      Log.wtf("point " + String.valueOf(i) + " Y: ", String.valueOf(traj.get(i).getPos().getYCoord_m()));
+                    // }
 
                 }
 
@@ -149,34 +148,9 @@ class Task implements Runnable {
                     Log.wtf("Error", "EmergencyStop");
                     lastDroneState = "EmergencyStop";
                 }
-
-//
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
          }
     }
 }
-
-
-/*
-class AsyncTaskRunner extends AsyncTask<String, String, String> {
-    @Override
-    protected String doInBackground(String... params) {
-        IsoDrone drone = new IsoDrone("192.168.21.87");
-        Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
-        return "";
-    }
-    @Override
-    protected void onPostExecute(String result) {
-    }
-    @Override
-    protected void onPreExecute() {
-    }
-    @Override
-    protected void onProgressUpdate(String... text) {
-    }
-}
-*/
-
-

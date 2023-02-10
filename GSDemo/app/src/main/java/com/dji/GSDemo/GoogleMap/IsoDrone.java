@@ -10,8 +10,37 @@ public class IsoDrone extends TestObject{
     public TrajectoryWaypointVector reducedTraj;
 
    IsoDrone(String ip) {
-        super(ip);
-        System.out.println("Drone init...ip");
+       super(ip);
+
+       /* Set iso speed/positional fields to initial value and make sure they are valid */
+       CartesianPosition cp = new CartesianPosition();
+       cp.setHeading_rad(0);
+       cp.setIsHeadingValid(true);
+       cp.setXCoord_m(0);
+       cp.setYCoord_m(0);
+       cp.setZCoord_m(0);
+       cp.setIsPositionValid(true);
+       cp.setIsXcoordValid(true);
+       cp.setIsYcoordValid(true);
+       cp.setIsZcoordValid(true);
+
+       SpeedType spd = new SpeedType();
+       spd.setLateral_m_s(0);
+       spd.setLongitudinal_m_s(0);
+       spd.setIsLateralValid(true);
+       spd.setIsLongitudinalValid(true);
+
+       AccelerationType acc = new AccelerationType();
+       acc.setLateral_m_s2(0);
+       acc.setLongitudinal_m_s2(0);
+       acc.setIsLateralValid(true);
+       acc.setIsLongitudinalValid(true);
+
+       this.setPosition(cp);
+       this.setSpeed(spd);
+       this.setAcceleration(acc);
+
+       System.out.println("Drone init...ip");
 
     }
     IsoDrone() {

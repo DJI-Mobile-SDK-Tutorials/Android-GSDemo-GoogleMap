@@ -94,13 +94,13 @@ public class RemoteControlManoeuvreMessageType {
   
   }
 
-  public void setSteeringManoeuvre(RemoteControlManoeuvreMessageType.steeringMan value) {
-    isoObject_wrapJNI.RemoteControlManoeuvreMessageType_steeringManoeuvre_set(swigCPtr, this, RemoteControlManoeuvreMessageType.steeringMan.getCPtr(value), value);
+  public void setSteeringManoeuvre(steeringMan value) {
+    isoObject_wrapJNI.RemoteControlManoeuvreMessageType_steeringManoeuvre_set(swigCPtr, this, steeringMan.getCPtr(value), value);
   }
 
-  public RemoteControlManoeuvreMessageType.steeringMan getSteeringManoeuvre() {
+  public steeringMan getSteeringManoeuvre() {
     long cPtr = isoObject_wrapJNI.RemoteControlManoeuvreMessageType_steeringManoeuvre_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new RemoteControlManoeuvreMessageType.steeringMan(cPtr, false);
+    return (cPtr == 0) ? null : new steeringMan(cPtr, false);
   }
 
   static public class speedMan {
@@ -153,13 +153,13 @@ public class RemoteControlManoeuvreMessageType {
   
   }
 
-  public void setSpeedManoeuvre(RemoteControlManoeuvreMessageType.speedMan value) {
-    isoObject_wrapJNI.RemoteControlManoeuvreMessageType_speedManoeuvre_set(swigCPtr, this, RemoteControlManoeuvreMessageType.speedMan.getCPtr(value), value);
+  public void setSpeedManoeuvre(speedMan value) {
+    isoObject_wrapJNI.RemoteControlManoeuvreMessageType_speedManoeuvre_set(swigCPtr, this, speedMan.getCPtr(value), value);
   }
 
-  public RemoteControlManoeuvreMessageType.speedMan getSpeedManoeuvre() {
+  public speedMan getSpeedManoeuvre() {
     long cPtr = isoObject_wrapJNI.RemoteControlManoeuvreMessageType_speedManoeuvre_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new RemoteControlManoeuvreMessageType.speedMan(cPtr, false);
+    return (cPtr == 0) ? null : new speedMan(cPtr, false);
   }
 
   static public class throttleMan {
@@ -204,13 +204,13 @@ public class RemoteControlManoeuvreMessageType {
   
   }
 
-  public void setThrottleManoeuvre(RemoteControlManoeuvreMessageType.throttleMan value) {
-    isoObject_wrapJNI.RemoteControlManoeuvreMessageType_throttleManoeuvre_set(swigCPtr, this, RemoteControlManoeuvreMessageType.throttleMan.getCPtr(value), value);
+  public void setThrottleManoeuvre(throttleMan value) {
+    isoObject_wrapJNI.RemoteControlManoeuvreMessageType_throttleManoeuvre_set(swigCPtr, this, throttleMan.getCPtr(value), value);
   }
 
-  public RemoteControlManoeuvreMessageType.throttleMan getThrottleManoeuvre() {
+  public throttleMan getThrottleManoeuvre() {
     long cPtr = isoObject_wrapJNI.RemoteControlManoeuvreMessageType_throttleManoeuvre_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new RemoteControlManoeuvreMessageType.throttleMan(cPtr, false);
+    return (cPtr == 0) ? null : new throttleMan(cPtr, false);
   }
 
   static public class brakeMan {
@@ -255,13 +255,13 @@ public class RemoteControlManoeuvreMessageType {
   
   }
 
-  public void setBrakeManoeuvre(RemoteControlManoeuvreMessageType.brakeMan value) {
-    isoObject_wrapJNI.RemoteControlManoeuvreMessageType_brakeManoeuvre_set(swigCPtr, this, RemoteControlManoeuvreMessageType.brakeMan.getCPtr(value), value);
+  public void setBrakeManoeuvre(brakeMan value) {
+    isoObject_wrapJNI.RemoteControlManoeuvreMessageType_brakeManoeuvre_set(swigCPtr, this, brakeMan.getCPtr(value), value);
   }
 
-  public RemoteControlManoeuvreMessageType.brakeMan getBrakeManoeuvre() {
+  public brakeMan getBrakeManoeuvre() {
     long cPtr = isoObject_wrapJNI.RemoteControlManoeuvreMessageType_brakeManoeuvre_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new RemoteControlManoeuvreMessageType.brakeMan(cPtr, false);
+    return (cPtr == 0) ? null : new brakeMan(cPtr, false);
   }
 
   public void setCommand(RemoteControlManoeuvreCommandType value) {

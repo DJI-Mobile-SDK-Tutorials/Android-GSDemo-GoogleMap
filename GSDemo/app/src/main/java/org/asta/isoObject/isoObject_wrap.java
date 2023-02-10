@@ -28,8 +28,8 @@ public class isoObject_wrap implements isoObject_wrapConstants {
     return (cPtr == 0) ? null : new SWIGTYPE_p_std__setT_ISO22133__Transition_t(cPtr, false);
   }
 
-  public static int encodeMONRMessage(timeval objectTime, CartesianPosition position, SpeedType speed, SWIGTYPE_p_AccelerationType acceleration, short driveDirection, short objectState, short readyToArm, short objectErrorState, int errorCode, String monrDataBuffer, long bufferLength, char debug) {
-    return isoObject_wrapJNI.encodeMONRMessage(timeval.getCPtr(objectTime), objectTime, CartesianPosition.getCPtr(position), position, SpeedType.getCPtr(speed), speed, SWIGTYPE_p_AccelerationType.getCPtr(acceleration), driveDirection, objectState, readyToArm, objectErrorState, errorCode, monrDataBuffer, bufferLength, debug);
+  public static int encodeMONRMessage(timeval objectTime, CartesianPosition position, SpeedType speed, AccelerationType acceleration, short driveDirection, short objectState, short readyToArm, short objectErrorState, int errorCode, String monrDataBuffer, long bufferLength, char debug) {
+    return isoObject_wrapJNI.encodeMONRMessage(timeval.getCPtr(objectTime), objectTime, CartesianPosition.getCPtr(position), position, SpeedType.getCPtr(speed), speed, AccelerationType.getCPtr(acceleration), acceleration, driveDirection, objectState, readyToArm, objectErrorState, errorCode, monrDataBuffer, bufferLength, debug);
   }
 
   public static int decodeMONRMessage(String monrDataBuffer, long bufferLength, timeval currentTime, SWIGTYPE_p_unsigned_int objectID, SWIGTYPE_p_ObjectMonitorType MonitorData, char debug) {
@@ -40,8 +40,8 @@ public class isoObject_wrap implements isoObject_wrapConstants {
     return isoObject_wrapJNI.encodeTRAJMessageHeader(trajectoryID, trajectoryInfo.swigValue(), trajectoryName, nameLength, numberOfPointsInTraj, trajDataBuffer, bufferLength, debug);
   }
 
-  public static int encodeTRAJMessagePoint(timeval pointTimeFromStart, CartesianPosition position, SpeedType speed, SWIGTYPE_p_AccelerationType acceleration, float curvature, String trajDataBufferPointer, long remainingBufferLength, char debug) {
-    return isoObject_wrapJNI.encodeTRAJMessagePoint(timeval.getCPtr(pointTimeFromStart), pointTimeFromStart, CartesianPosition.getCPtr(position), position, SpeedType.getCPtr(speed), speed, SWIGTYPE_p_AccelerationType.getCPtr(acceleration), curvature, trajDataBufferPointer, remainingBufferLength, debug);
+  public static int encodeTRAJMessagePoint(timeval pointTimeFromStart, CartesianPosition position, SpeedType speed, AccelerationType acceleration, float curvature, String trajDataBufferPointer, long remainingBufferLength, char debug) {
+    return isoObject_wrapJNI.encodeTRAJMessagePoint(timeval.getCPtr(pointTimeFromStart), pointTimeFromStart, CartesianPosition.getCPtr(position), position, SpeedType.getCPtr(speed), speed, AccelerationType.getCPtr(acceleration), acceleration, curvature, trajDataBufferPointer, remainingBufferLength, debug);
   }
 
   public static int decodeTRAJMessagePoint(TrajectoryWaypointType wayPoints, String trajDataBuffer, char debug) {

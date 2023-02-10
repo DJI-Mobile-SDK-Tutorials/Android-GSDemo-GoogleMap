@@ -73,8 +73,8 @@ public class TestObject {
     isoObject_wrapJNI.TestObject_setSpeed(swigCPtr, this, SpeedType.getCPtr(spd), spd);
   }
 
-  public void setAcceleration(SWIGTYPE_p_AccelerationType acc) {
-    isoObject_wrapJNI.TestObject_setAcceleration(swigCPtr, this, SWIGTYPE_p_AccelerationType.getCPtr(acc));
+  public void setAcceleration(AccelerationType acc) {
+    isoObject_wrapJNI.TestObject_setAcceleration(swigCPtr, this, AccelerationType.getCPtr(acc), acc);
   }
 
   public void setDriveDirection(SWIGTYPE_p_DriveDirectionType drd) {
@@ -113,8 +113,8 @@ public class TestObject {
     return new SpeedType(isoObject_wrapJNI.TestObject_getSpeed(swigCPtr, this), true);
   }
 
-  public SWIGTYPE_p_AccelerationType getAcceleration() {
-    return new SWIGTYPE_p_AccelerationType(isoObject_wrapJNI.TestObject_getAcceleration(swigCPtr, this), true);
+  public AccelerationType getAcceleration() {
+    return new AccelerationType(isoObject_wrapJNI.TestObject_getAcceleration(swigCPtr, this), true);
   }
 
   public SWIGTYPE_p_DriveDirectionType getDriveDirection() {

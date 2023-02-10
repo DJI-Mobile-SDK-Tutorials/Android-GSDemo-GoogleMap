@@ -103,13 +103,13 @@ public class RequestControlActionType {
   
   }
 
-  public void setSteeringAction(RequestControlActionType.steeringActions value) {
-    isoObject_wrapJNI.RequestControlActionType_steeringAction_set(swigCPtr, this, RequestControlActionType.steeringActions.getCPtr(value), value);
+  public void setSteeringAction(steeringActions value) {
+    isoObject_wrapJNI.RequestControlActionType_steeringAction_set(swigCPtr, this, steeringActions.getCPtr(value), value);
   }
 
-  public RequestControlActionType.steeringActions getSteeringAction() {
+  public steeringActions getSteeringAction() {
     long cPtr = isoObject_wrapJNI.RequestControlActionType_steeringAction_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new RequestControlActionType.steeringActions(cPtr, false);
+    return (cPtr == 0) ? null : new steeringActions(cPtr, false);
   }
 
   static public class speedActions {
@@ -162,13 +162,13 @@ public class RequestControlActionType {
   
   }
 
-  public void setSpeedAction(RequestControlActionType.speedActions value) {
-    isoObject_wrapJNI.RequestControlActionType_speedAction_set(swigCPtr, this, RequestControlActionType.speedActions.getCPtr(value), value);
+  public void setSpeedAction(speedActions value) {
+    isoObject_wrapJNI.RequestControlActionType_speedAction_set(swigCPtr, this, speedActions.getCPtr(value), value);
   }
 
-  public RequestControlActionType.speedActions getSpeedAction() {
+  public speedActions getSpeedAction() {
     long cPtr = isoObject_wrapJNI.RequestControlActionType_speedAction_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new RequestControlActionType.speedActions(cPtr, false);
+    return (cPtr == 0) ? null : new speedActions(cPtr, false);
   }
 
   public void setIsSteeringActionValid(boolean value) {

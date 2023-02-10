@@ -36,9 +36,8 @@ public class CartesianPosition {
     }
   }
 
-  public SpeedType setXCoord_m(double value) {
+  public void setXCoord_m(double value) {
     isoObject_wrapJNI.CartesianPosition_xCoord_m_set(swigCPtr, this, value);
-    return null;
   }
 
   public double getXCoord_m() {
@@ -83,6 +82,30 @@ public class CartesianPosition {
 
   public boolean getIsHeadingValid() {
     return isoObject_wrapJNI.CartesianPosition_isHeadingValid_get(swigCPtr, this);
+  }
+
+  public void setIsXcoordValid(boolean value) {
+    isoObject_wrapJNI.CartesianPosition_isXcoordValid_set(swigCPtr, this, value);
+  }
+
+  public boolean getIsXcoordValid() {
+    return isoObject_wrapJNI.CartesianPosition_isXcoordValid_get(swigCPtr, this);
+  }
+
+  public void setIsYcoordValid(boolean value) {
+    isoObject_wrapJNI.CartesianPosition_isYcoordValid_set(swigCPtr, this, value);
+  }
+
+  public boolean getIsYcoordValid() {
+    return isoObject_wrapJNI.CartesianPosition_isYcoordValid_get(swigCPtr, this);
+  }
+
+  public void setIsZcoordValid(boolean value) {
+    isoObject_wrapJNI.CartesianPosition_isZcoordValid_set(swigCPtr, this, value);
+  }
+
+  public boolean getIsZcoordValid() {
+    return isoObject_wrapJNI.CartesianPosition_isZcoordValid_get(swigCPtr, this);
   }
 
   public CartesianPosition() {

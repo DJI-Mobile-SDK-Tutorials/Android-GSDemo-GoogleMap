@@ -63,12 +63,13 @@ public class TrajectoryWaypointType {
     return (cPtr == 0) ? null : new SpeedType(cPtr, false);
   }
 
-  public void setAcc(SWIGTYPE_p_AccelerationType value) {
-    isoObject_wrapJNI.TrajectoryWaypointType_acc_set(swigCPtr, this, SWIGTYPE_p_AccelerationType.getCPtr(value));
+  public void setAcc(AccelerationType value) {
+    isoObject_wrapJNI.TrajectoryWaypointType_acc_set(swigCPtr, this, AccelerationType.getCPtr(value), value);
   }
 
-  public SWIGTYPE_p_AccelerationType getAcc() {
-    return new SWIGTYPE_p_AccelerationType(isoObject_wrapJNI.TrajectoryWaypointType_acc_get(swigCPtr, this), true);
+  public AccelerationType getAcc() {
+    long cPtr = isoObject_wrapJNI.TrajectoryWaypointType_acc_get(swigCPtr, this);
+    return (cPtr == 0) ? null : new AccelerationType(cPtr, false);
   }
 
   public void setCurvature(SWIGTYPE_p_float_t value) {

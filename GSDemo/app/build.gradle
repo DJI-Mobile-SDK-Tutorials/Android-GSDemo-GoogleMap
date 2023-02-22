@@ -1,12 +1,15 @@
 apply plugin: 'com.android.application'
 
-def my_boost_dir = "/home/victor/git/Boost-for-Android/build/out/arm64-v8a"
+def my_boost_dir = "/home/robertbre/tools/Boost-for-Android/build/out/arm64-v8a"
 def my_boost_dir_libs = my_boost_dir + "/lib/"
 def my_boost_dir_inc  = my_boost_dir + "/include/boost-1_78/"
 
 repositories {
     mavenLocal()
 }
+
+task wrapper(type: Wrapper){    gradleVersion = '7.2'}
+task prepareKotlinBuildScriptModel {}
 
 android {
     compileSdkVersion 30
@@ -32,6 +35,8 @@ android {
                 arguments '-DWITH_SWIG=ON'
                 arguments '-DSWIG_WITH_JAVA=ON'
                 arguments '-DCMAKE_BUILD_TYPE=Release'
+                arguments '-DCMAKE_CXX_FLAGS=-llog'
+                arguments '-DCMAKE_C_FLAGS=-llog'
                 cppFlags ''
             }
         } //Mention in the doc

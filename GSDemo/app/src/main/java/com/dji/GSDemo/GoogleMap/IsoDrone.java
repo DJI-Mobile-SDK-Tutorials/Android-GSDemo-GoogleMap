@@ -65,6 +65,20 @@ public class IsoDrone extends TestObject{
         this.reducedTraj = douglasPeucker(traj, epsilon);
     }
 
+    public void removePointsToClose(){
+        TrajectoryWaypointVector newTraj = new TrajectoryWaypointVector();
+        for(int i=1; i<this.reducedTraj.size(); i++){
+            CartesianPosition p1 = this.reducedTraj.get(i).getPos();
+            CartesianPosition p2 = this.reducedTraj.get(i-1).getPos();
+
+            double distance = Math.sqrt((Math.pow(p1.getXCoord_m() - p2.getXCoord_m(), 2) + Math.pow(p1.getYCoord_m() - p2.getYCoord_m(), 2) + Math.pow(p1.getZCoord_m() - p2.getZCoord_m(), 2)));
+            if(distance > 10){
+                newTraj.add(this.reducedTraj.get(i));
+            }
+        }
+        this.reducedTraj = newTraj;
+    }
+
     TrajectoryWaypointVector getReducedTraj(){
         return this.reducedTraj;
     }

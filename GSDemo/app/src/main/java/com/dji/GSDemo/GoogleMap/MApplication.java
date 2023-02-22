@@ -48,10 +48,11 @@ public class MApplication extends Application {
         super.onCreate();
         // Uncomment following lines to test communication from ISOObject <-> ATOS, see Task class below
         
-        //Task droneTask = new Task();
-        //droneTask.run();
+
+        // Task droneTask = new Task();
+        // droneTask.run();
         
-        // Uncomment following line to start connection to DJI drone and ISOObject <-> ATOS.
+        // Uncomment following line to start connection to DJI drone and ISOObject <-> ATOS
         fpvDemoApplication.onCreate();
 
     }
@@ -69,9 +70,9 @@ class Task implements Runnable {
          while(true) {
             try {
                Thread.sleep(100);
-               Log.wtf("Name", drone.getName());
+               /*Log.wtf("Name", drone.getName());
                Log.wtf("State", drone.getCurrentStateName());
-               Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4
+               Log.wtf("IPv4", Utils.getIPAddress(true)); // IPv4*/
 
                 //Log.wtf("Lat: ", String.valueOf(drone.getOrigin().getLatitude_deg()));
                 //Log.wtf("Log: ", String.valueOf(drone.getOrigin().getLongitude_deg()));
